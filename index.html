@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auricchio Market Intelligence — Observatório de Metais</title>
+  <link rel="stylesheet" href="./assets/css/portal.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <div class="brand"><strong>AURICCHIO</strong><span>Market Intelligence · Observatório de Metais</span></div>
+      <div class="status">Hub de Research</div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Market Intelligence · Metais não ferrosos</div>
+      <h1>Um ponto central para acompanhar a narrativa dos metais.</h1>
+      <div class="lede">Observatórios interativos que transformam relatórios de research em leituras comparáveis de técnico, macro, físico, oferta e demanda — preservando o histórico de cada análise.</div>
+    </div>
+  </section>
+
+  <main>
+    <div class="section-head">
+      <div><h2>Observatórios</h2><p>Abra o metal para acessar a análise atual e o histórico.</p></div>
+    </div>
+    <section class="grid" id="metals-grid" aria-live="polite"></section>
+
+    <section class="compare">
+      <div class="section-head" style="margin-top:0"><div><h2>Visão comparativa</h2><p>Resumo do estado mais recente registrado no repositório.</p></div></div>
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Metal</th><th>Último relatório</th><th>Viés curto</th><th>Físico</th><th>Leitura</th></tr></thead>
+          <tbody id="compare-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="note"><b>Estrutura do repositório:</b> cada metal possui uma página atual em <code>/metal/index.html</code> e snapshots históricos em <code>/metal/reports/AAAA-MM-DD.html</code>. PDFs de research não foram incluídos nesta primeira versão.</div>
+  </main>
+
+  <footer>Auricchio · Market Intelligence · Observatório de Metais</footer>
+  <script src="./assets/js/portal.js"></script>
+</body>
+</html>

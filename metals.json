@@ -1,0 +1,65 @@
+{
+  "updated_at": "2026-11-16",
+  "metals": [
+    {
+      "id": "tin",
+      "symbol": "Sn",
+      "name": "Estanho",
+      "english": "Tin",
+      "status": "available",
+      "path": "./tin/",
+      "last_report": "16/11/2026",
+      "bias": "Bearish",
+      "physical": "Apertado",
+      "note": "Técnico fraco; estoques baixos oferecem contrapeso."
+    },
+    {
+      "id": "copper",
+      "symbol": "Cu",
+      "name": "Cobre",
+      "english": "Copper",
+      "status": "pending",
+      "path": "./copper/",
+      "last_report": "13/11/2026",
+      "bias": "—",
+      "physical": "—",
+      "note": "Observatório ainda não publicado."
+    },
+    {
+      "id": "zinc",
+      "symbol": "Zn",
+      "name": "Zinco",
+      "english": "Zinc",
+      "status": "pending",
+      "path": "./zinc/",
+      "last_report": "16/11/2026",
+      "bias": "—",
+      "physical": "—",
+      "note": "Observatório ainda não publicado."
+    },
+    {
+      "id": "nickel",
+      "symbol": "Ni",
+      "name": "Níquel",
+      "english": "Nickel",
+      "status": "pending",
+      "path": "./nickel/",
+      "last_report": "16/11/2026",
+      "bias": "—",
+      "physical": "—",
+      "note": "Observatório ainda não publicado."
+    },
+    {
+      "id": "tungsten",
+      "symbol": "W",
+      "name": "Tungstênio",
+      "english": "Tungsten",
+      "status": "pending",
+      "path": "./tungsten/",
+      "last_report": null,
+      "bias": "—",
+      "physical": "—",
+      "note": "Estrutura preparada para futuros relatórios."
+    }
+  ]
+}
