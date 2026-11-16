@@ -16,7 +16,7 @@ fetch('./metals.json')
           <div class="row"><span>Viés curto prazo</span><b class="${biasClass}">${m.bias || '—'}</b></div>
           <div class="row"><span>Status</span><b>${available ? 'Disponível' : 'Em preparação'}</b></div>
         </div>
-        ${available ? `<a class="action" href="${m.path}">Abrir observatório</a>` : `<div class="action disabled">Em preparação</div>`}
+        ${available ? `<div class="actions"><a class="action" href="${m.path}">Abrir observatório</a><a class="action secondary" href="${m.path}history.html">Histórico</a></div>` : `<div class="actions"><div class="action disabled">Em preparação</div><a class="action secondary" href="${m.path}history.html">Histórico</a></div>`}
       </article>`;
     }).join('');
 

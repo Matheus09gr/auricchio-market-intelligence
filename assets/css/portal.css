@@ -46,3 +46,5 @@ main{max-width:1180px;margin:auto;padding:26px 22px 60px}
 footer{border-top:1px solid var(--line);padding:28px 22px;text-align:center;color:#7c8a90;font-size:12px;background:white}
 @media(max-width:1050px){.grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:700px){.grid{grid-template-columns:1fr}.top .wrap{align-items:flex-start}.status{display:none}.hero .wrap{padding-top:40px}.card{min-height:auto}}
+
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}.actions .action{margin-top:0}.action.secondary{background:#edf7f7;color:var(--brand-dark);border:1px solid #cce8e7}@media(max-width:700px){.actions{grid-template-columns:1fr}}

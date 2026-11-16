@@ -36,3 +36,32 @@ Exemplo para Estanho em 20/11/2026:
 ## Observação importante
 
 GitHub Pages publica conteúdo na web. Não inclua documentos confidenciais ou relatórios licenciados de terceiros sem verificar as permissões de distribuição.
+
+
+## Histórico por metal
+
+Cada metal possui:
+
+```text
+metal/
+├── index.html
+├── history.html
+├── reports.json
+└── reports/
+    └── AAAA-MM-DD.html
+```
+
+- `index.html` = observatório atual.
+- `history.html` = página que lista os snapshots históricos.
+- `reports.json` = catálogo do histórico daquele metal.
+- `reports/AAAA-MM-DD.html` = snapshot permanente da análise daquele dia.
+
+### Ao publicar um novo relatório
+
+1. Substituir `metal/index.html` pelo observatório mais recente.
+2. Adicionar uma cópia em `metal/reports/AAAA-MM-DD.html`.
+3. Adicionar a nova entrada no topo de `metal/reports.json`.
+4. Atualizar `metals.json` com data, viés, físico e nota.
+5. Fazer o commit. O GitHub Pages atualiza automaticamente.
+
+Nunca apagar snapshots anteriores apenas porque existe um relatório novo.

@@ -1,0 +1,16 @@
+{
+  "metal": "Estanho",
+  "symbol": "Sn",
+  "updated_at": "2026-11-16",
+  "reports": [
+    {
+      "date": "2026-11-16",
+      "display_date": "16/11/2026",
+      "title": "Tin remains vulnerable amid tech sector correction",
+      "file": "./reports/2026-11-16.html",
+      "bias": "Bearish",
+      "physical": "Apertado",
+      "note": "Técnico e tecnologia pressionam, enquanto estoques baixos oferecem suporte ao físico."
+    }
+  ]
+}
