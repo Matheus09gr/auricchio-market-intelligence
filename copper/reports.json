@@ -1,6 +1,16 @@
 {
   "metal": "Cobre",
   "symbol": "Cu",
-  "updated_at": null,
-  "reports": []
+  "updated_at": "2026-11-13",
+  "reports": [
+    {
+      "date": "2026-11-13",
+      "display_date": "13/11/2026",
+      "title": "Copper supported but looks vulnerable",
+      "file": "./reports/2026-11-13.html",
+      "bias": "Bearish / vulnerável",
+      "physical": "Misto",
+      "note": "O cobre está tecnicamente vulnerável, mas estruturalmente amparado por riscos de oferta. A leitura central não é “estoques altos = mercado folgado”: LME e CME cresceram, SHFE caiu, a backwardation ainda é positiva e o mercado de concentr..."
+    }
+  ]
 }

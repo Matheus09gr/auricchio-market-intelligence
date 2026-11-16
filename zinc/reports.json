@@ -1,6 +1,16 @@
 {
   "metal": "Zinco",
   "symbol": "Zn",
-  "updated_at": null,
-  "reports": []
+  "updated_at": "2026-11-16",
+  "reports": [
+    {
+      "date": "2026-11-16",
+      "display_date": "16/11/2026",
+      "title": "Zinc prices testing support again, but bullish fundamentals remain in place",
+      "file": "./reports/2026-11-16.html",
+      "bias": "Neutro",
+      "physical": "Apertado",
+      "note": "O fundamento ainda sustenta o zinco — mas agora o gráfico precisa provar isso. O mercado voltou a testar a região que separa uma correção normal de uma deterioração técnica mais séria. Enquanto US$ 3.650/t segurar, estoques em queda, bac..."
+    }
+  ]
 }

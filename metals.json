@@ -18,24 +18,24 @@
       "symbol": "Cu",
       "name": "Cobre",
       "english": "Copper",
-      "status": "pending",
+      "status": "available",
       "path": "./copper/",
       "last_report": "13/11/2026",
-      "bias": "—",
-      "physical": "—",
-      "note": "Observatório ainda não publicado."
+      "bias": "Bearish / vulnerável",
+      "physical": "Misto",
+      "note": "O cobre está tecnicamente vulnerável, mas estruturalmente amparado por riscos de oferta. A leitura central não é “estoques altos = mercado folgado”: LME e CME cresceram, SHFE caiu, a backwardation ainda é positiva e o mercado de concentr..."
     },
     {
       "id": "zinc",
       "symbol": "Zn",
       "name": "Zinco",
       "english": "Zinc",
-      "status": "pending",
+      "status": "available",
       "path": "./zinc/",
       "last_report": "16/11/2026",
-      "bias": "—",
-      "physical": "—",
-      "note": "Observatório ainda não publicado."
+      "bias": "Neutro",
+      "physical": "Apertado",
+      "note": "O fundamento ainda sustenta o zinco — mas agora o gráfico precisa provar isso. O mercado voltou a testar a região que separa uma correção normal de uma deterioração técnica mais séria. Enquanto US$ 3.650/t segurar, estoques em queda, bac..."
     },
     {
       "id": "nickel",
