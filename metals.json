@@ -42,12 +42,12 @@
       "symbol": "Ni",
       "name": "Níquel",
       "english": "Nickel",
-      "status": "pending",
+      "status": "available",
       "path": "./nickel/",
       "last_report": "16/11/2026",
-      "bias": "—",
-      "physical": "—",
-      "note": "Observatório ainda não publicado."
+      "bias": "Em teste",
+      "physical": "Folgado",
+      "note": "O níquel tem uma janela de recuperação, mas ainda precisa superar a média móvel de 100 dias para enfraquecer a lógica de venda nas altas. Os estoques acumulados e a demanda incerta por aço inox explicam a cautela de curto prazo. A possib..."
     },
     {
       "id": "tungsten",

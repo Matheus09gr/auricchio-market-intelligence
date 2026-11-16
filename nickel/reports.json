@@ -1,6 +1,16 @@
 {
   "metal": "Níquel",
   "symbol": "Ni",
-  "updated_at": null,
-  "reports": []
+  "updated_at": "2026-11-16",
+  "reports": [
+    {
+      "date": "2026-11-16",
+      "display_date": "16/11/2026",
+      "title": "Nickel needs to clear the 100 DMA to avoid another stalled rebound",
+      "file": "./reports/2026-11-16.html",
+      "bias": "Em teste",
+      "physical": "Folgado",
+      "note": "O níquel tem uma janela de recuperação, mas ainda precisa superar a média móvel de 100 dias para enfraquecer a lógica de venda nas altas. Os estoques acumulados e a demanda incerta por aço inox explicam a cautela de curto prazo. A possib..."
+    }
+  ]
 }
