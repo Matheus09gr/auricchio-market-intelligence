@@ -1,8 +1,17 @@
 {
   "metal": "Cobre",
   "symbol": "Cu",
-  "updated_at": "2026-11-13",
+  "updated_at": "2026-11-17",
   "reports": [
+    {
+      "date": "2026-11-17",
+      "display_date": "17/11/2026",
+      "title": "suporte",
+      "file": "./reports/2026-11-17.html",
+      "bias": "Bearish / sobrevendido",
+      "physical": "Misto",
+      "note": "A correção técnica se aprofundou: a 200 DMA foi rompida, e o RSI sobrevendido ainda não confirma fundo. A queda da backwardation indica alívio no aperto imediato da LME, enquanto estoques mais baixos em Xangai e restrições nas minas sust..."
+    },
     {
       "date": "2026-11-13",
       "display_date": "13/11/2026",

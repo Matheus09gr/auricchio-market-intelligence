@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#2c918b">
-<meta name="description" content="Observatório Auricchio de Cobre: leitura interativa do research Fastmarkets de 13/11/2026, com análise técnica, física, oferta, demanda e riscos.">
-<title>Auricchio | Observatório do Cobre — LME</title><style>
+<meta name="description" content="Observatório Auricchio de Cobre: leitura interativa do research Fastmarkets de 17/11/2026, com análise técnica, física, oferta, demanda e riscos.">
+<meta name="report-date" content="2026-11-17"><meta name="source-published-at" content="2026-11-17T07:49:00Z"><meta name="source-title" content="Research - Copper oversold as it approaches June low"><meta name="market" content="LME copper three-month"><title>Auricchio | Observatório do Cobre — LME</title><style>
   :root{
     --ink:#243238; --ink2:#3f5158; --muted:#728086; --line:#dde4e5;
     --paper:#f6f8f7; --white:#fff; --bear:#c85252; --bear-bg:#fff1ef;
@@ -306,104 +306,120 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var
 @media(max-width:1050px){.timeline{grid-template-columns:repeat(3,1fr)}.horizontal-steps{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:720px){.evidence-grid,.demand-map{grid-template-columns:1fr}.kpis3,.chart-pair,.forecast-wrap,.meter-balance{grid-template-columns:1fr}.horizontal-steps{grid-template-columns:1fr}.cop-barline{grid-template-columns:80px minmax(0,1fr) 92px;gap:7px;font-size:12px}.timeline{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:460px){.timeline{grid-template-columns:1fr}.hero .lede{font-size:16px}.hero h1{line-height:1.08}.cop-barline{grid-template-columns:72px 1fr 86px;gap:5px}.cop-chart{padding:12px}.level-wrap{min-width:0}}
-</style></head><body>
+</style></head><body data-metal="CU" data-source-date="2026-11-17" data-report-name="Copper oversold as it approaches June low">
 <header class="topbar"><div class="wrap">
   <a class="brand-lockup" href="#comece" aria-label="Auricchio Market Intelligence"><span class="brand-accent" aria-hidden="true"></span><span class="brand-copy"><span class="brand-name">AURICCHIO</span><span class="brand-sub">Market Intelligence · Cobre</span></span></a>
   <div class="nav-shell"><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button>
   <nav class="main-nav" id="mainNav" aria-label="Navegação principal"><a class="primary-nav" href="#guia">Visão geral</a><a href="#macro">Macro</a><a href="#niveis">Técnico</a><a href="#fisico">Físico</a><a href="#oferta">Oferta</a><a href="#demanda">Demanda</a><details class="more-menu"><summary>Mais</summary><div class="more-dropdown"><a href="#panorama">Panorama</a><a href="#forcas">Forças</a><a href="#posicionamento">Fundos</a><a href="#cronologia">Linha do tempo</a><a href="#glossario">Glossário</a><a href="#fontes">Fontes e limites</a></div></details></nav></div>
 </div></header>
 <div class="hero"><div class="wrap"><div class="brand-rule"></div><div class="eyebrow">AURICCHIO · MARKET INTELLIGENCE · COBRE · NOVEMBRO 2026</div>
-<h1>Se o concentrado está apertado, por que o cobre perdeu força?</h1>
-<div class="lede">O preço do cobre na LME tenta se estabilizar perto de um suporte importante, mas o momentum segue fraco. Ao mesmo tempo, os estoques crescem no Ocidente, diminuem em Xangai e a oferta de concentrado continua sob pressão. <b>A questão não é apenas quanto cobre existe — mas em que etapa e em qual região ele está disponível.</b></div>
+<h1>O cobre está sobrevendido. Por que ainda pode cair?</h1>
+<div class="lede">O cobre LME de três meses <b>perdeu a média de 200 dias, em US$ 13.612/t</b>, e aproxima-se da mínima de junho (US$ 12.988/t). O RSI indica sobrevenda, mas o estocástico continua negativo. Enquanto isso, a backwardation diminui e a oferta de concentrado segue apertada. <b>Sobrevenda pode produzir repiques, não necessariamente um fundo de preço.</b></div>
 <div class="hero-actions"><button class="primary" type="button" onclick="document.querySelector('#guia').scrollIntoView()">Entender em 5 minutos</button><button type="button" onclick="document.querySelector('#fisico').scrollIntoView()">Explorar os dados</button><button type="button" onclick="exportResumo()">Exportar resumo</button></div>
-<div class="source-stamp">Research de referência: 13/11/2026 · Preço e dados conforme documento, sem atualização em tempo real</div></div></div>
-<div class="question"><div class="question-card"><div><h2>Pergunta central</h2><p>O aumento dos estoques LME/CME significa alívio real da oferta global, ou reflete também arbitragem, tarifas e redistribuição regional de metal?</p></div><div class="tag">FASTMARKETS · 13 NOV 2026</div></div></div>
+<div class="source-stamp">Relatório-base: Fastmarkets, 17/11/2026 (07:49 GMT) · Comparações históricas: 13/11 · Sem cotação ao vivo</div></div></div>
+<div class="question"><div class="question-card"><div><h2>Pergunta central</h2><p>A perda da média de 200 dias anuncia uma correção mais profunda ou a sobrevenda atrairá compradores de longo prazo?</p></div><div class="tag">FASTMARKETS · 17 NOV 2026</div></div></div>
 <main>
 <section style="margin-top:8px"><div class="industrial-band"><b>Inteligência de mercado para a cadeia do cobre</b><p>Uma leitura conectada de técnico, estoques de bolsa, spreads, oferta de concentrados, prêmios físicos e comportamento dos fundos — com fatos, interpretações e cenários separados.</p></div></section>
 <section id="comece"><div class="starter"><div class="starter-grid"><div><div class="eyebrow">Antes de analisar os números</div><h3>O cobre é negociado em mercados que podem enviar sinais diferentes</h3><p>Preço de bolsa, disponibilidade de cátodo, oferta de concentrado e demanda industrial não são a mesma coisa. Uma recuperação em um desses blocos não garante melhora nos demais.</p></div><div class="four-blocks">
-<div class="block"><div class="num">1</div><b>Técnico</b><span>Preço, médias móveis, tendência e posicionamento financeiro.</span></div><div class="block"><div class="num">2</div><b>Macro</b><span>Política comercial dos EUA, arbitragem e sentimento.</span></div><div class="block"><div class="num">3</div><b>Físico</b><span>LME, CME, SHFE, backwardation e prêmios regionais.</span></div><div class="block"><div class="num">4</div><b>Cadeia produtiva</b><span>Mineração, concentrado, fundições e consumidores finais.</span></div>
+<div class="block"><div class="num">1</div><b>Técnico</b><span>Preço, médias móveis, suporte perdido, RSI e posicionamento financeiro.</span></div><div class="block"><div class="num">2</div><b>Macro</b><span>Tecnologia/IA, tarifas dos EUA, arbitragem e sentimento.</span></div><div class="block"><div class="num">3</div><b>Físico</b><span>LME, CME, SHFE e backwardation em desaceleração.</span></div><div class="block"><div class="num">4</div><b>Cadeia produtiva</b><span>Greve no Canadá, Oyu Tolgoi, concentrado, SX-EW e consumidores.</span></div>
 </div></div></div></section>
 <section id="guia"><div class="section-head"><div><h2>Entenda este relatório em 5 minutos</h2><p>Cinco respostas para compreender a tese antes de entrar nos detalhes.</p></div></div><div class="guided"><div class="guided-menu">
 <button type="button" class="active" data-step="0">1. O que aconteceu?</button><button type="button" data-step="1">2. Por que enfraqueceu?</button><button type="button" data-step="2">3. O que sustenta?</button><button type="button" data-step="3">4. O que pode mudar?</button><button type="button" data-step="4">5. O que observar?</button>
 </div><div class="guided-panel" id="guidedPanel" aria-live="polite"></div></div></section>
-<section><div class="section-head"><div><h2>Se você lembrar de apenas 3 coisas</h2><p>O que fica depois de fechar o observatório.</p></div></div><div class="memory3">
-<div class="memory"><strong>01</strong><b>Curto prazo vulnerável</b><p>O preço tenta formar uma base acima da média de 200 dias, mas os osciladores apontam fraqueza.</p></div>
-<div class="memory"><strong>02</strong><b>Estoques não contam toda a história</b><p>LME e CME acumulam metal, enquanto SHFE contrai e os concentrados permanecem apertados.</p></div>
-<div class="memory"><strong>03</strong><b>2027 é a tese estrutural</b><p>A Fastmarkets projeta uma mudança de superávit em 2026 para déficit de cerca de 340 mil t em 2027.</p></div>
+<section><div class="section-head"><div><h2>Se você lembrar de apenas 3 coisas</h2><p>As mensagens que realmente mudaram de 13 para 17 de novembro.</p></div></div><div class="memory3">
+<div class="memory"><strong>01</strong><b>Suporte perdido</b><p>A média de 200 dias, US$ 13.612/t, deixou de sustentar o preço e passa a atuar como resistência.</p></div>
+<div class="memory"><strong>02</strong><b>Sobrevendido não é fundo</b><p>RSI sobrevendido e candle Doji sinalizam cautela e indecisão; estocástico continua negativo.</p></div>
+<div class="memory"><strong>03</strong><b>Físico em ritmos distintos</b><p>Backwardation encolheu para US$ 25,86/t, mas SHFE caiu a 27.642 t e a oferta de concentrado segue restrita.</p></div>
 </div></section>
-<section id="evidencias"><div class="section-head"><div><h2>Fato, interpretação ou cenário?</h2><p>Uma boa análise explicita a diferença.</p></div></div><div class="evidence-grid">
-<div class="evidence"><div class="mini-labels" style="margin-top:0"><span class="label fact">Fato do relatório</span></div><h3>O que foi registrado</h3><p>LME: 328.600 t; SHFE: 33.848 t; backwardation Cash–3M: US$ 73,93/t; net long de fundos: 18.085 lotes.</p></div>
-<div class="evidence"><div class="mini-labels" style="margin-top:0"><span class="label interp">Interpretação</span></div><h3>Como conectar os sinais</h3><p>Parte do crescimento do estoque pode refletir incentivos de arbitragem e localização, não necessariamente demanda industrial mundial mais fraca.</p></div>
-<div class="evidence"><div class="mini-labels" style="margin-top:0"><span class="label hyp">Hipótese / previsão</span></div><h3>O que ainda não aconteceu</h3><p>Se o suporte de US$ 13.611/t for perdido, a mínima de junho pode voltar ao radar. O déficit global de 2027 ainda é projeção.</p></div>
+<section id="evidencias"><div class="section-head"><div><h2>Fato, interpretação ou cenário?</h2><p>Três tipos de afirmação, com limites explícitos.</p></div></div><div class="evidence-grid">
+<div class="evidence"><div class="mini-labels" style="margin-top:0"><span class="label fact">Fato do relatório</span></div><h3>O que a Fastmarkets registrou</h3><p>200 DMA rompida em US$ 13.612/t; LME em 327.457 t; SHFE em 27.642 t (13/11); Cash–3M em backwardation de US$ 25,86/t.</p></div>
+<div class="evidence"><div class="mini-labels" style="margin-top:0"><span class="label interp">Interpretação</span></div><h3>O que os sinais sugerem</h3><p>RSI sobrevendido aumenta a possibilidade de repique, mas queda do spread e rompimento da média reforçam a vulnerabilidade no curto prazo.</p></div>
+<div class="evidence"><div class="mini-labels" style="margin-top:0"><span class="label hyp">Hipótese / previsão</span></div><h3>O que ainda pode acontecer</h3><p>Nova queda até US$ 12.988/t é um risco, não fato. Déficit global de cerca de 340 mil t em 2027 é projeção da consultoria.</p></div>
 </div></section>
 <section id="panorama"><div class="section-head"><div><h2>Panorama por horizonte</h2><p>O viés muda conforme o período analisado.</p></div><div class="controls"><button class="seg active" type="button" data-h="curto">Curto prazo</button><button class="seg" type="button" data-h="medio">Médio prazo</button><button class="seg" type="button" data-h="longo">Longo prazo</button></div></div><div class="grid cards4" id="horizonCards" aria-live="polite"></div></section>
 <section id="forcas"><div class="section-head"><div><h2>Forças que pressionam e sustentam o preço</h2><p>Abra cada fator para ver o dado, a interpretação e a limitação.</p></div></div><div class="grid columns"><div class="card"><small>Pressiona o preço</small><div class="driver-list" id="bearDrivers"></div></div><div class="card"><small>Dá suporte ao preço</small><div class="driver-list" id="bullDrivers"></div></div></div>
-<div class="meter-balance" style="margin-top:14px"><div class="outlook-card"><h3>Leitura de curto prazo</h3><p>Correção bearish e posição de fundos menos comprada. O preço ainda precisa recuperar a média de 100 dias para melhorar o momentum.</p></div><div class="outlook-card"><h3>Contrapeso fundamental</h3><p>Concentrados escassos, custos de processamento pressionados e riscos de interrupção dão suporte à tese de oferta, especialmente em 2027.</p></div></div></section>
-<section id="macro"><div class="section-head"><div><h2>Macro e arbitragem: por que o metal muda de endereço</h2><p>O relatório destaca o efeito das expectativas tarifárias dos EUA sobre os incentivos regionais.</p></div></div>
-<div class="big-callout"><h3>Mais estoque nos EUA não significa, por si só, mais oferta mundial</h3><p>O research associa o grande aumento dos estoques na CME a condições favoráveis de arbitragem. Após as eleições legislativas norte-americanas, as expectativas de tarifa Section 232 sobre importações de cátodos refinados diminuíram e o prêmio CME/LME se estreitou. A mudança do diferencial pode alterar o destino comercial do metal, sem alterar imediatamente a produção global.</p><div class="mini-labels"><span class="label fact">Fato relatado</span><span class="label interp">Interpretação econômica</span></div></div>
-<div class="relation" style="margin-top:14px"><div class="relation-card"><h3>Canal tarifário e arbitragem</h3><div class="relation-row"><div class="relation-box">Expectativa de tarifa nos EUA</div><div class="relation-arrow">→</div><div class="relation-box">Prêmio relativo da CME pode subir</div></div><div class="relation-row" style="margin-top:8px"><div class="relation-box">Incentivo a direcionar cátodo aos EUA</div><div class="relation-arrow">→</div><div class="relation-box">Estoques da CME podem crescer</div></div><p class="smallprint" style="margin-bottom:0">Canal explicativo, não uma prova isolada da causa de cada entrada em armazém.</p></div>
-<div class="relation-card"><h3>Após o resultado eleitoral</h3><div class="relation-row"><div class="relation-box">Expectativa de tarifa recua</div><div class="relation-arrow">→</div><div class="relation-box">Prêmio CME/LME diminui</div></div><div class="relation-row" style="margin-top:8px"><div class="relation-box">Atratividade da arbitragem muda</div><div class="relation-arrow">→</div><div class="relation-box">Fluxos regionais podem se reequilibrar</div></div><p class="smallprint" style="margin-bottom:0">O relatório não fornece série numérica do prêmio CME/LME nem confirma uma tarifa efetivamente aprovada.</p></div></div>
-<div class="note-box" style="margin-top:14px">O documento também menciona ganhos modestos de bolsas em 09/11 após uma semana volátil. Isso é contexto de sentimento financeiro; não é evidência de alteração do consumo físico de cobre.</div></section>
-<section id="niveis"><div class="section-head"><div><h2>Análise técnica: o mapa decisivo</h2><p>Valores da LME de três meses em US$/t. Sem preço intradiário atualizado.</p></div><div class="controls"><button class="seg active" type="button" data-s="base">Cenário-base</button><button class="seg" type="button" data-s="bear">Se perder suporte</button><button class="seg" type="button" data-s="bull">Se recuperar</button></div></div>
+<div class="meter-balance" style="margin-top:14px"><div class="outlook-card"><h3>Leitura de curto prazo</h3><p>Queda acelerada após o rompimento da 200 DMA, com estocástico negativo. O RSI indica sobrevenda, mas não comprova fundo; o primeiro teste de recuperação é reconquistar US$ 13.612/t.</p></div><div class="outlook-card"><h3>Contrapeso fundamental</h3><p>Concentrados escassos, custos de processamento pressionados e riscos de interrupção dão suporte à tese de oferta, especialmente em 2027.</p></div></div></section>
+<section id="macro"><div class="section-head"><div><h2>Macro: tecnologia, tarifas e arbitragem</h2><p>Diferenciar mudança de sentimento financeiro de alteração efetiva do consumo de cobre.</p></div></div>
+<div class="big-callout"><h3>Incerteza em IA e chips adiciona pressão financeira</h3><p>Em 17/11, segundo a Fastmarkets, as bolsas seguiam pressionadas em meio a restrições adicionais dos EUA ao acesso de empresas chinesas a chips avançados de IA e à expectativa pelos resultados da Nvidia. Isso altera expectativas de investimentos em tecnologia e data centers; <b>não prova queda atual do consumo físico de cobre.</b></p><div class="mini-labels"><span class="label fact">Fato relatado pela fonte</span><span class="label interp">Canal de expectativa</span></div></div>
+<div class="relation" style="margin-top:14px"><div class="relation-card"><h3>Canal de expectativas</h3><div class="relation-row"><div class="relation-box">Restrições a chips de IA</div><div class="relation-arrow">→</div><div class="relation-box">Incerteza sobre investimentos futuros</div></div><div class="relation-row" style="margin-top:8px"><div class="relation-box">Menor apetite por risco</div><div class="relation-arrow">→</div><div class="relation-box">Pressão possível sobre o cobre</div></div><p class="smallprint">Interpretação de transmissão financeira; não é evidência de redução de encomendas de cátodo.</p></div>
+<div class="relation-card"><h3>Arbitragem CME/LME</h3><div class="relation-row"><div class="relation-box">Expectativa de tarifa Section 232 recua</div><div class="relation-arrow">→</div><div class="relation-box">Prêmio CME/LME se estreita</div></div><div class="relation-row" style="margin-top:8px"><div class="relation-box">Vantagem relativa da destinação aos EUA muda</div><div class="relation-arrow">→</div><div class="relation-box">Fluxos comerciais podem mudar</div></div><p class="smallprint">O research associa o estoque da CME acima de 760 mil t a arbitragem favorável; não quantifica o fluxo causado por tarifas.</p></div></div>
+<div class="note-box" style="margin-top:14px"><b>Leitura importante:</b> reavaliação do futuro de data centers pode pressionar o preço de bolsa hoje, mesmo sem evidência de mudança proporcional no consumo físico hoje. Incerteza sobre resultados de uma empresa de tecnologia não deve ser tratada como proxy de demanda de cobre.</div></section>
+<section id="niveis"><div class="section-head"><div><h2>Técnico: o suporte virou resistência</h2><p>LME de três meses · US$/t · referências do research de 17/11, não cotações ao vivo.</p></div><div class="controls"><button class="seg active" type="button" data-s="base">Cenário-base</button><button class="seg" type="button" data-s="bear">Se continuar caindo</button><button class="seg" type="button" data-s="bull">Se reagir</button></div></div>
 <div class="level-wrap"><div class="card"><div class="level-ladder"><div class="level-line"></div>
-<div class="level"><b>US$ 14.875/t</b><span>Máxima histórica indicada no relatório: referência superior, não alvo imediato.</span></div>
-<div class="level"><b>US$ 14.068/t</b><span>100 DMA: resistência imediata explicitamente indicada no texto da análise.</span></div>
-<div class="level support"><b>US$ 13.611/t</b><span>200 DMA + retração Fibonacci de 61,8%: suporte que sustenta a hipótese de formação de base.</span></div>
-<div class="level critical"><b>US$ 12.988/t</b><span>Mínima de 24/06: referência de queda se a média de 200 dias ceder.</span></div>
-</div></div><div class="card"><small>O que muda no cenário</small><div class="value" id="scenarioTitle">Base frágil acima da 200 DMA</div><p id="scenarioText">O preço tenta se sustentar acima de US$ 13.611/t. Sem recuperar US$ 14.068/t, o repique continua sem confirmação de força compradora.</p><div class="mini-labels"><span class="label interp">Interpretação</span><span class="label hyp">Cenário condicional</span></div><div class="caveat" style="margin-top:18px"><b>Conferência editorial:</b> a caixa lateral do PDF mistura suporte e resistência e traz valores contraditórios para a média de 20 dias (US$ 14.136 e US$ 14.326/t). Por isso, esta escada prioriza os níveis confirmados no texto analítico.</div></div></div>
-<div class="note-box" style="margin-top:12px">O gráfico da página 1 mostra a correção desde o pico de setembro e o estocástico em região baixa. Um oscilador sobrevendido indica fraqueza de momentum, mas não garante reversão.</div>
+<div class="level"><b>US$ 14.204/t</b><span>40 DMA · resistência superior em uma recuperação.</span></div>
+<div class="level"><b>US$ 14.065/t</b><span>100 DMA · referência intermediária, acima do preço.</span></div>
+<div class="level"><b>US$ 13.960/t</b><span>20 DMA · primeira média curta relevante acima da 200 DMA.</span></div>
+<div class="level critical"><b>US$ 13.612/t</b><span>200 DMA + Fibonacci 61,8% · suporte rompido, agora resistência.</span></div>
+<div class="level support"><b>US$ 12.988/t</b><span>Mínima de 24/06 · referência para uma correção mais profunda.</span></div>
+</div></div><div class="card"><small>O que muda no cenário</small><div class="value" id="scenarioTitle">Correção segue dominante</div><p id="scenarioText">A perda de US$ 13.612/t agravou a estrutura. RSI em sobrevenda e Doji sugerem hesitação, mas não neutralizam o estocástico negativo nem confirmam reversão.</p><div class="mini-labels"><span class="label fact">Fato reportado</span><span class="label interp">Interpretação</span><span class="label hyp">Cenário condicional</span></div><div class="caveat" style="margin-top:18px"><b>Conferência editorial:</b> a tabela lateral do PDF coloca US$ 12.693/t (máxima de 2025) em “resistências”, embora esteja abaixo da região de preço indicada no gráfico, e também lista várias médias acima do preço como suportes. Esta escada organiza os níveis pela posição atual descrita na análise, não pelos títulos inconsistentes da tabela.</div></div></div>
+<div class="note-box" style="margin-top:12px"><b>Leitura do gráfico na página 1:</b> em 13/11, a média de 200 dias ainda era uma sustentação provisória; em 17/11, o preço já a havia rompido. RSI em sobrevenda e candle Doji mostram possibilidade de pausa, não garantia de alta. Nenhum valor exato de fechamento foi inferido da imagem.</div>
 </section>
-<section id="fisico"><div class="section-head"><div><h2>Mercado físico: o mesmo cobre, três fotografias diferentes</h2><p>Comparações de estoques visíveis, com datas e bolsas distintas.</p></div></div>
-<div class="kpis3">
-<div class="card"><small>Estoques LME</small><div class="kpi-figure signal-bear-text">328.600 t</div><p>+103.175 t (+45,8%) frente a 15/10, segundo o research.</p></div>
-<div class="card"><small>Estoques SHFE · 06/11</small><div class="kpi-figure signal-bull-text">33.848 t</div><p>−10.764 t frente à leitura semanal anterior.</p></div>
-<div class="card"><small>Backwardation Cash–3M</small><div class="kpi-figure">US$ 73,93/t</div><p>Era US$ 194,55/t em 06/11: aperto de curto prazo ainda presente, mas menor.</p></div>
-</div>
+<section id="fisico"><div class="section-head"><div><h2>Mercado físico: o aperto imediato perde intensidade</h2><p>Estoques visíveis e spread LME. Cada dado mantém a data de referência informada pela Fastmarkets.</p></div></div>
+<div class="kpis3"><div class="card"><small>LME · 17/11 (relatório)</small><div class="kpi-figure signal-bear-text">327.457 t</div><p>+102.032 t (+45,3%) frente a 15/10; -1.143 t ante o relatório de 13/11.</p></div>
+<div class="card"><small>SHFE · 13/11</small><div class="kpi-figure signal-bull-text">27.642 t</div><p>-6.206 t (-18,3%) ante 06/11. Movimento oposto à expansão acumulada na LME.</p></div>
+<div class="card"><small>Cash–3M · backwardation</small><div class="kpi-figure">US$ 25,86/t</div><p>Recua de US$ 194,55/t em 06/11 e US$ 73,93/t em 13/11.</p></div></div>
 <div class="chart-pair" style="margin-top:14px">
-<div class="cop-chart"><h3>LME · estoque reportado</h3><div class="chart-meta">15/10 versus último nível citado no relatório (13/11). Toneladas.</div><div class="cop-barline"><span>15/10</span><div class="cop-bar-track"><div class="cop-bar-fill" style="width:68.6%"></div></div><span class="cop-bar-figure">225.425</span></div><div class="cop-barline"><span>Relatório</span><div class="cop-bar-track"><div class="cop-bar-fill up" style="width:100%"></div></div><span class="cop-bar-figure">328.600</span></div><div class="cop-delta signal-bear-text">+45,8% no período comparado</div></div>
-<div class="cop-chart"><h3>SHFE · estoque reportado</h3><div class="chart-meta">Leitura anterior inferida por diferença citada; último dado explícito: 06/11. Toneladas.</div><div class="cop-barline"><span>Anterior</span><div class="cop-bar-track"><div class="cop-bar-fill" style="width:100%"></div></div><span class="cop-bar-figure">44.612</span></div><div class="cop-barline"><span>06/11</span><div class="cop-bar-track"><div class="cop-bar-fill down" style="width:75.9%"></div></div><span class="cop-bar-figure">33.848</span></div><div class="cop-delta signal-bull-text">−24,1% (cálculo a partir da queda informada)</div></div>
-<div class="cop-chart"><h3>CME · deslocamento regional</h3><div class="chart-meta">01/03/2025 versus nível mais recente citado no research. Toneladas; valor final mínimo, não exato.</div><div class="cop-barline"><span>01/03/25</span><div class="cop-bar-track"><div class="cop-bar-fill" style="width:12.3%"></div></div><span class="cop-bar-figure">93.173</span></div><div class="cop-barline"><span>Relatório</span><div class="cop-bar-track"><div class="cop-bar-fill up" style="width:100%"></div></div><span class="cop-bar-figure">&gt;760.000</span></div><div class="cop-delta">Mais de 8,15 vezes o nível de mar/2025</div></div>
-<div class="cop-chart"><h3>LME Cash–3M · backwardation</h3><div class="chart-meta">Prêmio do caixa sobre o contrato de três meses; US$/t.</div><div class="cop-barline"><span>06/11</span><div class="cop-bar-track"><div class="cop-bar-fill" style="width:100%"></div></div><span class="cop-bar-figure">194,55</span></div><div class="cop-barline"><span>Relatório</span><div class="cop-bar-track"><div class="cop-bar-fill down" style="width:38%"></div></div><span class="cop-bar-figure">73,93</span></div><div class="cop-delta">−US$ 120,62/t (−62,0%) — ainda em backwardation</div></div>
-</div>
-<div class="physical-note"><b>Interpretação:</b> o aumento do estoque LME reduz a impressão de escassez imediata na bolsa, mas a backwardation positiva indica que a entrega à vista ainda carrega prêmio. O aperto não desapareceu; diminuiu. Já a SHFE registra uma direção diferente. Esses indicadores precisam ser lidos em conjunto.</div>
-<div class="note-box" style="margin-top:12px"><b>Limites:</b> estoques de bolsa não equivalem a estoque mundial. Os períodos não são uniformes, o relatório não detalha cancelled warrants e não oferece série suficiente para inferir o motivo de cada movimentação. A CME é apresentada como “acima de 760.000 t”, não como valor exato.</div>
-</section>
+<div class="cop-chart"><h3>LME · estoque de cobre</h3><div class="chart-meta">Comparação entre leituras documentadas. Toneladas; 15/10 é a base, 13/11 é relatório anterior.</div>
+<div class="cop-barline"><span>15/10</span><div class="cop-bar-track"><div class="cop-bar-fill" style="width:68.6%"></div></div><span class="cop-bar-figure">225.425</span></div>
+<div class="cop-barline"><span>13/11</span><div class="cop-bar-track"><div class="cop-bar-fill up" style="width:100%"></div></div><span class="cop-bar-figure">328.600</span></div>
+<div class="cop-barline"><span>17/11*</span><div class="cop-bar-track"><div class="cop-bar-fill up" style="width:99.7%"></div></div><span class="cop-bar-figure">327.457</span></div>
+<div class="cop-delta signal-bear-text">+45,3% vs. 15/10 · *valor reportado em 17/11</div></div>
+<div class="cop-chart"><h3>SHFE · estoque de cobre</h3><div class="chart-meta">Leituras com datas expressas nos relatórios. Toneladas.</div>
+<div class="cop-barline"><span>06/11</span><div class="cop-bar-track"><div class="cop-bar-fill" style="width:100%"></div></div><span class="cop-bar-figure">33.848</span></div>
+<div class="cop-barline"><span>13/11</span><div class="cop-bar-track"><div class="cop-bar-fill down" style="width:81.7%"></div></div><span class="cop-bar-figure">27.642</span></div>
+<div class="cop-delta signal-bull-text">-6.206 t (-18,3%) em uma semana</div></div>
+<div class="cop-chart"><h3>CME · estoque visível nos EUA</h3><div class="chart-meta">01/03/2025 versus patamar reportado; dado mais recente é limite inferior, não valor exato.</div>
+<div class="cop-barline"><span>01/03/25</span><div class="cop-bar-track"><div class="cop-bar-fill" style="width:12.3%"></div></div><span class="cop-bar-figure">93.173</span></div>
+<div class="cop-barline"><span>17/11*</span><div class="cop-bar-track"><div class="cop-bar-fill up" style="width:100%"></div></div><span class="cop-bar-figure">&gt;760.000</span></div>
+<div class="cop-delta">Acima de 8,15 vezes o nível inicial · *patamar citado</div></div>
+<div class="cop-chart"><h3>LME Cash–3M · backwardation</h3><div class="chart-meta">Prêmio da entrega imediata sobre o contrato de três meses (US$/t).</div>
+<div class="cop-barline"><span>06/11</span><div class="cop-bar-track"><div class="cop-bar-fill" style="width:100%"></div></div><span class="cop-bar-figure">194,55</span></div>
+<div class="cop-barline"><span>13/11</span><div class="cop-bar-track"><div class="cop-bar-fill down" style="width:38%"></div></div><span class="cop-bar-figure">73,93</span></div>
+<div class="cop-barline"><span>17/11*</span><div class="cop-bar-track"><div class="cop-bar-fill down" style="width:13.3%"></div></div><span class="cop-bar-figure">25,86</span></div>
+<div class="cop-delta">-86,7% desde 06/11 · ainda positivo</div></div></div>
+<div class="physical-note"><b>Interpretação:</b> o prêmio por entrega imediata permanece positivo, porém é muito menor. Isso enfraquece a tese de aperto extremo de curtíssimo prazo na LME. A queda adicional dos estoques SHFE e os prêmios asiáticos firmes apontam um quadro regional diferente. Não há evidência suficiente para chamar todo o mercado global de “folgado” ou de “escasso”.</div>
+<div class="note-box" style="margin-top:12px"><b>Limites:</b> os dados de LME e CME não revelam estoques mundiais; SHFE refere-se a 13/11; o relatório não informa cancelled warrants, entrada e saída diária por armazém, nem o volume exato dos estoques CME. Os três registros de spread são fotografias de relatórios, não uma série contínua.</div></section>
 <section id="premios"><div class="section-head"><div><h2>Prêmios físicos: China firme, Europa dividida</h2><p>O prêmio depende de região, produto, modalidade de entrega e horizonte contratual.</p></div></div>
 <div class="grid columns"><div class="card"><h3>Ásia · suporte do mercado spot</h3><p>O research relata alta dos prêmios de importação de cátodo em Xangai até 10/11, apoiada por prêmios firmes no mercado doméstico chinês. No Sudeste Asiático, alguns compradores entraram no spot em meio a oferta reduzida.</p><div class="mini-labels"><span class="label fact">Fato reportado</span><span class="label interp">Sinal de suporte regional</span></div></div>
 <div class="card"><h3>Europa · fraco no spot, firme no contrato</h3><p>Embora a demanda spot europeia esteja fraca, referências anuais subiram. Isso não é contradição: o preço de um contrato anual pode incorporar custos, negociação e condições de oferta, sem provar recuperação de consumo.</p><div class="mini-labels"><span class="label fact">Fato reportado</span><span class="label interp">Interpretação</span></div></div></div>
 <div class="card" style="margin-top:14px"><h3>Referências anuais citadas no research</h3><div class="premium-row"><div><b>Aurubis · referência anual FCA</b><div class="smallprint">De US$ 315/t para US$ 347/t</div></div><b>+US$ 32/t</b></div><div class="premium-row"><div><b>Codelco · oferta para 2027</b><div class="smallprint">De US$ 325/t (ano anterior) para US$ 350/t ofertados</div></div><b>+US$ 25/t</b></div><div class="smallprint" style="margin-top:10px">A proposta da Codelco é uma oferta, não necessariamente um prêmio negociado. Não comparar valores FCA, spot e ofertas anuais como se fossem a mesma cotação.</div></div>
 </section>
-<section id="oferta"><div class="section-head"><div><h2>Oferta: o aperto começa antes do cátodo</h2><p>O relatório concentra suas preocupações em mina, concentrado, ácido sulfúrico e fundição.</p></div></div>
-<div class="horizontal-steps"><div class="step"><b>1. Mineração</b><p>El Niño cria riscos de interrupção; Oyu Tolgoi subterrânea parou após evento sísmico, segundo o research.</p></div><div class="step"><b>2. Concentrado</b><p>Oferta apertada aumenta a competição por matéria-prima.</p></div><div class="step"><b>3. Processamento</b><p>TC muito negativo sinaliza pressão sobre as margens das fundições.</p></div><div class="step"><b>4. Cátodo refinado</b><p>Menor produção pode restringir disponibilidade, caso os problemas persistam.</p></div><div class="step"><b>5. Preço</b><p>Suporte fundamental pode coexistir com correção técnica.</p></div></div>
-<div class="grid columns" style="margin-top:14px"><div class="card"><small>Concentrados · índice TC CIF Ásia-Pacífico</small><div class="value">US$ −281,60/t</div><p>30/10, frente a US$ −281,00/t em 23/10. Nível negativo elevado é sinal de forte pressão econômica na compra/processamento de concentrado.</p><div class="mini-labels"><span class="label fact">Fato do relatório</span><span class="label interp">Interpretação</span></div></div>
-<div class="card"><small>Risco industrial · SX-EW</small><div class="value">Ácido sulfúrico</div><p>Restrições no enxofre podem reduzir a disponibilidade de ácido sulfúrico, utilizado na lixiviação e em rotas SX-EW. O relatório apresenta o risco; não quantifica volume de cobre perdido.</p><div class="mini-labels"><span class="label hyp">Risco prospectivo</span></div></div></div>
-<div class="caveat" style="margin-top:14px"><b>Importante:</b> TC negativo, parada de mina e risco de ácido não podem ser somados como toneladas de déficit. Cada evento afeta uma etapa diferente da cadeia; o research não quantifica o impacto agregado desses fatores.</div>
-</section>
-<section id="demanda"><div class="section-head"><div><h2>Demanda: sinais físicos regionais, sem extrapolar para o mundo</h2><p>O research dá mais evidência sobre prêmios e disponibilidade do que sobre volumes de consumo final.</p></div></div>
-<div class="demand-map"><div class="demand-card"><h3><span class="status-dot dot-green"></span>China</h3><p>Prêmios de cátodo importado aumentaram até 10/11; o mercado doméstico chinês permaneceu firme. É sinal físico regional, não prova de aumento da demanda global.</p><div class="mini-labels"><span class="label fact">Fato reportado</span></div></div>
-<div class="demand-card"><h3><span class="status-dot dot-green"></span>Sudeste Asiático</h3><p>Alguns compradores retornaram ao mercado spot em meio à menor oferta. Não há volume ou duração informados.</p><div class="mini-labels"><span class="label fact">Fato reportado</span></div></div>
-<div class="demand-card"><h3><span class="status-dot dot-red"></span>Europa</h3><p>O research aponta fraca demanda spot de cátodo, apesar da alta nas referências anuais de prêmio.</p><div class="mini-labels"><span class="label fact">Fato reportado</span></div></div></div>
-<div class="two-paths" style="margin-top:14px"><div class="path"><h3>O que o mercado financeiro observa</h3><ul><li>Médias móveis e estocástico.</li><li>Fluxos de fundos e posições compradas/vendidas.</li><li>Arbitragem CME/LME e política tarifária.</li><li>Expectativas para o balanço de 2027.</li></ul></div><div class="path"><h3>O que comprovaria demanda física</h3><ul><li>Consumo efetivo de cátodo por indústria.</li><li>Ordens de compra e volumes importados.</li><li>Atividade elétrica e manufatureira.</li><li>Prêmios persistentes acompanhados de volumes.</li></ul></div></div>
-<div class="note-box" style="margin-top:14px"><b>Setores de uso:</b> redes elétricas, construção, energia renovável, veículos elétricos e data centers são canais relevantes para o cobre, mas o research anexado não fornece números recentes de consumo desses setores. Portanto, não foram usados como evidência quantitativa.</div>
-</section>
-<section id="posicionamento"><div class="section-head"><div><h2>Fundos: perda de convicção compradora</h2><p>Última fotografia de COT citada no research. Data exata da posição não foi informada no documento.</p></div></div>
+<section id="oferta"><div class="section-head"><div><h2>Oferta: concentrado apertado e novas interrupções de minas</h2><p>O relatório atual acrescenta riscos operacionais relevantes no Canadá à discussão de Oyu Tolgoi, El Niño e SX-EW.</p></div></div>
+<div class="horizontal-steps"><div class="step"><b>1. Mineração</b><p>El Niño, paralisação reportada de Oyu Tolgoi e greve em Highland Valley Copper.</p></div><div class="step"><b>2. Concentrado</b><p>Oferta restrita e competição por matéria-prima.</p></div><div class="step"><b>3. Fusão / refino</b><p>TC negativo e margens pressionadas nas fundições.</p></div><div class="step"><b>4. SX-EW</b><p>Disponibilidade potencialmente limitada de ácido sulfúrico.</p></div><div class="step"><b>5. Cátodo e preço</b><p>Menor produção refinada é risco condicional, não volume comprovado.</p></div></div>
+<div class="grid columns" style="margin-top:14px"><div class="card"><small>Índice TC · CIF Ásia-Pacífico · 13/11</small><div class="value">US$ -277,80/t</div><p>O relatório anterior citava US$ -281,60/t em 30/10. O indicador ficou menos negativo em US$ 3,80/t, mas continua em patamar de forte pressão para as fundições. Datas não coincidem.</p><div class="mini-labels"><span class="label fact">Fato do research</span><span class="label interp">Comparação calculada</span></div></div>
+<div class="card"><small>Interrupção reportada · Canadá</small><div class="value">HVC · 4ª semana</div><p>O relatório registra greve na mina Highland Valley Copper, da Teck, já na quarta semana. Não informa volume de cobre perdido nem data de normalização.</p><div class="mini-labels"><span class="label fact">Evento reportado</span><span class="label hyp">Impacto não quantificado</span></div></div>
+<div class="card"><small>Interrupção reportada · Mongólia</small><div class="value">Oyu Tolgoi</div><p>A Fastmarkets informa que a Rio Tinto paralisou a operação subterrânea após evento sísmico. O research não dimensiona perda acumulada.</p><div class="mini-labels"><span class="label fact">Evento reportado</span></div></div>
+<div class="card"><small>Risco industrial · SX-EW</small><div class="value">Ácido sulfúrico</div><p>Possíveis restrições ao enxofre podem limitar ácido sulfúrico e atingir extração/processamento de concentrados. O tamanho do impacto ainda não foi informado.</p><div class="mini-labels"><span class="label hyp">Risco prospectivo</span></div></div></div>
+<div class="caveat" style="margin-top:14px"><b>Critério analítico:</b> não somar greves, eventos sísmicos, TC negativo e riscos climáticos como se fossem toneladas comparáveis. A consultoria descreve mecanismos e eventos, mas não calcula um déficit incremental atribuível a eles.</div></section>
+<section id="demanda"><div class="section-head"><div><h2>Demanda: expectativas de IA não são consumo físico</h2><p>As evidências de 17/11 combinam preocupação financeira com tecnologia e sinais físicos regionais heterogêneos.</p></div></div>
+<div class="demand-map"><div class="demand-card"><h3><span class="status-dot dot-red"></span>Financeiro · IA e chips</h3><p>Restrição de acesso chinês a chips avançados e espera pelos resultados da Nvidia elevam a incerteza sobre data centers. É sentimento de mercado, não volume de cobre consumido.</p><div class="mini-labels"><span class="label fact">Fato reportado</span><span class="label interp">Canal financeiro</span></div></div>
+<div class="demand-card"><h3><span class="status-dot dot-green"></span>China e Sudeste Asiático</h3><p>Prêmios de importação de Xangai continuaram subindo até 10/11. Alguns compradores no Sudeste Asiático entraram no spot em meio à oferta reduzida. Dados mantidos como referência histórica do relatório.</p><div class="mini-labels"><span class="label fact">Fato reportado</span></div></div>
+<div class="demand-card"><h3><span class="status-dot dot-red"></span>Europa</h3><p>A demanda spot de cátodo permanece fraca na leitura do research. Prêmios anuais elevados de Aurubis e Codelco não provam recuperação de consumo.</p><div class="mini-labels"><span class="label fact">Fato reportado</span></div></div></div>
+<div class="two-paths" style="margin-top:14px"><div class="path"><h3>O preço pode reagir agora</h3><ul><li>Mercado reavalia o ritmo de investimentos em IA.</li><li>Fundos ajustam posições e apetite por risco.</li><li>O cobre perde suporte técnico.</li><li>Não é preciso observar queda instantânea de cátodo.</li></ul></div><div class="path"><h3>Para demonstrar queda física</h3><ul><li>Verificar consumo e pedidos efetivos por setor.</li><li>Comparar importações com dados de produção e estoques.</li><li>Separar volumes de construção, redes e data centers.</li><li>Examinar persistência de prêmios com volumes.</li></ul></div></div>
+<div class="note-box" style="margin-top:14px"><b>Longo prazo:</b> eletrificação e desglobalização continuam sendo fatores bullish na conclusão da Fastmarkets. Essa é a tese prospectiva da consultoria, não a confirmação de aumento do consumo de cobre em 17/11.</div></section>
+<section id="posicionamento"><div class="section-head"><div><h2>Fundos: perda de convicção compradora</h2><p>Última fotografia de COT repetida nos relatórios de 13/11 e 17/11. A data exata da posição não foi informada; não interpretar como mudança nova de 17/11.</p></div></div>
 <div class="grid columns"><div class="card"><small>Net long de fundos na LME</small><div class="value">18.085 lotes</div><p>Queda de 6.325 lotes ante o dado anterior. Posição anterior calculada: 24.410 lotes; redução de 25,9%.</p><div class="mini-labels"><span class="label fact">Fato</span><span class="label interp">Cálculo derivado</span></div></div>
 <div class="card"><small>O que provocou a redução</small><div class="value">Long liquidation + fresh shorts</div><p>O relatório atribui a queda tanto ao encerramento de posições compradas quanto ao aumento significativo de posições vendidas. Os volumes individuais não são divulgados.</p><div class="mini-labels"><span class="label fact">Fato reportado</span></div></div></div>
 <div class="cop-chart" style="margin-top:14px"><h3>Evolução da posição líquida comprada</h3><div class="chart-meta">Lotes de fundos · dados reportados e valor anterior calculado.</div><div class="cop-barline"><span>Anterior</span><div class="cop-bar-track"><div class="cop-bar-fill" style="width:100%"></div></div><span class="cop-bar-figure">24.410</span></div><div class="cop-barline"><span>Último COT</span><div class="cop-bar-track"><div class="cop-bar-fill up" style="width:74.1%"></div></div><span class="cop-bar-figure">18.085</span></div><div class="cop-delta signal-bear-text">−6.325 lotes (−25,9%)</div></div>
-<div class="note-box" style="margin-top:12px">Net long positivo significa que o grupo permanece comprado em termos líquidos. A queda da exposição não quer dizer que todos os fundos estejam vendidos. O relatório não informa o total de longs e shorts separadamente.</div>
+<div class="note-box" style="margin-top:12px">Net long positivo significa que o grupo permanece comprado em termos líquidos. A queda da exposição não quer dizer que todos os fundos estejam vendidos. O relatório não informa o total de longs e shorts separadamente. O mesmo valor já aparecia no research anterior, sem evidência de atualização de posição.</div>
 </section>
 <section id="balanco"><div class="section-head"><div><h2>Balanço global: da folga estimada ao déficit projetado</h2><p>Estimativas da Fastmarkets, e não resultados efetivos já observados.</p></div></div>
 <div class="forecast-wrap"><div class="forecast"><div class="source-tag">2026 · estimativa Fastmarkets</div><div class="huge signal-bear-text">+150 mil t</div><div class="desc"><b>Superávit estimado.</b> A produção e o consumo globais ainda se equilibrariam com uma sobra aproximada no ano.</div><div class="rail"><i style="width:44%;background:var(--bear)"></i></div></div><div class="forecast"><div class="source-tag">2027 · projeção Fastmarkets</div><div class="huge signal-bull-text">−340 mil t</div><div class="desc"><b>Déficit projetado.</b> A diferença entre oferta e demanda passaria para terreno negativo, caso as premissas da consultoria se confirmem.</div><div class="rail"><i style="width:100%;background:var(--bull)"></i></div></div></div>
 <div class="insight" style="margin-top:14px">A mudança de +150 mil t para −340 mil t equivale a uma deterioração projetada de aproximadamente <b>490 mil t</b> no balanço anual. Isso reforça a tese estrutural de suporte, sem impedir quedas de preço no curto prazo.</div>
 <div class="smallprint" style="margin-top:10px">Sinal positivo = superávit; sinal negativo = déficit. As barras mostram magnitude absoluta em escala relativa de 0 a 340 mil t. Nenhuma delas representa probabilidades.</div></section>
-<section id="cronologia"><div class="section-head"><div><h2>Linha do tempo das evidências</h2><p>Marcos citados no próprio relatório. Não é uma série de relatórios anteriores.</p></div></div><div class="timeline">
-<div class="event red"><time>23 SET</time><b>Pico e canal descendente</b><p>O preço passa a desenhar uma estrutura técnica de correção.</p></div><div class="event"><time>15 OUT</time><b>LME: 225.425 t</b><p>Base de comparação para o aumento posterior dos estoques.</p></div><div class="event red"><time>30 OUT</time><b>TC: −US$ 281,60</b><p>Pressão sobre a economia das fundições.</p></div><div class="event green"><time>06 NOV</time><b>SHFE: 33.848 t</b><p>Estoques em Xangai caem; backwardation LME era US$ 194,55/t.</p></div><div class="event green"><time>10 NOV</time><b>Prêmios de Xangai</b><p>Importação segue firme; compradores spot aparecem na Ásia.</p></div><div class="event red"><time>12–13 NOV</time><b>Research</b><p>Estocástico fraco; fundos reduzem net long; LME chega a 328.600 t.</p></div>
+<section id="cronologia"><div class="section-head"><div><h2>Como a narrativa mudou</h2><p>Sequência temporal construída com os researches de 13/11 e 17/11 e seus marcos citados.</p></div></div><div class="timeline">
+<div class="event"><time>15 OUT</time><b>LME: 225.425 t</b><p>Ponto de referência para a expansão posterior de estoques.</p></div>
+<div class="event green"><time>06 NOV</time><b>Cash–3M: 194,55</b><p>Backwardation elevada; SHFE ainda em 33.848 t no dado semanal.</p></div>
+<div class="event red"><time>13 NOV · research</time><b>Base ainda possível</b><p>Preço acima da 200 DMA; LME 328.600 t e spread 73,93.</p></div>
+<div class="event green"><time>13 NOV · SHFE</time><b>27.642 t</b><p>Queda adicional de 6.206 t em uma semana; TC de -277,80.</p></div>
+<div class="event red"><time>17 NOV · research</time><b>200 DMA rompida</b><p>RSI sobrevendido; spread reduzido a US$ 25,86/t.</p></div>
+<div class="event red"><time>PRÓXIMO TESTE</time><b>US$ 12.988/t</b><p>Cenário condicional se a queda continuar; ainda não é uma mínima atingida.</p></div>
 </div></section>
 <section id="glossario"><div class="section-head"><div><h2>Glossário de leitura rápida</h2><p>Abra os conceitos usados nesta análise.</p></div></div><div class="glossary">
-<details><summary>Backwardation</summary><p>Condição em que o preço à vista supera o preço futuro. No spread LME Cash–3M, valor positivo indica prêmio pela entrega imediata.</p></details>
-<details><summary>Cash–3M</summary><p>Diferença entre o preço cash e o contrato de três meses da LME. Aqui, recuou de US$ 194,55/t para US$ 73,93/t.</p></details>
-<details><summary>DMA</summary><p>Daily Moving Average: média móvel de n pregões. A média de 200 dias no research é US$ 13.611/t.</p></details>
-<details><summary>Estocástico</summary><p>Indicador de momentum; níveis baixos apontam enfraquecimento ou sobrevenda, mas não garantem formação de fundo.</p></details>
+<details><summary>Backwardation</summary><p>Condição em que o preço à vista supera o preço futuro. O spread ainda é positivo no research de 17/11, mas caiu muito desde 06/11.</p></details>
+<details><summary>Cash–3M</summary><p>Diferença entre o preço cash e o contrato de três meses da LME. Na sequência, caiu de US$ 194,55/t (06/11) para US$ 73,93/t (relatório 13/11) e US$ 25,86/t (relatório 17/11).</p></details>
+<details><summary>DMA</summary><p>Daily Moving Average: média móvel de n pregões. A 200 DMA indicada em 17/11 é US$ 13.612/t e passou a funcionar como resistência após seu rompimento.</p></details>
+<details><summary>Estocástico</summary><p>Indicador de momentum. Em 17/11 o research diz que continua negativo; níveis baixos não garantem fundo nem repique.</p></details>
 <details><summary>TC (Treatment Charge)</summary><p>Indicador econômico da etapa de tratamento de concentrados em fundições. Valor muito negativo costuma indicar competição intensa por matéria-prima.</p></details>
 <details><summary>SX-EW</summary><p>Solvent Extraction–Electrowinning: rota de produção que combina extração por solvente e eletrorrecuperação, frequentemente após lixiviação ácida.</p></details>
 <details><summary>Premium físico</summary><p>Adicional sobre referência de bolsa pago por metal físico conforme local, qualidade, prazo e condições de entrega.</p></details>
@@ -412,36 +428,41 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var
 <details><summary>Fresh shorts</summary><p>Abertura de novas posições vendidas, indicando apostas adicionais na queda.</p></details>
 <details><summary>Net long</summary><p>Posição líquida comprada: total comprado menos total vendido para um grupo de participantes.</p></details>
 <details><summary>Dip-buying</summary><p>Compra após correções, buscando aproveitar preços mais baixos. Não confirma automaticamente que um fundo foi formado.</p></details>
+<details><summary>RSI e sobrevenda</summary><p>Índice de força relativa. Valores considerados sobrevendidos sugerem queda intensa recente, mas o indicador não determina quando o preço deixará de cair.</p></details>
+<details><summary>Doji</summary><p>Candle com abertura e fechamento próximos, representando indecisão. Sozinho não confirma mudança de tendência.</p></details>
 </div></section>
 <section><div class="section-head"><div><h2>Checklist do analista</h2><p>Cinco perguntas para acompanhar a tese nos próximos pregões.</p></div></div><div class="checklist">
-<label class="check"><input type="checkbox"><span>US$ 13.611/t segue sustentando o preço?</span></label>
-<label class="check"><input type="checkbox"><span>O cobre recuperou a 100 DMA (US$ 14.068/t)?</span></label>
-<label class="check"><input type="checkbox"><span>A backwardation continua diminuindo?</span></label>
+<label class="check"><input type="checkbox"><span>O cobre reconquistou a 200 DMA (US$ 13.612/t)?</span></label>
+<label class="check"><input type="checkbox"><span>A mínima de junho (US$ 12.988/t) está sendo testada?</span></label>
+<label class="check"><input type="checkbox"><span>A backwardation se mantém positiva ou zera?</span></label>
 <label class="check"><input type="checkbox"><span>LME, CME e SHFE seguem divergentes?</span></label>
-<label class="check"><input type="checkbox"><span>Há novos dados confirmando restrição de mina/refino?</span></label>
+<label class="check"><input type="checkbox"><span>HVC/Oyu Tolgoi têm impactos quantificados no fornecimento?</span></label>
 </div></section>
-<section id="fontes"><div class="section-head"><div><h2>Fontes, metodologia e limites</h2><p>Transparência sobre o que sustenta a análise.</p></div></div>
-<details class="source-panel" open><summary>Relatório-base e tratamentos aplicados</summary>
-<p><b>Fonte principal:</b> Fastmarkets, James Moore, <i>Research – Copper supported but looks vulnerable</i>, documento com cabeçalho de 13/11/2026 e horário editorial de 12/11/2026, 09:25 GMT. Duas páginas.</p>
-<p><b>Contexto histórico:</b> apenas os marcos incluídos no próprio research. Nenhum relatório anterior de cobre foi usado; a linha do tempo não sugere uma série independente de research.</p>
-<ul><li>Todos os valores de preço e níveis de médias móveis citados são da fotografia do documento, não de uma cotação ao vivo.</li>
-<li>Variações percentuais, diferença do balanço e níveis anteriores inferidos foram calculados a partir dos números do PDF e estão identificados.</li>
-<li>O research apresenta inconsistências internas na tabela lateral de suportes/resistências, especialmente na 20 DMA. Priorizamos o texto analítico para níveis críticos.</li>
-<li>Para CME, a única informação é <b>acima de 760.000 t</b>; não há valor final exato nem data detalhada da fotografia.</li>
-<li>O report não informa data exata do COT, gross longs, gross shorts, cancelled warrants, volumes de demanda final nem participação por origem de estoques.</li>
-<li>Estimativas de 2026 e projeções de 2027 são da Fastmarkets; não foram verificadas como dados realizados.</li>
-<li>Riscos de El Niño e enxofre são tratados como potenciais; a interrupção da mina Oyu Tolgoi é registrada como evento reportado, sem extensão da duração/volume quantificada.</li></ul>
-</details></section>
-<section><div class="final"><h2>Mensagem final</h2><p><b>O cobre está tecnicamente vulnerável, mas estruturalmente amparado por riscos de oferta.</b> A leitura central não é “estoques altos = mercado folgado”: LME e CME cresceram, SHFE caiu, a backwardation ainda é positiva e o mercado de concentrados segue pressionado. No curto prazo, a média de 200 dias define o risco; para 2027, o déficit projetado explica por que a tese compradora não desapareceu. O sinal de mudança mais confiável virá da combinação de <b>preço, spreads, estoques regionais e evidência efetiva de oferta.</b></p></div><div class="source">Fonte principal: Fastmarkets, “Copper supported but looks vulnerable”, 13/11/2026. Observatório derivado do documento, sem atualização intradiária.</div></section>
+<section id="fontes"><div class="section-head"><div><h2>Fontes, metodologia e limites</h2><p>A leitura principal reflete o novo relatório, e o anterior é usado apenas para mostrar a mudança da tese.</p></div></div>
+<details class="source-panel" open><summary>Fonte atual, histórico e tratamentos</summary>
+<p><b>Relatório-base:</b> Fastmarkets, James Moore, <i>Research – Copper oversold as it approaches June low</i>, 17/11/2026, 07:49 GMT. Duas páginas.</p>
+<p><b>Comparação histórica:</b> Fastmarkets, <i>Research – Copper supported but looks vulnerable</i>, cabeçalho de 13/11/2026, com publicação indicada em 12/11, 09:25 GMT. Nenhum outro research foi usado.</p>
+<ul><li>Níveis de preço são referências técnicas do relatório, não cotação ao vivo. Não foi inferido fechamento exato a partir do gráfico.</li>
+<li>Na versão de 13/11, US$ 13.611/t (200 DMA) era suporte; em 17/11, US$ 13.612/t (200 DMA) foi rompido e passou a resistência.</li>
+<li>A caixa lateral do PDF de 17/11 mistura níveis acima do preço como “suporte” e US$ 12.693/t como “resistência”; a interpretação técnica segue o corpo da análise.</li>
+<li>LME 327.457 t e Cash–3M 25,86 são dados reportados em 17/11, sem data operacional intradiária especificada no documento; SHFE 27.642 t corresponde a 13/11.</li>
+<li>A CME é descrita apenas como “acima de 760.000 t”; sem valor pontual ou data precisa de estoque.</li>
+<li>Os dados de COT são repetidos nos dois relatórios e não contêm data exata, número de longs ou shorts brutos.</li>
+<li>Percentuais, variações de saldo e comparações entre documentos foram calculados explicitamente a partir dos valores informados nas fontes.</li>
+<li>Estoques de bolsa não representam estoque mundial. O documento não traz cancelled warrants, volumes de consumo setorial ou perdas quantificadas das interrupções.</li>
+<li>O déficit global de aproximadamente 340 mil t para 2027 é projeção da Fastmarkets, e o superávit de 150 mil t em 2026 é estimativa.</li>
+</ul></details></section>
+<section><div class="final"><h2>Mensagem final</h2><p><b>A correção técnica se aprofundou: a 200 DMA foi rompida, e o RSI sobrevendido ainda não confirma fundo.</b> A queda da backwardation indica alívio no aperto imediato da LME, enquanto estoques mais baixos em Xangai e restrições nas minas sustentam riscos de oferta. O suporte de US$ 12.988/t é a referência condicional da próxima etapa da queda. A tese estrutural para 2027 continua construtiva, mas não deve ser confundida com um sinal de compra de curto prazo. <b>Agora a pergunta é se os fundamentos vão atrair compradores antes de uma nova perda de preço.</b></p></div><div class="source">Fonte principal: Fastmarkets, “Copper oversold as it approaches June low”, 17/11/2026. Comparativo histórico: research 13/11. Sem dados intradiários ao vivo.</div></section>
 </main><footer><b style="color:var(--brand-dark);letter-spacing:.08em">AURICCHIO</b> · Observatório do Cobre · inteligência de mercado</footer>
 <script>
 const guidedSteps = [
- {title:'1. O que aconteceu com o cobre?',intro:'O preço LME de três meses abandonou a forte tendência de alta de médio prazo e entrou em correção de curto prazo. A Fastmarkets descreve uma tentativa de formação de base acima da média de 200 dias (US$ 13.611/t), ainda sem confirmação de reversão.',chain:['Correção desde setembro','Preço defende a 200 DMA','Momento ainda fraco'],insight:'Fato: o estocástico permanece fraco. Interpretação: a base é tentativa, não fundo confirmado.',labels:['Fato','Interpretação']},
- {title:'2. Por que a leitura enfraqueceu?',intro:'A deterioração técnica se soma à redução do net long dos fundos e ao aumento dos estoques LME/CME. A política tarifária norte-americana também mudou os incentivos de arbitragem, afetando a localização do metal.',chain:['Fundos reduzem exposição','Estoques crescem no Ocidente','Recuperação perde convicção'],insight:'Aumento do estoque em uma região não implica, isoladamente, sobreoferta mundial.',labels:['Fato','Interpretação']},
- {title:'3. O que ainda sustenta o cobre?',intro:'O concentrado segue apertado: TC fortemente negativo, risco sobre SX-EW por ácido sulfúrico e paralisação reportada em Oyu Tolgoi. Na ponta física, há backwardation positiva e prêmios de importação firmes na China.',chain:['Concentrado disputado','Margens de fundição sob pressão','Risco à produção refinada'],insight:'A restrição começa na matéria-prima, não necessariamente no estoque de cátodo observado hoje.',labels:['Fato','Interpretação','Hipótese']},
- {title:'4. O que pode mudar a história?',intro:'Uma perda confirmada da 200 DMA elevaria a vulnerabilidade técnica. Na direção oposta, retomada da 100 DMA, suporte de demanda física regional e restrições persistentes de oferta melhorariam a leitura. O balanço de 2027 continua previsão.',chain:['Perder 13.611 ou recuperar 14.068','Confirmar pelos fluxos físicos','Reavaliar a tese'],insight:'Os dois cenários dependem de condições futuras; não são movimentos já ocorridos.',labels:['Hipótese','Interpretação']},
- {title:'5. O que acompanhar agora?',intro:'Em vez de seguir dezenas de variáveis, acompanhe sinais capazes de invalidar a tese.',bullets:['LME de três meses sustenta US$ 13.611/t?','Recupera US$ 14.068/t com continuidade?','LME/CME/SHFE seguem divergindo?','Backwardation volta a apertar ou continua diminuindo?','O aperto do concentrado chega a reduzir cátodo refinado?'],insight:'Um movimento de preços ganha credibilidade quando é acompanhado por sinais coerentes do mercado físico.',labels:['Checklist']}
+ {title:'1. O que aconteceu com o preço?',intro:'O cobre LME de três meses perdeu a 200 DMA em US$ 13.612/t. Era suporte na análise de 13/11 e virou resistência em 17/11. O novo research registra Doji e RSI sobrevendido, mas estocástico ainda negativo.',chain:['Suporte de 200 dias rompido','Preço sob pressão','US$ 12.988/t entra no radar'],insight:'Fato: rompimento e RSI sobrevendido. Interpretação: pode ocorrer reação, mas não há fundo técnico confirmado.',labels:['Fato','Interpretação']},
+ {title:'2. O que pressiona a cotação?',intro:'A perda da referência técnica se combina com menor convicção dos fundos, maior estoque acumulado na LME/CME e incerteza financeira sobre chips avançados e investimentos futuros em IA.',chain:['Técnico se deteriora','Tecnologia pressiona sentimento','Investidores se tornam cautelosos'],insight:'A incerteza sobre data centers não prova redução imediata do consumo físico de cobre.',labels:['Fato','Interpretação']},
+ {title:'3. O que ainda sustenta o mercado?',intro:'Os estoques SHFE caíram para 27.642 t, os prêmios na Ásia seguem firmes na referência de 10/11, e a oferta de concentrado continua sob pressão. A Fastmarkets também cita greve prolongada na HVC e paralisação em Oyu Tolgoi.',chain:['Minas enfrentam restrições','Concentrado permanece disputado','Risco para oferta refinada'],insight:'Os eventos não têm impacto agregado em toneladas quantificado. A backwardation caiu para US$ 25,86/t, reduzindo o sinal de aperto imediato.',labels:['Fato','Interpretação','Hipótese']},
+ {title:'4. O que pode mudar a história?',intro:'Se a queda continuar, US$ 12.988/t é a mínima de junho mencionada como possível teste. Para aliviar o viés bearish, seria importante reconquistar US$ 13.612/t e depois as médias de 20 e 100 dias.',chain:['Defender 12.988 ou reagir','Recuperar a 200 DMA','Conferir confirmação no físico'],insight:'Sobrevenda é condição de mercado, não previsão de recuperação. O balanço de 2027 permanece projeção.',labels:['Hipótese','Interpretação']},
+ {title:'5. O que acompanhar agora?',intro:'O conjunto mínimo de sinais que permite verificar se a tese mudou.',bullets:['US$ 12.988/t será testado ou haverá recuperação?', 'O cobre volta acima de US$ 13.612/t?', 'Cash–3M permanece em backwardation depois de cair a US$ 25,86/t?', 'A SHFE continua caindo enquanto LME/CME acumulam estoques?', 'As paralisações de HVC e Oyu Tolgoi afetam volumes mensuráveis?'],insight:'Uma reversão mais convincente reuniria melhora técnica e confirmação do físico, não apenas um RSI sobrevendido.',labels:['Checklist']}
 ];
+
 function renderGuided(i){const s=guidedSteps[i];let body=`<h3>${s.title}</h3><div class="intro">${s.intro}</div>`;
  if(s.chain){body+=`<div class="cause"><div class="box">${s.chain[0]}</div><div class="arrow">→</div><div class="box">${s.chain[1]}</div><div class="arrow">→</div><div class="box">${s.chain[2]}</div></div>`;}
  if(s.bullets){body+=`<div class="card" style="box-shadow:none"><ol style="margin:0;padding-left:20px;color:#526779;line-height:1.8">${s.bullets.map(x=>`<li>${x}</li>`).join('')}</ol></div>`;}
@@ -450,86 +471,96 @@ function renderGuided(i){const s=guidedSteps[i];let body=`<h3>${s.title}</h3><di
 renderGuided(0);
 document.querySelectorAll('[data-step]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('[data-step]').forEach(x=>x.classList.remove('active'));btn.classList.add('active');renderGuided(Number(btn.dataset.step));}));
 const horizonData={
- curto:[['Viés','Bearish / vulnerável','Estocástico fraco; correção técnica desde setembro.','bear'],['Nível crucial','US$ 13.611/t','200 DMA: sustentação provisória da base.',''],['Pressão','Fundos + estoques','Net long recuou e LME/CME acumulam metal.','bear'],['Contrapeso','Físico heterogêneo','SHFE cai, backwardation e prêmios asiáticos persistem.','bull']],
- medio:[['Viés','Neutro / corretivo','A forte alta anterior perdeu estrutura, mas a 200 DMA permanece relevante.',''],['Para melhorar','US$ 14.068/t','Recuperar a 100 DMA reforçaria o momentum.','bull'],['Risco','Romper a 200 DMA','Poderia expor a mínima de junho, US$ 12.988/t.','bear'],['Oferta','Concentrado apertado','TC negativo e riscos de mina/fundição dão suporte.','bull']],
- longo:[['Visão','Construtiva, com risco','A consultoria projeta déficit em 2027.','bull'],['2026','+150 mil t','Superávit global estimado, não realizado.',''],['2027','−340 mil t','Déficit previsto pela Fastmarkets.','bull'],['Principal incerteza','Oferta vs consumo','Impactos efetivos das interrupções e demanda futura ainda precisam se confirmar.','']]
+ curto:[['Viés','Bearish / sobrevendido','A 200 DMA foi rompida; RSI em sobrevenda não confirma fundo.','bear'],['Resistência imediata','US$ 13.612/t','200 DMA e Fibonacci 61,8%; antes era suporte.','bear'],['Risco de queda','US$ 12.988/t','Mínima de junho; teste condicional.','bear'],['Contrapeso','Concentrado restrito','SHFE em queda e riscos de oferta nas minas.','bull']],
+ medio:[['Viés','Corretivo / cauteloso','20, 100 e 40 DMA continuam acima do preço.','bear'],['Recuperação','US$ 13.612 → 13.960','Reverter a ruptura e superar 20 DMA seria o começo.',''],['Físico','Aperto desacelerando','Cash–3M de 194,55 para 25,86 em novembro.',''],['Risco de produção','HVC + Oyu Tolgoi','Interrupções citadas, sem perda total quantificada.','bull']],
+ longo:[['Visão','Tese construtiva','Eletrificação/desglobalização seguem fatores bullish.','bull'],['2026','+150 mil t','Superávit global estimado Fastmarkets.',''],['2027','−340 mil t','Déficit previsto, não resultado realizado.','bull'],['Limite','Fundamentos ≠ timing','Déficit futuro não impede correções atuais.','']]
 };
+
 function renderHorizon(h){document.getElementById('horizonCards').innerHTML=horizonData[h].map(x=>`<div class="card"><small>${x[0]}</small><div class="value ${x[3]}">${x[1]}</div><p>${x[2]}</p></div>`).join('');}
 renderHorizon('curto');document.querySelectorAll('[data-h]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('[data-h]').forEach(x=>x.classList.remove('active'));btn.classList.add('active');renderHorizon(btn.dataset.h);}));
 const bears=[
- ['Deterioração técnica','Alto','Fato: correção bearish, estocástico fraco e suporte-chave na 200 DMA. Interpretação: a tendência precisa reconquistar a média de 100 dias. Limite: indicadores técnicos não garantem direção.'],
- ['Fundos menos comprados','Alto','Fato: net long caiu 6.325 lotes para 18.085, por long liquidation e abertura de shorts. Interpretação: convicção compradora enfraqueceu. Limite: a posição líquida ainda é positiva.'],
- ['Entrada de metal na LME','Médio','Fato: estoques subiram de 225.425 t para 328.600 t. Interpretação: melhora a oferta visível na bolsa. Limite: não corresponde ao estoque global e fluxos podem ser influenciados por spreads.'],
- ['CME acumula metal','Médio','Fato: estoque supera 760 mil t, contra 93.173 t em mar/2025. Interpretação: arbitragem/regulação ajudam a explicar a mudança de localização. Limite: períodos distantes e quantidade final não exata.']
+ ['200 DMA rompida','Alto','Fato: o preço perdeu a média de 200 dias, US$ 13.612/t, alinhada ao Fibonacci de 61,8%. Interpretação: antigo suporte vira resistência; risco de teste de US$ 12.988/t. Limite: o rompimento não determina o tamanho da queda.'],
+ ['RSI sobrevendido não reverte o estocástico','Médio','Fato: a Fastmarkets descreve RSI sobrevendido, Doji e estocástico negativo. Interpretação: há possibilidade de pausa, mas não há confirmação de fundo. Limite: indicadores não fornecem probabilidade ou data de reação.'],
+ ['Aperto próximo diminui','Alto','Fato: backwardation Cash–3M de US$ 194,55/t em 06/11 para US$ 25,86/t em 17/11 (-86,7%). Interpretação: menos prêmio por entrega imediata. Limite: o spread permanece positivo.'],
+ ['IA e fundos mais cautelosos','Médio','Fato: o research cita restrições a chips avançados e net long de fundos em 18.085 lotes (-6.325). Interpretação: expectativas financeiras de crescimento se enfraquecem. Limite: COT sem data de posição e repetido no relatório anterior.']
 ];
 const bulls=[
- ['Concentrado escasso','Alto','Fato: TC CIF Ásia-Pacífico de −US$ 281,60/t em 30/10. Interpretação: forte pressão sobre margens e acesso das fundições à matéria-prima. Limite: não se conhece déficit convertido em cátodo.'],
- ['Aperto em partes da Ásia','Médio','Fato: SHFE caiu para 33.848 t em 06/11; prêmios de Xangai subiram até 10/11. Interpretação: oferta física regional segue mais ajustada. Limite: não prova demanda global acelerada.'],
- ['Backwardation ainda positiva','Médio','Fato: Cash–3M de +US$ 73,93/t, embora menor que +US$ 194,55/t em 06/11. Interpretação: entrega imediata ainda vale mais que três meses. Limite: o aperto próximo se reduziu.'],
- ['Risco de oferta e déficit 2027','Alto','Fato: Oyu Tolgoi foi paralisada após evento sísmico, segundo o research; déficit previsto de 340 mil t em 2027. Interpretação: cenário estrutural de suporte. Limite: previsão e impactos não quantificados por evento.']
+ ['Concentrado ainda apertado','Alto','Fato: TC CIF Ásia-Pacífico de -US$ 277,80/t em 13/11; segue fortemente negativo. Interpretação: competição por matérias-primas pressiona fundições. Limite: não há quantidade exata de metal refinado afetado.'],
+ ['SHFE e prêmios asiáticos','Médio','Fato: SHFE recuou 6.206 t para 27.642 t em 13/11, enquanto prêmios físicos asiáticos estavam firmes na leitura de 10/11. Interpretação: disponibilidade regional segue restrita. Limite: não comprova déficit mundial.'],
+ ['HVC e Oyu Tolgoi','Médio','Fato: greve da HVC na quarta semana e paralisação da operação subterrânea de Oyu Tolgoi após evento sísmico, segundo a fonte. Interpretação: riscos adicionais à produção. Limite: nenhuma perda total foi quantificada.'],
+ ['2027: déficit projetado','Médio','Fato: projeção Fastmarkets de -340 mil t em 2027, ante estimativa de +150 mil t em 2026. Interpretação: base estrutural de suporte. Limite: previsão não oferece gatilho técnico imediato.']
 ];
+
 function renderDrivers(id,data){document.getElementById(id).innerHTML=data.map(x=>`<div class="driver" tabindex="0" role="button" aria-expanded="false"><div class="driver-top"><span class="driver-name">${x[0]}</span><div class="driver-top-right"><span class="impact-badge">Impacto: ${x[1]}</span><span aria-hidden="true">⌄</span></div></div><div class="detail">${x[2]}</div></div>`).join('');}
 renderDrivers('bearDrivers',bears);renderDrivers('bullDrivers',bulls);
 function toggleDriver(d){d.classList.toggle('open');d.setAttribute('aria-expanded',String(d.classList.contains('open')));}
 document.addEventListener('click',e=>{const d=e.target.closest('.driver');if(d)toggleDriver(d);});
 document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.classList.contains('driver')){e.preventDefault();toggleDriver(e.target);}});
 const scenarios={
- base:['Base frágil acima da 200 DMA','O preço tenta se sustentar acima de US$ 13.611/t. Sem recuperar US$ 14.068/t, o repique continua sem confirmação de força compradora.'],
- bear:['US$ 12.988/t entra no radar','A perda confirmada de US$ 13.611/t, suporte da média de 200 dias e Fibonacci, aumentaria o risco de recuo até a mínima de 24/06. É possibilidade, não previsão certa.'],
- bull:['US$ 14.068/t é o primeiro teste','Uma recuperação sustentada acima da média de 100 dias fortaleceria o momentum e reduziria o viés bearish. Resistências superiores continuam dependentes de confirmação.']
+ base:['Correção segue dominante','A perda de US$ 13.612/t agravou a estrutura. RSI em sobrevenda e Doji sugerem hesitação, mas não neutralizam o estocástico negativo nem confirmam reversão.'],
+ bear:['US$ 12.988/t pode ser testado','A Fastmarkets identifica a mínima de 24/06 como próximo risco após a perda da 200 DMA. Não há confirmação de que esse patamar tenha sido atingido.'],
+ bull:['Primeiro: reconquistar US$ 13.612/t','Uma recuperação sustentada acima da 200 DMA daria o primeiro sinal de alívio; depois viriam a 20 DMA em US$ 13.960/t e a 100 DMA em US$ 14.065/t. RSI sobrevendido sozinho não basta.']
 };
+
 document.querySelectorAll('[data-s]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('[data-s]').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const d=scenarios[btn.dataset.s];document.getElementById('scenarioTitle').textContent=d[0];document.getElementById('scenarioText').textContent=d[1];}));
 function exportResumo(){const txt=`OBSERVATÓRIO AURICCHIO DO COBRE — RESUMO ANALÍTICO
-Fonte principal: Fastmarkets, Copper supported but looks vulnerable, 13/11/2026 (horário editorial 12/11/2026).
-Não é cotação em tempo real.
+Fonte atual: Fastmarkets, Research - Copper oversold as it approaches June low, 17/11/2026 (07:49 GMT).
+Comparação: Fastmarkets, Copper supported but looks vulnerable, relatório de 13/11/2026.
+Não são cotações ao vivo.
 
 PERGUNTA CENTRAL
-Se o concentrado está apertado, por que o cobre perdeu força?
+O cobre está sobrevendido. Por que ainda pode cair?
 
-LEITURA
-Curto prazo: correção bearish, estocástico fraco e net long em queda.
-Médio prazo: preço tenta uma base acima de US$ 13.611/t.
-Longo prazo: Fastmarkets projeta déficit de 340 mil t em 2027, frente a superávit estimado de 150 mil t em 2026.
+LEITURA POR HORIZONTE
+Curto: 200 DMA rompida; estocástico negativo, RSI sobrevendido e candle Doji.
+Médio: precisa recuperar 200 DMA/20 DMA; perda técnica reforça possibilidade de teste de junho.
+Longo: Fastmarkets estima superávit de +150 mil t em 2026 e projeta déficit de -340 mil t em 2027.
 
-NÍVEIS LME 3M
-US$ 14.875/t: máxima histórica no research.
-US$ 14.068/t: 100 DMA, resistência imediata.
-US$ 13.611/t: 200 DMA e Fibonacci 61,8%, suporte.
-US$ 12.988/t: mínima 24/06, risco em ruptura do suporte.
+NÍVEIS LME 3M (US$/t, pesquisa 17/11)
+14.204: 40 DMA, resistência
+14.065: 100 DMA, resistência
+13.960: 20 DMA, resistência
+13.612: 200 DMA / Fibonacci 61,8%, suporte rompido -> resistência
+12.988: mínima 24/06, possível teste de baixa (não confirmado)
 
-MERCADO FÍSICO (DATAS DO RESEARCH)
-LME: 225.425 t em 15/10 -> 328.600 t no relatório (+45,8%).
-CME: 93.173 t em 01/03/2025 -> acima de 760.000 t no relatório.
-SHFE: queda de 10.764 t para 33.848 t em 06/11; estoque anterior calculado 44.612 t.
-Cash–3M LME: backwardation +US$ 194,55/t em 06/11 -> +US$ 73,93/t no relatório.
-TC CIF Ásia-Pacífico: −US$ 281,60/t em 30/10.
-Prêmios: Xangai e Sudeste Asiático firmes, demanda spot europeia fraca.
+ESTOQUES E SPREAD (DATAS CONSERVADAS)
+LME: 225.425 t em 15/10; 328.600 t no research 13/11; 327.457 t no research 17/11.
+SHFE: 33.848 t em 06/11; 27.642 t em 13/11 (-6.206 t, -18,3%).
+CME: 93.173 t em 01/03/2025 e acima de 760.000 t no research atual (valor exato não divulgado).
+LME Cash–3M: backwardation de +US$ 194,55/t (06/11), +73,93/t (research 13/11), +25,86/t (research 17/11).
+
+OFERTA E DEMANDA
+TC CIF Ásia-Pacífico: -US$ 277,80/t em 13/11; -US$ 281,60/t em 30/10 (relatório anterior).
+Greve Highland Valley Copper (HVC): quarta semana na data do research.
+Oyu Tolgoi: parada subterrânea reportada após evento sísmico.
+Risco de ácido sulfúrico para SX-EW; impactos sem quantificação de tonelagem.
+Tecnologia: restrições a chips avançados e incerteza sobre IA afetam expectativas; não provam queda atual de consumo físico.
+China: prêmio de cátodo importado firme até 10/11; Europa: demanda spot fraca.
 
 POSICIONAMENTO
-Net long fundos LME: 18.085 lotes, queda de 6.325 (-25,9% ante 24.410). Data exata não informada.
+Fundos LME net long: 18.085 lotes, -6.325 (-25,9%), dado repetido em ambos os reports; data exata não informada.
 
-FATO / INTERPRETAÇÃO / HIPÓTESE
-Fato: LME/CME aumentaram, SHFE recuou e ainda há backwardation.
-Interpretação: a disponibilidade e os incentivos de arbitragem diferem por região.
-Hipótese: romper 200 DMA expõe 12.988; recuperar 100 DMA fortalece reversão.
-Projeção: mercado global de cobre com déficit de ~340 mil t em 2027 (Fastmarkets).
+FATO / INTERPRETAÇÃO / CENÁRIO
+Fato: perda da 200 DMA, redução de backwardation e menor estoque SHFE.
+Interpretação: queda do aperto próximo não apaga riscos estruturais de oferta.
+Cenário: US$ 12.988/t pode ser testado; reação técnica exige sinais além de RSI sobrevendido.
 
 LIMITES
-Estoques de bolsa não são estoques globais. Há inconsistências na tabela lateral do PDF de níveis técnicos. COT sem data exata e sem composição gross.
+Estoques em bolsas não equivalem ao estoque global; datas distintas. Caixa lateral do PDF tem classificações de níveis inconsistentes; prevalece texto analítico. Não há quantificação de perdas de minas ou consumo por setor.
 
-O QUE ACOMPANHAR
-200 DMA, 100 DMA, spreads LME, fluxos regionais de estoque e comprovação de impactos de oferta.`;
-const blob=new Blob([txt],{type:'text/plain;charset=utf-8'});const a=document.createElement('a');const u=URL.createObjectURL(blob);a.href=u;a.download='resumo_observatorio_cobre_13-11-2026.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1000);}
+CHECKLIST
+Reconquista de 13.612? Teste de 12.988? Spread zera? SHFE continua caindo? Interrupções viram perdas efetivas?`;
+const blob=new Blob([txt],{type:'text/plain;charset=utf-8'});const a=document.createElement('a');const u=URL.createObjectURL(blob);a.href=u;a.download='resumo_observatorio_cobre_17-11-2026.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1000);}
 (function(){const btn=document.querySelector('.menu-toggle'),nav=document.querySelector('.main-nav');btn.addEventListener('click',()=>{const on=nav.classList.toggle('open');btn.setAttribute('aria-expanded',String(on));});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');btn.setAttribute('aria-expanded','false');document.querySelector('.more-menu').open=false;}));document.addEventListener('click',e=>{if(window.innerWidth<=980&&!e.target.closest('.nav-shell')){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}});})();
 </script>
 <script id="report-meta" type="application/json">
 {
   "metal": "copper",
-  "date": "2026-11-13",
-  "title": "Copper supported but looks vulnerable",
-  "bias": "Bearish / vulnerável",
+  "date": "2026-11-17",
+  "title": "suporte",
+  "bias": "Bearish / sobrevendido",
   "physical": "Misto",
-  "note": "O cobre está tecnicamente vulnerável, mas estruturalmente amparado por riscos de oferta. A leitura central não é “estoques altos = mercado folgado”: LME e CME cresceram, SHFE caiu, a backwardation ainda é positiva e o mercado de concentr..."
+  "note": "A correção técnica se aprofundou: a 200 DMA foi rompida, e o RSI sobrevendido ainda não confirma fundo. A queda da backwardation indica alívio no aperto imediato da LME, enquanto estoques mais baixos em Xangai e restrições nas minas sust..."
 }
 </script>
 </body></html>
