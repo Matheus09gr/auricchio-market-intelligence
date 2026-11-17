@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16",
+  "updated_at": "2026-11-17",
   "metals": [
     {
       "id": "tin",
@@ -44,10 +44,10 @@
       "english": "Nickel",
       "status": "available",
       "path": "./nickel/",
-      "last_report": "16/11/2026",
-      "bias": "Em teste",
+      "last_report": "17/11/2026",
+      "bias": "Neutral-bearish",
       "physical": "Folgado",
-      "note": "O níquel tem uma janela de recuperação, mas ainda precisa superar a média móvel de 100 dias para enfraquecer a lógica de venda nas altas. Os estoques acumulados e a demanda incerta por aço inox explicam a cautela de curto prazo. A possib..."
+      "note": "Níquel LME 3M em ~US$ 15.955/t; contango de US$ 195/t e estoques elevados limitam a recuperação. Suporte em US$ 15.800–15.950/t, confirmação acima de US$ 16.400–16.500/t."
     },
     {
       "id": "tungsten",

@@ -1,8 +1,17 @@
 {
   "metal": "Níquel",
   "symbol": "Ni",
-  "updated_at": "2026-11-16",
+  "updated_at": "2026-11-17",
   "reports": [
+    {
+      "date": "2026-11-17",
+      "display_date": "17/11/2026",
+      "title": "Níquel: recuperação estagna sob pressão macro e contango",
+      "file": "./reports/2026-11-17.html",
+      "bias": "Neutral-bearish",
+      "physical": "Folgado",
+      "note": "Níquel LME 3M em ~US$ 15.955/t; contango de US$ 195/t e estoques elevados limitam a recuperação. Suporte em US$ 15.800–15.950/t, confirmação acima de US$ 16.400–16.500/t."
+    },
     {
       "date": "2026-11-16",
       "display_date": "16/11/2026",
