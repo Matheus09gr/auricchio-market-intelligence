@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#2c918b">
+<meta name="description" content="Observatório Auricchio de Cobre: leitura interativa do research Fastmarkets de 17/11/2026, com análise técnica, física, oferta, demanda e riscos.">
+<meta name="report-date" content="2026-11-17"><meta name="source-published-at" content="2026-11-17T07:49:00Z"><meta name="source-title" content="Research - Copper oversold as it approaches June low"><meta name="market" content="LME copper three-month"><title>Auricchio | Observatório do Cobre — LME</title><style>
+  :root{
+    --ink:#243238; --ink2:#3f5158; --muted:#728086; --line:#dde4e5;
+    --paper:#f6f8f7; --white:#fff; --bear:#c85252; --bear-bg:#fff1ef;
+    --bull:#2b806b; --bull-bg:#edf8f4; --neutral:#708086; --nav:#263a3d;
+    --brand:#2c918b; --brand-dark:#23736f; --brand-soft:#e8f4f2; --metal:#8b979b;
+    --metal-light:#edf0f0; --gold:#9b7a3d; --gold-bg:#fff8e9; --blue-bg:#edf5f5;
+    --shadow:0 12px 30px rgba(38,58,61,.08);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+  a{color:inherit}
+  button{font:inherit}
+  .topbar{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.98);backdrop-filter:blur(10px);color:var(--ink);border-bottom:1px solid #e1e7e7;box-shadow:0 4px 18px rgba(38,58,61,.035)}
+  .topbar .wrap{max-width:1240px;margin:auto;min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:34px;padding:10px 24px}
+  .brand-lockup{display:flex;align-items:center;gap:13px;flex:0 0 auto;text-decoration:none}
+  .brand-accent{width:5px;height:38px;border-radius:99px;background:linear-gradient(180deg,var(--brand) 0 68%,#9aa6a9 68% 100%)}
+  .brand-copy{display:flex;flex-direction:column;line-height:1}
+  .brand-name{font-size:19px;font-weight:900;letter-spacing:.105em;color:var(--brand-dark)}
+  .brand-sub{margin-top:7px;font-size:10px;font-weight:750;letter-spacing:.16em;color:#8a969a;text-transform:uppercase}
+  .nav-shell{display:flex;align-items:center;gap:18px;min-width:0}
+  .main-nav{display:flex;align-items:center;gap:4px;font-size:13.5px;overflow:visible}
+  .main-nav>a,.more-menu>summary{display:flex;align-items:center;text-decoration:none;color:#53666b;padding:9px 10px;border-radius:9px;white-space:nowrap;font-weight:650;cursor:pointer;list-style:none}
+  .main-nav>a:hover,.more-menu>summary:hover{color:var(--brand-dark);background:var(--brand-soft)}
+  .main-nav>a.primary-nav{color:var(--brand-dark);background:#f1f7f6;font-weight:800}
+  .more-menu{position:relative}
+  .more-menu>summary::-webkit-details-marker{display:none}
+  .more-menu>summary:after{content:"⌄";font-size:12px;margin-left:6px;color:#8b989b}
+  .more-menu[open]>summary{color:var(--brand-dark);background:var(--brand-soft)}
+  .more-dropdown{position:absolute;right:0;top:calc(100% + 10px);width:190px;padding:8px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 18px 40px rgba(38,58,61,.14);display:grid;gap:2px}
+  .more-dropdown a{text-decoration:none;color:#53666b;padding:10px 11px;border-radius:8px;font-size:13px;font-weight:650}
+  .more-dropdown a:hover{background:var(--brand-soft);color:var(--brand-dark)}
+  .menu-toggle{display:none;border:1px solid #dce5e4;background:#fff;color:var(--brand-dark);border-radius:10px;padding:9px 11px;font-size:13px;font-weight:800}
+
+  .hero{background:linear-gradient(180deg,#edf5f4 0%,#f8faf9 72%,#ffffff 100%);border-bottom:1px solid var(--line)}
+  .hero .wrap{max-width:1180px;margin:auto;padding:54px 22px 40px}
+  .eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--brand-dark);text-transform:uppercase}
+  h1{font-size:clamp(34px,5vw,62px);line-height:.98;margin:12px 0 14px;max-width:940px;letter-spacing:-.045em}
+  .lede{font-size:18px;line-height:1.6;color:#647378;max-width:900px}
+  .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+  button,.pill{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:10px 15px;font-weight:750;cursor:pointer}
+  button.primary{background:var(--brand);color:white;border-color:var(--brand)}
+  button:hover{transform:translateY(-1px)}
+
+  main{max-width:1180px;margin:auto;padding:22px}
+  section{margin:26px 0 48px}
+  .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:16px}
+  .section-head h2{font-size:28px;margin:0;letter-spacing:-.025em;color:#2d4145;position:relative;padding-left:14px}.section-head h2:before{content:"";position:absolute;left:0;top:5px;bottom:5px;width:4px;border-radius:99px;background:var(--brand)}
+  .section-head p{margin:5px 0 0;color:var(--muted);line-height:1.5}
+  .grid{display:grid;gap:14px}
+  .columns{grid-template-columns:1fr 1fr}
+  .cards4{grid-template-columns:repeat(4,1fr)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 6px 18px rgba(16,37,63,.04)}
+  .card small{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#718292;font-weight:800}
+  .card .value{font-size:25px;font-weight:850;margin:7px 0 5px;letter-spacing:-.03em}
+  .card p{margin:0;color:#66798a;font-size:14px;line-height:1.5}
+  .bear{color:var(--bear)} .bull{color:var(--bull)}
+
+  .question{max-width:1180px;margin:26px auto 0;padding:0 22px}
+  .question-card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:22px 24px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
+  .question-card h2{margin:0 0 5px;font-size:22px}
+  .question-card p{margin:0;color:var(--muted);line-height:1.5}
+  .tag{padding:8px 11px;border-radius:10px;background:#eef3f7;color:#3a566e;font-size:12px;font-weight:800}
+
+  .starter{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
+  .starter-grid{display:grid;grid-template-columns:1.05fr 1.95fr;gap:18px;align-items:start}
+  .starter h3{margin:0 0 8px;font-size:23px}
+  .starter p{margin:0;color:var(--muted);line-height:1.6}
+  .four-blocks{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .block{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fbfcfd}
+  .block b{display:block;margin-bottom:5px}
+  .block span{font-size:13px;color:var(--muted);line-height:1.45}
+  .block .num{width:28px;height:28px;display:grid;place-items:center;border-radius:50%;background:var(--brand-dark);color:#fff;font-size:12px;font-weight:900;margin-bottom:10px}
+
+  .guided{display:grid;grid-template-columns:240px 1fr;gap:16px}
+  .guided-menu{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px;position:sticky;top:75px;height:max-content}
+  .guided-menu button{width:100%;border:0;border-radius:10px;text-align:left;padding:12px;background:transparent;font-weight:800;color:#496277}
+  .guided-menu button.active{background:#eef4f8;color:var(--ink)}
+  .guided-panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;min-height:300px}
+  .guided-panel h3{font-size:26px;margin:0 0 8px;letter-spacing:-.02em}
+  .guided-panel .intro{color:var(--muted);line-height:1.55;margin-bottom:18px}
+  .cause{display:grid;grid-template-columns:1fr 36px 1fr 36px 1fr;gap:8px;align-items:center;margin:18px 0}
+  .cause .box{border:1px solid var(--line);border-radius:12px;padding:13px;background:#fbfcfd;text-align:center;font-weight:750}
+  .cause .arrow{text-align:center;color:#91a5b5;font-size:22px;font-weight:900}
+  .insight{padding:14px 16px;border-radius:12px;background:var(--blue-bg);color:#315d5a;line-height:1.55}
+  .mini-labels{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+  .label{font-size:11px;font-weight:850;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:6px 9px;border:1px solid}
+  .fact{color:#275b7a;background:#edf6fb;border-color:#b9d9ea}
+  .interp{color:#7b5d1c;background:var(--gold-bg);border-color:#ead69c}
+  .hyp{color:#7a3a3a;background:#fff1ef;border-color:#edc0ba}
+
+  .memory3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .memory{background:#fff;border:1px solid var(--line);border-radius:15px;padding:18px}
+  .memory strong{font-size:30px;display:block;color:#9cb0bf;margin-bottom:8px}
+  .memory b{font-size:18px;display:block;margin-bottom:7px}
+  .memory p{color:var(--muted);line-height:1.5;margin:0}
+
+  .controls{display:flex;gap:8px;flex-wrap:wrap}
+  .seg{padding:8px 12px;border-radius:10px;background:#fff;border:1px solid var(--line);font-weight:750;font-size:13px;cursor:pointer}
+  .seg.active{background:var(--brand-dark);color:#fff;border-color:var(--brand-dark)}
+
+  .driver-list{display:grid;gap:10px;margin-top:12px}
+  .driver{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fbfcfd;cursor:pointer}
+  .driver-top{display:flex;justify-content:space-between;gap:14px;align-items:center}
+  .driver-name{font-weight:800}
+  .driver .detail{display:none;color:#607486;font-size:13px;line-height:1.5;margin-top:8px;padding-top:8px;border-top:1px solid var(--line)}
+  .driver.open .detail{display:block}
+  .bar{height:7px;border-radius:99px;background:#e8eef3;margin-top:9px;overflow:hidden}
+  .bar > i{display:block;height:100%;border-radius:99px}
+  .bearbar{background:var(--bear)} .bullbar{background:var(--bull)}
+  .balance{display:grid;grid-template-columns:1fr 160px 1fr;gap:16px;align-items:center}
+  .scale{height:16px;border-radius:99px;background:linear-gradient(90deg,var(--bear),#e7c8a6 48%,#dceee8 52%,var(--bull));position:relative}
+  .needle{position:absolute;top:-7px;width:3px;height:30px;background:var(--ink);left:36%;border-radius:2px}
+  .scale-label{font-size:12px;color:var(--muted);display:flex;justify-content:space-between;margin-top:7px}
+
+  .level-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
+  .level-ladder{position:relative;padding:12px 0}
+  .level-line{position:absolute;left:18px;top:20px;bottom:20px;width:2px;background:#cbd8e2}
+  .level{position:relative;margin:10px 0 10px 34px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:#fff}
+  .level:before{content:"";position:absolute;left:-23px;top:50%;transform:translateY(-50%);width:12px;height:12px;border-radius:50%;background:#9fb2c2;border:3px solid white;box-shadow:0 0 0 1px #9fb2c2}
+  .level.critical{border-color:#e7abab;background:#fff5f3}.level.critical:before{background:var(--bear);box-shadow:0 0 0 1px var(--bear)}
+  .level.support{border-color:#abd4c9;background:#f2fbf8}.level.support:before{background:var(--bull);box-shadow:0 0 0 1px var(--bull)}
+  .level b{font-size:17px}
+  .level span{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+
+  .mini-chart{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .metricbox{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fff}
+  .metricbox h3{margin:0 0 10px;font-size:16px}
+  .compare{display:grid;gap:8px}
+  .compare-row{display:grid;grid-template-columns:70px 1fr 70px;gap:10px;align-items:center;font-size:13px}
+  .track{height:12px;background:#eaf0f4;border-radius:8px;overflow:hidden}
+  .fill{height:100%;background:var(--neutral)}
+  .physical-note{margin-top:12px;padding:12px 14px;background:#edf5fa;border-radius:12px;color:#315d5a;font-weight:700;line-height:1.5}
+
+  .relation{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+  .relation-card{border:1px solid var(--line);border-radius:14px;background:#fff;padding:16px}
+  .relation-card h3{margin:0 0 10px;font-size:17px}
+  .relation-row{display:grid;grid-template-columns:1fr 34px 1fr;gap:8px;align-items:center}
+  .relation-box{padding:12px;border-radius:11px;text-align:center;background:#f7f9fb;border:1px solid var(--line);font-size:13px;font-weight:800}
+  .relation-arrow{text-align:center;color:#91a5b5;font-size:20px;font-weight:900}
+
+  .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;align-items:stretch}
+  .flow .step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px;position:relative}
+  .flow .step:not(:last-child):after{content:"→";position:absolute;right:-17px;top:50%;transform:translateY(-50%);color:#91a5b5;font-size:22px;font-weight:900;z-index:2}
+  .step b{display:block;margin-bottom:4px}.step span{font-size:13px;color:var(--muted)}
+
+  .timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+  .event{border-top:4px solid #9aaebe;background:#fff;border-radius:10px;border-left:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:13px}
+  .event.red{border-top-color:var(--bear)} .event.green{border-top-color:var(--bull)}
+  .event time{font-size:11px;color:var(--muted);font-weight:800}
+  .event b{display:block;margin:5px 0;font-size:14px}.event p{font-size:12px;color:var(--muted);margin:0;line-height:1.4}
+
+  .glossary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+  summary{cursor:pointer;font-weight:800}
+  details p{color:var(--muted);font-size:13px;line-height:1.5}
+
+  .checklist{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+  .check{background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px;display:flex;gap:10px;align-items:flex-start}
+  .check input{margin-top:3px}
+  .final{background:var(--brand-dark);color:#fff;border-radius:18px;padding:24px}
+  .final h2{margin:0 0 8px}.final p{margin:0;color:#dbe8f1;line-height:1.6}
+  .source{font-size:12px;color:#7d8b98;margin-top:12px}
+  footer{padding:30px 22px 50px;text-align:center;color:#7b8b99;font-size:12px}
+
+
+    .brand-rule{height:4px;background:linear-gradient(90deg,var(--brand) 0 58%,var(--metal) 58% 72%,transparent 72%);border-radius:99px;margin:0 0 20px;width:150px}
+  .auricchio-kicker{display:flex;align-items:center;gap:10px;color:var(--brand-dark);font-size:12px;font-weight:850;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+  .auricchio-kicker:before{content:"";width:26px;height:3px;background:var(--brand);border-radius:99px}
+  .industrial-band{border:1px solid #d9e2e1;background:linear-gradient(135deg,#273b3d 0%,#3c5052 52%,#6f7d7f 52%,#889497 100%);border-radius:16px;padding:18px;color:white;position:relative;overflow:hidden}
+  .industrial-band:after{content:"";position:absolute;right:-30px;top:-55px;width:180px;height:180px;border:32px solid rgba(255,255,255,.07);transform:rotate(35deg)}
+  .industrial-band b{position:relative;z-index:2;font-size:18px}.industrial-band p{position:relative;z-index:2;color:#e5eeee;margin:6px 0 0;max-width:760px;line-height:1.5}
+  .card,.starter,.question-card,.guided-panel,.guided-menu,.metricbox,.relation-card,.path,.demand-card,.source-panel,.memory,.evidence{border-color:#dfe6e5}
+  .tag{background:var(--brand-soft);color:var(--brand-dark)}
+  .seg.active{background:var(--brand-dark);border-color:var(--brand-dark)}
+  .guided-menu button.active{background:var(--brand-soft);color:var(--brand-dark)}
+  .block .num{background:var(--brand)}
+  .physical-note,.insight{background:var(--brand-soft);color:#315d5a}
+  .final{background:linear-gradient(135deg,var(--brand-dark),#2e4648)}
+  .final p{color:#e8f3f2}
+  .level.support{border-color:#a8d5cf;background:#f0f9f7}
+  .level.critical{border-color:#e5b3ad;background:#fff4f2}
+  .fact{color:#256b67;background:#eaf7f5;border-color:#b9ddd9}
+  .interp{color:#6a5b2a;background:#fff8e8;border-color:#e7d79e}
+  .hyp{color:#7a3a3a;background:#fff1ef;border-color:#edc0ba}
+
+  @media(max-width:900px){
+    .cards4,.timeline,.memory3{grid-template-columns:repeat(2,1fr)}
+    .columns,.level-wrap,.balance,.starter-grid,.guided,.relation{grid-template-columns:1fr}
+    .guided-menu{position:static;display:flex;overflow:auto}
+    .guided-menu button{min-width:180px}
+    .flow{grid-template-columns:1fr 1fr}.flow .step:after{display:none}
+    .checklist,.glossary{grid-template-columns:1fr 1fr}
+    .four-blocks{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:560px){
+    .topbar .wrap{align-items:flex-start;flex-direction:column;gap:8px}
+    .hero .wrap{padding-top:36px}
+    .cards4,.timeline,.flow,.checklist,.glossary,.mini-chart,.memory3,.four-blocks{grid-template-columns:1fr}
+    .question-card{grid-template-columns:1fr}
+    .cause{grid-template-columns:1fr}
+    .cause .arrow{transform:rotate(90deg)}
+  }
+  .impact-badge{font-size:11px;font-weight:850;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:5px 8px;background:#eef3f7;color:#496277;border:1px solid #d7e1e8}
+  .driver-top-right{display:flex;align-items:center;gap:8px}
+  .evidence-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .evidence{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+  .evidence h3{margin:0 0 8px;font-size:17px}
+  .evidence p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}
+  .big-callout{background:linear-gradient(180deg,#ffffff 0%,#f6f9fb 100%);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
+  .big-callout h3{margin:0 0 10px;font-size:22px}
+  .big-callout p{margin:0;color:var(--muted);line-height:1.6}
+  .two-paths{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .path{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+  .path h3{margin:0 0 10px;font-size:17px}
+  .path ul{margin:0;padding-left:18px;color:var(--muted);line-height:1.65;font-size:13px}
+  .data-table{width:100%;border-collapse:collapse;font-size:13px}
+  .data-table th,.data-table td{padding:11px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  .data-table th{color:#5b7184;font-size:11px;text-transform:uppercase;letter-spacing:.07em}
+  .data-table tr:last-child td{border-bottom:0}
+  .note-box{padding:13px 15px;border:1px dashed #b9c8d4;border-radius:12px;background:#fbfcfd;color:#5e7283;font-size:13px;line-height:1.55}
+  .source-panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+  .source-panel summary{font-weight:850}
+  .source-panel p,.source-panel li{font-size:13px;color:var(--muted);line-height:1.55}
+  .signal-row{display:grid;grid-template-columns:150px 1fr 120px;gap:10px;align-items:center;margin:9px 0}
+  .signal-name{font-weight:800;font-size:13px}
+  .signal-track{height:10px;background:#edf1f4;border-radius:99px;overflow:hidden}
+  .signal-fill{height:100%;border-radius:99px}
+  .signal-bear{background:var(--bear)} .signal-bull{background:var(--bull)} .signal-neutral{background:#8ca0b2}
+  .signal-label{text-align:right;font-size:12px;color:var(--muted);font-weight:800}
+  .demand-map{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .demand-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+  .demand-card h3{margin:0 0 6px;font-size:17px}
+  .demand-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}
+  .status-dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}
+  .dot-red{background:var(--bear)} .dot-green{background:var(--bull)} .dot-gray{background:#8ca0b2}
+
+  @media(max-width:980px){
+    .topbar .wrap{min-height:70px;padding:10px 18px}
+    .menu-toggle{display:block}
+    .nav-shell{position:relative}
+    .main-nav{display:none;position:absolute;right:0;top:48px;width:230px;padding:8px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 18px 40px rgba(38,58,61,.14);flex-direction:column;align-items:stretch;z-index:40}
+    .main-nav.open{display:flex}
+    .main-nav>a,.more-menu>summary{padding:11px 12px}
+    .more-dropdown{position:static;width:auto;margin:4px 0 0;box-shadow:none;border:0;border-left:2px solid var(--brand-soft);border-radius:0;padding:2px 0 2px 8px}
+  }
+  @media(max-width:560px){
+    .topbar .wrap{flex-direction:row;align-items:center;gap:12px}
+    .brand-name{font-size:17px}
+    .brand-sub{font-size:9px;letter-spacing:.12em}
+    .brand-accent{height:34px}
+    .main-nav{right:-2px;width:min(250px,calc(100vw - 28px))}
+  }
+
+
+:root{--copper:#a6684f;--copper-light:#fbf2ed}
+html{scroll-padding-top:90px}body{overflow-x:hidden}
+.hero h1{max-width:1080px}.hero .lede{max-width:920px}
+.source-stamp{font-size:12px;font-weight:700;color:var(--muted);margin-top:15px}
+.informative{font-size:13px;line-height:1.65;color:var(--ink2)}
+.section-lead{margin:2px 0 18px;color:var(--muted);line-height:1.6}
+.kpis3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.kpi-figure{font-size:28px;font-weight:850;letter-spacing:-.04em;margin:8px 0;color:#243238}
+.kpi-sub{color:#728086;font-size:13px;line-height:1.45}
+.smallprint{font-size:12px;line-height:1.6;color:#728086}
+.signal-bear-text{color:var(--bear)}.signal-bull-text{color:var(--bull)}
+.cop-chart{background:white;border:1px solid var(--line);border-radius:15px;padding:16px}
+.cop-chart h3{margin:0 0 9px;font-size:17px}
+.cop-chart .chart-meta{font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:15px}
+.cop-barline{display:grid;grid-template-columns:95px 1fr 110px;align-items:center;gap:12px;margin:12px 0;font-size:13px}
+.cop-bar-track{height:15px;background:#edf1f1;border-radius:20px;overflow:hidden}
+.cop-bar-fill{height:100%;background:#99acae;border-radius:20px;min-width:3px}
+.cop-bar-fill.up{background:var(--bear)}.cop-bar-fill.down{background:var(--bull)}
+.cop-bar-figure{text-align:right;font-variant-numeric:tabular-nums;font-weight:800}
+.cop-delta{margin-top:11px;border-top:1px solid var(--line);padding-top:10px;font-size:13px;font-weight:800}
+.source-tag{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:800;margin-bottom:7px}
+.chart-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.premium-row{display:grid;grid-template-columns:1fr auto;align-items:center;gap:15px;padding:12px 0;border-bottom:1px solid var(--line)}
+.premium-row:last-child{border-bottom:0}.premium-row b{font-variant-numeric:tabular-nums}
+.list-lines{line-height:1.7;font-size:14px;color:var(--ink2);padding-left:18px}
+.meter-balance{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.outlook-card{background:#fff;border:1px solid var(--line);padding:18px;border-radius:14px}
+.outlook-card h3{font-size:17px;margin:0 0 8px}
+.outlook-card p{color:var(--muted);line-height:1.55;font-size:14px;margin:0}
+.horizontal-steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;margin-top:15px}
+.horizontal-steps .step{background:#fff;border:1px solid var(--line);padding:12px;border-radius:12px;min-width:0}
+.horizontal-steps .step b{font-size:13px}
+.horizontal-steps .step p{font-size:12px;line-height:1.5;color:var(--muted);margin:3px 0 0}
+.forecast-wrap{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.forecast{padding:17px;border:1px solid var(--line);background:#fff;border-radius:14px}
+.forecast .huge{font-size:30px;font-weight:900;margin:9px 0 6px;letter-spacing:-.03em}
+.forecast .desc{font-size:13px;color:var(--muted);line-height:1.45}
+.forecast .rail{height:8px;border-radius:20px;background:#edf1f1;margin-top:16px;overflow:hidden}
+.forecast .rail i{display:block;height:100%;border-radius:20px}
+.caveat{padding:15px 17px;border-left:3px solid #9b7a3d;background:#fff9eb;font-size:13px;line-height:1.7;color:#5d5747;border-radius:0 10px 10px 0}
+.date-flag{padding:8px 10px;font-size:11px;color:var(--muted);background:#f4f7f7;border-radius:9px}
+.timeline{grid-template-columns:repeat(6,minmax(0,1fr))}
+.timeline .event{min-width:0}
+.copper-label{color:var(--copper);font-weight:800}
+.driver{outline-offset:3px}.driver:focus-visible{outline:2px solid var(--brand)}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+@media(max-width:1050px){.timeline{grid-template-columns:repeat(3,1fr)}.horizontal-steps{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:720px){.evidence-grid,.demand-map{grid-template-columns:1fr}.kpis3,.chart-pair,.forecast-wrap,.meter-balance{grid-template-columns:1fr}.horizontal-steps{grid-template-columns:1fr}.cop-barline{grid-template-columns:80px minmax(0,1fr) 92px;gap:7px;font-size:12px}.timeline{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:460px){.timeline{grid-template-columns:1fr}.hero .lede{font-size:16px}.hero h1{line-height:1.08}.cop-barline{grid-template-columns:72px 1fr 86px;gap:5px}.cop-chart{padding:12px}.level-wrap{min-width:0}}
+</style></head><body data-metal="CU" data-source-date="2026-11-17" data-report-name="Copper oversold as it approaches June low">
+<header class="topbar"><div class="wrap">
+  <a class="brand-lockup" href="#comece" aria-label="Auricchio Market Intelligence"><span class="brand-accent" aria-hidden="true"></span><span class="brand-copy"><span class="brand-name">AURICCHIO</span><span class="brand-sub">Market Intelligence · Cobre</span></span></a>
+  <div class="nav-shell"><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button>
+  <nav class="main-nav" id="mainNav" aria-label="Navegação principal"><a class="primary-nav" href="#guia">Visão geral</a><a href="#macro">Macro</a><a href="#niveis">Técnico</a><a href="#fisico">Físico</a><a href="#oferta">Oferta</a><a href="#demanda">Demanda</a><details class="more-menu"><summary>Mais</summary><div class="more-dropdown"><a href="#panorama">Panorama</a><a href="#forcas">Forças</a><a href="#posicionamento">Fundos</a><a href="#cronologia">Linha do tempo</a><a href="#glossario">Glossário</a><a href="#fontes">Fontes e limites</a></div></details></nav></div>
+</div></header>
+<div class="hero"><div class="wrap"><div class="brand-rule"></div><div class="eyebrow">AURICCHIO · MARKET INTELLIGENCE · COBRE · NOVEMBRO 2026</div>
+<h1>O cobre está sobrevendido. Por que ainda pode cair?</h1>
+<div class="lede">O cobre LME de três meses <b>perdeu a média de 200 dias, em US$ 13.612/t</b>, e aproxima-se da mínima de junho (US$ 12.988/t). O RSI indica sobrevenda, mas o estocástico continua negativo. Enquanto isso, a backwardation diminui e a oferta de concentrado segue apertada. <b>Sobrevenda pode produzir repiques, não necessariamente um fundo de preço.</b></div>
+<div class="hero-actions"><button class="primary" type="button" onclick="document.querySelector('#guia').scrollIntoView()">Entender em 5 minutos</button><button type="button" onclick="document.querySelector('#fisico').scrollIntoView()">Explorar os dados</button><button type="button" onclick="exportResumo()">Exportar resumo</button></div>
+<div class="source-stamp">Relatório-base: Fastmarkets, 17/11/2026 (07:49 GMT) · Comparações históricas: 13/11 · Sem cotação ao vivo</div></div></div>
+<div class="question"><div class="question-card"><div><h2>Pergunta central</h2><p>A perda da média de 200 dias anuncia uma correção mais profunda ou a sobrevenda atrairá compradores de longo prazo?</p></div><div class="tag">FASTMARKETS · 17 NOV 2026</div></div></div>
+<main>
+<section style="margin-top:8px"><div class="industrial-band"><b>Inteligência de mercado para a cadeia do cobre</b><p>Uma leitura conectada de técnico, estoques de bolsa, spreads, oferta de concentrados, prêmios físicos e comportamento dos fundos — com fatos, interpretações e cenários separados.</p></div></section>
+<section id="comece"><div class="starter"><div class="starter-grid"><div><div class="eyebrow">Antes de analisar os números</div><h3>O cobre é negociado em mercados que podem enviar sinais diferentes</h3><p>Preço de bolsa, disponibilidade de cátodo, oferta de concentrado e demanda industrial não são a mesma coisa. Uma recuperação em um desses blocos não garante melhora nos demais.</p></div><div class="four-blocks">
+<div class="block"><div class="num">1</div><b>Técnico</b><span>Preço, médias móveis, suporte perdido, RSI e posicionamento financeiro.</span></div><div class="block"><div class="num">2</div><b>Macro</b><span>Tecnologia/IA, tarifas dos EUA, arbitragem e sentimento.</span></div><div class="block"><div class="num">3</div><b>Físico</b><span>LME, CME, SHFE e backwardation em desaceleração.</span></div><div class="block"><div class="num">4</div><b>Cadeia produtiva</b><span>Greve no Canadá, Oyu Tolgoi, concentrado, SX-EW e consumidores.</span></div>
+</div></div></div></section>
+<section id="guia"><div class="section-head"><div><h2>Entenda este relatório em 5 minutos</h2><p>Cinco respostas para compreender a tese antes de entrar nos detalhes.</p></div></div><div class="guided"><div class="guided-menu">
+<button type="button" class="active" data-step="0">1. O que aconteceu?</button><button type="button" data-step="1">2. Por que enfraqueceu?</button><button type="button" data-step="2">3. O que sustenta?</button><button type="button" data-step="3">4. O que pode mudar?</button><button type="button" data-step="4">5. O que observar?</button>
+</div><div class="guided-panel" id="guidedPanel" aria-live="polite"></div></div></section>
+<section><div class="section-head"><div><h2>Se você lembrar de apenas 3 coisas</h2><p>As mensagens que realmente mudaram de 13 para 17 de novembro.</p></div></div><div class="memory3">
+<div class="memory"><strong>01</strong><b>Suporte perdido</b><p>A média de 200 dias, US$ 13.612/t, deixou de sustentar o preço e passa a atuar como resistência.</p></div>
+<div class="memory"><strong>02</strong><b>Sobrevendido não é fundo</b><p>RSI sobrevendido e candle Doji sinalizam cautela e indecisão; estocástico continua negativo.</p></div>
+<div class="memory"><strong>03</strong><b>Físico em ritmos distintos</b><p>Backwardation encolheu para US$ 25,86/t, mas SHFE caiu a 27.642 t e a oferta de concentrado segue restrita.</p></div>
+</div></section>
+<section id="evidencias"><div class="section-head"><div><h2>Fato, interpretação ou cenário?</h2><p>Três tipos de afirmação, com limites explícitos.</p></div></div><div class="evidence-grid">
+<div class="evidence"><div class="mini-labels" style="margin-top:0"><span class="label fact">Fato do relatório</span></div><h3>O que a Fastmarkets registrou</h3><p>200 DMA rompida em US$ 13.612/t; LME em 327.457 t; SHFE em 27.642 t (13/11); Cash–3M em backwardation de US$ 25,86/t.</p></div>
+<div class="evidence"><div class="mini-labels" style="margin-top:0"><span class="label interp">Interpretação</span></div><h3>O que os sinais sugerem</h3><p>RSI sobrevendido aumenta a possibilidade de repique, mas queda do spread e rompimento da média reforçam a vulnerabilidade no curto prazo.</p></div>
+<div class="evidence"><div class="mini-labels" style="margin-top:0"><span class="label hyp">Hipótese / previsão</span></div><h3>O que ainda pode acontecer</h3><p>Nova queda até US$ 12.988/t é um risco, não fato. Déficit global de cerca de 340 mil t em 2027 é projeção da consultoria.</p></div>
+</div></section>
+<section id="panorama"><div class="section-head"><div><h2>Panorama por horizonte</h2><p>O viés muda conforme o período analisado.</p></div><div class="controls"><button class="seg active" type="button" data-h="curto">Curto prazo</button><button class="seg" type="button" data-h="medio">Médio prazo</button><button class="seg" type="button" data-h="longo">Longo prazo</button></div></div><div class="grid cards4" id="horizonCards" aria-live="polite"></div></section>
+<section id="forcas"><div class="section-head"><div><h2>Forças que pressionam e sustentam o preço</h2><p>Abra cada fator para ver o dado, a interpretação e a limitação.</p></div></div><div class="grid columns"><div class="card"><small>Pressiona o preço</small><div class="driver-list" id="bearDrivers"></div></div><div class="card"><small>Dá suporte ao preço</small><div class="driver-list" id="bullDrivers"></div></div></div>
+<div class="meter-balance" style="margin-top:14px"><div class="outlook-card"><h3>Leitura de curto prazo</h3><p>Queda acelerada após o rompimento da 200 DMA, com estocástico negativo. O RSI indica sobrevenda, mas não comprova fundo; o primeiro teste de recuperação é reconquistar US$ 13.612/t.</p></div><div class="outlook-card"><h3>Contrapeso fundamental</h3><p>Concentrados escassos, custos de processamento pressionados e riscos de interrupção dão suporte à tese de oferta, especialmente em 2027.</p></div></div></section>
+<section id="macro"><div class="section-head"><div><h2>Macro: tecnologia, tarifas e arbitragem</h2><p>Diferenciar mudança de sentimento financeiro de alteração efetiva do consumo de cobre.</p></div></div>
+<div class="big-callout"><h3>Incerteza em IA e chips adiciona pressão financeira</h3><p>Em 17/11, segundo a Fastmarkets, as bolsas seguiam pressionadas em meio a restrições adicionais dos EUA ao acesso de empresas chinesas a chips avançados de IA e à expectativa pelos resultados da Nvidia. Isso altera expectativas de investimentos em tecnologia e data centers; <b>não prova queda atual do consumo físico de cobre.</b></p><div class="mini-labels"><span class="label fact">Fato relatado pela fonte</span><span class="label interp">Canal de expectativa</span></div></div>
+<div class="relation" style="margin-top:14px"><div class="relation-card"><h3>Canal de expectativas</h3><div class="relation-row"><div class="relation-box">Restrições a chips de IA</div><div class="relation-arrow">→</div><div class="relation-box">Incerteza sobre investimentos futuros</div></div><div class="relation-row" style="margin-top:8px"><div class="relation-box">Menor apetite por risco</div><div class="relation-arrow">→</div><div class="relation-box">Pressão possível sobre o cobre</div></div><p class="smallprint">Interpretação de transmissão financeira; não é evidência de redução de encomendas de cátodo.</p></div>
+<div class="relation-card"><h3>Arbitragem CME/LME</h3><div class="relation-row"><div class="relation-box">Expectativa de tarifa Section 232 recua</div><div class="relation-arrow">→</div><div class="relation-box">Prêmio CME/LME se estreita</div></div><div class="relation-row" style="margin-top:8px"><div class="relation-box">Vantagem relativa da destinação aos EUA muda</div><div class="relation-arrow">→</div><div class="relation-box">Fluxos comerciais podem mudar</div></div><p class="smallprint">O research associa o estoque da CME acima de 760 mil t a arbitragem favorável; não quantifica o fluxo causado por tarifas.</p></div></div>
+<div class="note-box" style="margin-top:14px"><b>Leitura importante:</b> reavaliação do futuro de data centers pode pressionar o preço de bolsa hoje, mesmo sem evidência de mudança proporcional no consumo físico hoje. Incerteza sobre resultados de uma empresa de tecnologia não deve ser tratada como proxy de demanda de cobre.</div></section>
+<section id="niveis"><div class="section-head"><div><h2>Técnico: o suporte virou resistência</h2><p>LME de três meses · US$/t · referências do research de 17/11, não cotações ao vivo.</p></div><div class="controls"><button class="seg active" type="button" data-s="base">Cenário-base</button><button class="seg" type="button" data-s="bear">Se continuar caindo</button><button class="seg" type="button" data-s="bull">Se reagir</button></div></div>
+<div class="level-wrap"><div class="card"><div class="level-ladder"><div class="level-line"></div>
+<div class="level"><b>US$ 14.204/t</b><span>40 DMA · resistência superior em uma recuperação.</span></div>
+<div class="level"><b>US$ 14.065/t</b><span>100 DMA · referência intermediária, acima do preço.</span></div>
+<div class="level"><b>US$ 13.960/t</b><span>20 DMA · primeira média curta relevante acima da 200 DMA.</span></div>
+<div class="level critical"><b>US$ 13.612/t</b><span>200 DMA + Fibonacci 61,8% · suporte rompido, agora resistência.</span></div>
+<div class="level support"><b>US$ 12.988/t</b><span>Mínima de 24/06 · referência para uma correção mais profunda.</span></div>
+</div></div><div class="card"><small>O que muda no cenário</small><div class="value" id="scenarioTitle">Correção segue dominante</div><p id="scenarioText">A perda de US$ 13.612/t agravou a estrutura. RSI em sobrevenda e Doji sugerem hesitação, mas não neutralizam o estocástico negativo nem confirmam reversão.</p><div class="mini-labels"><span class="label fact">Fato reportado</span><span class="label interp">Interpretação</span><span class="label hyp">Cenário condicional</span></div><div class="caveat" style="margin-top:18px"><b>Conferência editorial:</b> a tabela lateral do PDF coloca US$ 12.693/t (máxima de 2025) em “resistências”, embora esteja abaixo da região de preço indicada no gráfico, e também lista várias médias acima do preço como suportes. Esta escada organiza os níveis pela posição atual descrita na análise, não pelos títulos inconsistentes da tabela.</div></div></div>
+<div class="note-box" style="margin-top:12px"><b>Leitura do gráfico na página 1:</b> em 13/11, a média de 200 dias ainda era uma sustentação provisória; em 17/11, o preço já a havia rompido. RSI em sobrevenda e candle Doji mostram possibilidade de pausa, não garantia de alta. Nenhum valor exato de fechamento foi inferido da imagem.</div>
+</section>
+<section id="fisico"><div class="section-head"><div><h2>Mercado físico: o aperto imediato perde intensidade</h2><p>Estoques visíveis e spread LME. Cada dado mantém a data de referência informada pela Fastmarkets.</p></div></div>
+<div class="kpis3"><div class="card"><small>LME · 17/11 (relatório)</small><div class="kpi-figure signal-bear-text">327.457 t</div><p>+102.032 t (+45,3%) frente a 15/10; -1.143 t ante o relatório de 13/11.</p></div>
+<div class="card"><small>SHFE · 13/11</small><div class="kpi-figure signal-bull-text">27.642 t</div><p>-6.206 t (-18,3%) ante 06/11. Movimento oposto à expansão acumulada na LME.</p></div>
+<div class="card"><small>Cash–3M · backwardation</small><div class="kpi-figure">US$ 25,86/t</div><p>Recua de US$ 194,55/t em 06/11 e US$ 73,93/t em 13/11.</p></div></div>
+<div class="chart-pair" style="margin-top:14px">
+<div class="cop-chart"><h3>LME · estoque de cobre</h3><div class="chart-meta">Comparação entre leituras documentadas. Toneladas; 15/10 é a base, 13/11 é relatório anterior.</div>
+<div class="cop-barline"><span>15/10</span><div class="cop-bar-track"><div class="cop-bar-fill" style="width:68.6%"></div></div><span class="cop-bar-figure">225.425</span></div>
+<div class="cop-barline"><span>13/11</span><div class="cop-bar-track"><div class="cop-bar-fill up" style="width:100%"></div></div><span class="cop-bar-figure">328.600</span></div>
+<div class="cop-barline"><span>17/11*</span><div class="cop-bar-track"><div class="cop-bar-fill up" style="width:99.7%"></div></div><span class="cop-bar-figure">327.457</span></div>
+<div class="cop-delta signal-bear-text">+45,3% vs. 15/10 · *valor reportado em 17/11</div></div>
+<div class="cop-chart"><h3>SHFE · estoque de cobre</h3><div class="chart-meta">Leituras com datas expressas nos relatórios. Toneladas.</div>
+<div class="cop-barline"><span>06/11</span><div class="cop-bar-track"><div class="cop-bar-fill" style="width:100%"></div></div><span class="cop-bar-figure">33.848</span></div>
+<div class="cop-barline"><span>13/11</span><div class="cop-bar-track"><div class="cop-bar-fill down" style="width:81.7%"></div></div><span class="cop-bar-figure">27.642</span></div>
+<div class="cop-delta signal-bull-text">-6.206 t (-18,3%) em uma semana</div></div>
+<div class="cop-chart"><h3>CME · estoque visível nos EUA</h3><div class="chart-meta">01/03/2025 versus patamar reportado; dado mais recente é limite inferior, não valor exato.</div>
+<div class="cop-barline"><span>01/03/25</span><div class="cop-bar-track"><div class="cop-bar-fill" style="width:12.3%"></div></div><span class="cop-bar-figure">93.173</span></div>
+<div class="cop-barline"><span>17/11*</span><div class="cop-bar-track"><div class="cop-bar-fill up" style="width:100%"></div></div><span class="cop-bar-figure">&gt;760.000</span></div>
+<div class="cop-delta">Acima de 8,15 vezes o nível inicial · *patamar citado</div></div>
+<div class="cop-chart"><h3>LME Cash–3M · backwardation</h3><div class="chart-meta">Prêmio da entrega imediata sobre o contrato de três meses (US$/t).</div>
+<div class="cop-barline"><span>06/11</span><div class="cop-bar-track"><div class="cop-bar-fill" style="width:100%"></div></div><span class="cop-bar-figure">194,55</span></div>
+<div class="cop-barline"><span>13/11</span><div class="cop-bar-track"><div class="cop-bar-fill down" style="width:38%"></div></div><span class="cop-bar-figure">73,93</span></div>
+<div class="cop-barline"><span>17/11*</span><div class="cop-bar-track"><div class="cop-bar-fill down" style="width:13.3%"></div></div><span class="cop-bar-figure">25,86</span></div>
+<div class="cop-delta">-86,7% desde 06/11 · ainda positivo</div></div></div>
+<div class="physical-note"><b>Interpretação:</b> o prêmio por entrega imediata permanece positivo, porém é muito menor. Isso enfraquece a tese de aperto extremo de curtíssimo prazo na LME. A queda adicional dos estoques SHFE e os prêmios asiáticos firmes apontam um quadro regional diferente. Não há evidência suficiente para chamar todo o mercado global de “folgado” ou de “escasso”.</div>
+<div class="note-box" style="margin-top:12px"><b>Limites:</b> os dados de LME e CME não revelam estoques mundiais; SHFE refere-se a 13/11; o relatório não informa cancelled warrants, entrada e saída diária por armazém, nem o volume exato dos estoques CME. Os três registros de spread são fotografias de relatórios, não uma série contínua.</div></section>
+<section id="premios"><div class="section-head"><div><h2>Prêmios físicos: China firme, Europa dividida</h2><p>O prêmio depende de região, produto, modalidade de entrega e horizonte contratual.</p></div></div>
+<div class="grid columns"><div class="card"><h3>Ásia · suporte do mercado spot</h3><p>O research relata alta dos prêmios de importação de cátodo em Xangai até 10/11, apoiada por prêmios firmes no mercado doméstico chinês. No Sudeste Asiático, alguns compradores entraram no spot em meio a oferta reduzida.</p><div class="mini-labels"><span class="label fact">Fato reportado</span><span class="label interp">Sinal de suporte regional</span></div></div>
+<div class="card"><h3>Europa · fraco no spot, firme no contrato</h3><p>Embora a demanda spot europeia esteja fraca, referências anuais subiram. Isso não é contradição: o preço de um contrato anual pode incorporar custos, negociação e condições de oferta, sem provar recuperação de consumo.</p><div class="mini-labels"><span class="label fact">Fato reportado</span><span class="label interp">Interpretação</span></div></div></div>
+<div class="card" style="margin-top:14px"><h3>Referências anuais citadas no research</h3><div class="premium-row"><div><b>Aurubis · referência anual FCA</b><div class="smallprint">De US$ 315/t para US$ 347/t</div></div><b>+US$ 32/t</b></div><div class="premium-row"><div><b>Codelco · oferta para 2027</b><div class="smallprint">De US$ 325/t (ano anterior) para US$ 350/t ofertados</div></div><b>+US$ 25/t</b></div><div class="smallprint" style="margin-top:10px">A proposta da Codelco é uma oferta, não necessariamente um prêmio negociado. Não comparar valores FCA, spot e ofertas anuais como se fossem a mesma cotação.</div></div>
+</section>
+<section id="oferta"><div class="section-head"><div><h2>Oferta: concentrado apertado e novas interrupções de minas</h2><p>O relatório atual acrescenta riscos operacionais relevantes no Canadá à discussão de Oyu Tolgoi, El Niño e SX-EW.</p></div></div>
+<div class="horizontal-steps"><div class="step"><b>1. Mineração</b><p>El Niño, paralisação reportada de Oyu Tolgoi e greve em Highland Valley Copper.</p></div><div class="step"><b>2. Concentrado</b><p>Oferta restrita e competição por matéria-prima.</p></div><div class="step"><b>3. Fusão / refino</b><p>TC negativo e margens pressionadas nas fundições.</p></div><div class="step"><b>4. SX-EW</b><p>Disponibilidade potencialmente limitada de ácido sulfúrico.</p></div><div class="step"><b>5. Cátodo e preço</b><p>Menor produção refinada é risco condicional, não volume comprovado.</p></div></div>
+<div class="grid columns" style="margin-top:14px"><div class="card"><small>Índice TC · CIF Ásia-Pacífico · 13/11</small><div class="value">US$ -277,80/t</div><p>O relatório anterior citava US$ -281,60/t em 30/10. O indicador ficou menos negativo em US$ 3,80/t, mas continua em patamar de forte pressão para as fundições. Datas não coincidem.</p><div class="mini-labels"><span class="label fact">Fato do research</span><span class="label interp">Comparação calculada</span></div></div>
+<div class="card"><small>Interrupção reportada · Canadá</small><div class="value">HVC · 4ª semana</div><p>O relatório registra greve na mina Highland Valley Copper, da Teck, já na quarta semana. Não informa volume de cobre perdido nem data de normalização.</p><div class="mini-labels"><span class="label fact">Evento reportado</span><span class="label hyp">Impacto não quantificado</span></div></div>
+<div class="card"><small>Interrupção reportada · Mongólia</small><div class="value">Oyu Tolgoi</div><p>A Fastmarkets informa que a Rio Tinto paralisou a operação subterrânea após evento sísmico. O research não dimensiona perda acumulada.</p><div class="mini-labels"><span class="label fact">Evento reportado</span></div></div>
+<div class="card"><small>Risco industrial · SX-EW</small><div class="value">Ácido sulfúrico</div><p>Possíveis restrições ao enxofre podem limitar ácido sulfúrico e atingir extração/processamento de concentrados. O tamanho do impacto ainda não foi informado.</p><div class="mini-labels"><span class="label hyp">Risco prospectivo</span></div></div></div>
+<div class="caveat" style="margin-top:14px"><b>Critério analítico:</b> não somar greves, eventos sísmicos, TC negativo e riscos climáticos como se fossem toneladas comparáveis. A consultoria descreve mecanismos e eventos, mas não calcula um déficit incremental atribuível a eles.</div></section>
+<section id="demanda"><div class="section-head"><div><h2>Demanda: expectativas de IA não são consumo físico</h2><p>As evidências de 17/11 combinam preocupação financeira com tecnologia e sinais físicos regionais heterogêneos.</p></div></div>
+<div class="demand-map"><div class="demand-card"><h3><span class="status-dot dot-red"></span>Financeiro · IA e chips</h3><p>Restrição de acesso chinês a chips avançados e espera pelos resultados da Nvidia elevam a incerteza sobre data centers. É sentimento de mercado, não volume de cobre consumido.</p><div class="mini-labels"><span class="label fact">Fato reportado</span><span class="label interp">Canal financeiro</span></div></div>
+<div class="demand-card"><h3><span class="status-dot dot-green"></span>China e Sudeste Asiático</h3><p>Prêmios de importação de Xangai continuaram subindo até 10/11. Alguns compradores no Sudeste Asiático entraram no spot em meio à oferta reduzida. Dados mantidos como referência histórica do relatório.</p><div class="mini-labels"><span class="label fact">Fato reportado</span></div></div>
+<div class="demand-card"><h3><span class="status-dot dot-red"></span>Europa</h3><p>A demanda spot de cátodo permanece fraca na leitura do research. Prêmios anuais elevados de Aurubis e Codelco não provam recuperação de consumo.</p><div class="mini-labels"><span class="label fact">Fato reportado</span></div></div></div>
+<div class="two-paths" style="margin-top:14px"><div class="path"><h3>O preço pode reagir agora</h3><ul><li>Mercado reavalia o ritmo de investimentos em IA.</li><li>Fundos ajustam posições e apetite por risco.</li><li>O cobre perde suporte técnico.</li><li>Não é preciso observar queda instantânea de cátodo.</li></ul></div><div class="path"><h3>Para demonstrar queda física</h3><ul><li>Verificar consumo e pedidos efetivos por setor.</li><li>Comparar importações com dados de produção e estoques.</li><li>Separar volumes de construção, redes e data centers.</li><li>Examinar persistência de prêmios com volumes.</li></ul></div></div>
+<div class="note-box" style="margin-top:14px"><b>Longo prazo:</b> eletrificação e desglobalização continuam sendo fatores bullish na conclusão da Fastmarkets. Essa é a tese prospectiva da consultoria, não a confirmação de aumento do consumo de cobre em 17/11.</div></section>
+<section id="posicionamento"><div class="section-head"><div><h2>Fundos: perda de convicção compradora</h2><p>Última fotografia de COT repetida nos relatórios de 13/11 e 17/11. A data exata da posição não foi informada; não interpretar como mudança nova de 17/11.</p></div></div>
+<div class="grid columns"><div class="card"><small>Net long de fundos na LME</small><div class="value">18.085 lotes</div><p>Queda de 6.325 lotes ante o dado anterior. Posição anterior calculada: 24.410 lotes; redução de 25,9%.</p><div class="mini-labels"><span class="label fact">Fato</span><span class="label interp">Cálculo derivado</span></div></div>
+<div class="card"><small>O que provocou a redução</small><div class="value">Long liquidation + fresh shorts</div><p>O relatório atribui a queda tanto ao encerramento de posições compradas quanto ao aumento significativo de posições vendidas. Os volumes individuais não são divulgados.</p><div class="mini-labels"><span class="label fact">Fato reportado</span></div></div></div>
+<div class="cop-chart" style="margin-top:14px"><h3>Evolução da posição líquida comprada</h3><div class="chart-meta">Lotes de fundos · dados reportados e valor anterior calculado.</div><div class="cop-barline"><span>Anterior</span><div class="cop-bar-track"><div class="cop-bar-fill" style="width:100%"></div></div><span class="cop-bar-figure">24.410</span></div><div class="cop-barline"><span>Último COT</span><div class="cop-bar-track"><div class="cop-bar-fill up" style="width:74.1%"></div></div><span class="cop-bar-figure">18.085</span></div><div class="cop-delta signal-bear-text">−6.325 lotes (−25,9%)</div></div>
+<div class="note-box" style="margin-top:12px">Net long positivo significa que o grupo permanece comprado em termos líquidos. A queda da exposição não quer dizer que todos os fundos estejam vendidos. O relatório não informa o total de longs e shorts separadamente. O mesmo valor já aparecia no research anterior, sem evidência de atualização de posição.</div>
+</section>
+<section id="balanco"><div class="section-head"><div><h2>Balanço global: da folga estimada ao déficit projetado</h2><p>Estimativas da Fastmarkets, e não resultados efetivos já observados.</p></div></div>
+<div class="forecast-wrap"><div class="forecast"><div class="source-tag">2026 · estimativa Fastmarkets</div><div class="huge signal-bear-text">+150 mil t</div><div class="desc"><b>Superávit estimado.</b> A produção e o consumo globais ainda se equilibrariam com uma sobra aproximada no ano.</div><div class="rail"><i style="width:44%;background:var(--bear)"></i></div></div><div class="forecast"><div class="source-tag">2027 · projeção Fastmarkets</div><div class="huge signal-bull-text">−340 mil t</div><div class="desc"><b>Déficit projetado.</b> A diferença entre oferta e demanda passaria para terreno negativo, caso as premissas da consultoria se confirmem.</div><div class="rail"><i style="width:100%;background:var(--bull)"></i></div></div></div>
+<div class="insight" style="margin-top:14px">A mudança de +150 mil t para −340 mil t equivale a uma deterioração projetada de aproximadamente <b>490 mil t</b> no balanço anual. Isso reforça a tese estrutural de suporte, sem impedir quedas de preço no curto prazo.</div>
+<div class="smallprint" style="margin-top:10px">Sinal positivo = superávit; sinal negativo = déficit. As barras mostram magnitude absoluta em escala relativa de 0 a 340 mil t. Nenhuma delas representa probabilidades.</div></section>
+<section id="cronologia"><div class="section-head"><div><h2>Como a narrativa mudou</h2><p>Sequência temporal construída com os researches de 13/11 e 17/11 e seus marcos citados.</p></div></div><div class="timeline">
+<div class="event"><time>15 OUT</time><b>LME: 225.425 t</b><p>Ponto de referência para a expansão posterior de estoques.</p></div>
+<div class="event green"><time>06 NOV</time><b>Cash–3M: 194,55</b><p>Backwardation elevada; SHFE ainda em 33.848 t no dado semanal.</p></div>
+<div class="event red"><time>13 NOV · research</time><b>Base ainda possível</b><p>Preço acima da 200 DMA; LME 328.600 t e spread 73,93.</p></div>
+<div class="event green"><time>13 NOV · SHFE</time><b>27.642 t</b><p>Queda adicional de 6.206 t em uma semana; TC de -277,80.</p></div>
+<div class="event red"><time>17 NOV · research</time><b>200 DMA rompida</b><p>RSI sobrevendido; spread reduzido a US$ 25,86/t.</p></div>
+<div class="event red"><time>PRÓXIMO TESTE</time><b>US$ 12.988/t</b><p>Cenário condicional se a queda continuar; ainda não é uma mínima atingida.</p></div>
+</div></section>
+<section id="glossario"><div class="section-head"><div><h2>Glossário de leitura rápida</h2><p>Abra os conceitos usados nesta análise.</p></div></div><div class="glossary">
+<details><summary>Backwardation</summary><p>Condição em que o preço à vista supera o preço futuro. O spread ainda é positivo no research de 17/11, mas caiu muito desde 06/11.</p></details>
+<details><summary>Cash–3M</summary><p>Diferença entre o preço cash e o contrato de três meses da LME. Na sequência, caiu de US$ 194,55/t (06/11) para US$ 73,93/t (relatório 13/11) e US$ 25,86/t (relatório 17/11).</p></details>
+<details><summary>DMA</summary><p>Daily Moving Average: média móvel de n pregões. A 200 DMA indicada em 17/11 é US$ 13.612/t e passou a funcionar como resistência após seu rompimento.</p></details>
+<details><summary>Estocástico</summary><p>Indicador de momentum. Em 17/11 o research diz que continua negativo; níveis baixos não garantem fundo nem repique.</p></details>
+<details><summary>TC (Treatment Charge)</summary><p>Indicador econômico da etapa de tratamento de concentrados em fundições. Valor muito negativo costuma indicar competição intensa por matéria-prima.</p></details>
+<details><summary>SX-EW</summary><p>Solvent Extraction–Electrowinning: rota de produção que combina extração por solvente e eletrorrecuperação, frequentemente após lixiviação ácida.</p></details>
+<details><summary>Premium físico</summary><p>Adicional sobre referência de bolsa pago por metal físico conforme local, qualidade, prazo e condições de entrega.</p></details>
+<details><summary>Arbitragem CME/LME</summary><p>Operações que exploram diferenças de preço entre os mercados. Podem influenciar o direcionamento regional de estoques.</p></details>
+<details><summary>Long liquidation</summary><p>Encerramento de posições compradas, que reduz a exposição altista do investidor.</p></details>
+<details><summary>Fresh shorts</summary><p>Abertura de novas posições vendidas, indicando apostas adicionais na queda.</p></details>
+<details><summary>Net long</summary><p>Posição líquida comprada: total comprado menos total vendido para um grupo de participantes.</p></details>
+<details><summary>Dip-buying</summary><p>Compra após correções, buscando aproveitar preços mais baixos. Não confirma automaticamente que um fundo foi formado.</p></details>
+<details><summary>RSI e sobrevenda</summary><p>Índice de força relativa. Valores considerados sobrevendidos sugerem queda intensa recente, mas o indicador não determina quando o preço deixará de cair.</p></details>
+<details><summary>Doji</summary><p>Candle com abertura e fechamento próximos, representando indecisão. Sozinho não confirma mudança de tendência.</p></details>
+</div></section>
+<section><div class="section-head"><div><h2>Checklist do analista</h2><p>Cinco perguntas para acompanhar a tese nos próximos pregões.</p></div></div><div class="checklist">
+<label class="check"><input type="checkbox"><span>O cobre reconquistou a 200 DMA (US$ 13.612/t)?</span></label>
+<label class="check"><input type="checkbox"><span>A mínima de junho (US$ 12.988/t) está sendo testada?</span></label>
+<label class="check"><input type="checkbox"><span>A backwardation se mantém positiva ou zera?</span></label>
+<label class="check"><input type="checkbox"><span>LME, CME e SHFE seguem divergentes?</span></label>
+<label class="check"><input type="checkbox"><span>HVC/Oyu Tolgoi têm impactos quantificados no fornecimento?</span></label>
+</div></section>
+<section id="fontes"><div class="section-head"><div><h2>Fontes, metodologia e limites</h2><p>A leitura principal reflete o novo relatório, e o anterior é usado apenas para mostrar a mudança da tese.</p></div></div>
+<details class="source-panel" open><summary>Fonte atual, histórico e tratamentos</summary>
+<p><b>Relatório-base:</b> Fastmarkets, James Moore, <i>Research – Copper oversold as it approaches June low</i>, 17/11/2026, 07:49 GMT. Duas páginas.</p>
+<p><b>Comparação histórica:</b> Fastmarkets, <i>Research – Copper supported but looks vulnerable</i>, cabeçalho de 13/11/2026, com publicação indicada em 12/11, 09:25 GMT. Nenhum outro research foi usado.</p>
+<ul><li>Níveis de preço são referências técnicas do relatório, não cotação ao vivo. Não foi inferido fechamento exato a partir do gráfico.</li>
+<li>Na versão de 13/11, US$ 13.611/t (200 DMA) era suporte; em 17/11, US$ 13.612/t (200 DMA) foi rompido e passou a resistência.</li>
+<li>A caixa lateral do PDF de 17/11 mistura níveis acima do preço como “suporte” e US$ 12.693/t como “resistência”; a interpretação técnica segue o corpo da análise.</li>
+<li>LME 327.457 t e Cash–3M 25,86 são dados reportados em 17/11, sem data operacional intradiária especificada no documento; SHFE 27.642 t corresponde a 13/11.</li>
+<li>A CME é descrita apenas como “acima de 760.000 t”; sem valor pontual ou data precisa de estoque.</li>
+<li>Os dados de COT são repetidos nos dois relatórios e não contêm data exata, número de longs ou shorts brutos.</li>
+<li>Percentuais, variações de saldo e comparações entre documentos foram calculados explicitamente a partir dos valores informados nas fontes.</li>
+<li>Estoques de bolsa não representam estoque mundial. O documento não traz cancelled warrants, volumes de consumo setorial ou perdas quantificadas das interrupções.</li>
+<li>O déficit global de aproximadamente 340 mil t para 2027 é projeção da Fastmarkets, e o superávit de 150 mil t em 2026 é estimativa.</li>
+</ul></details></section>
+<section><div class="final"><h2>Mensagem final</h2><p><b>A correção técnica se aprofundou: a 200 DMA foi rompida, e o RSI sobrevendido ainda não confirma fundo.</b> A queda da backwardation indica alívio no aperto imediato da LME, enquanto estoques mais baixos em Xangai e restrições nas minas sustentam riscos de oferta. O suporte de US$ 12.988/t é a referência condicional da próxima etapa da queda. A tese estrutural para 2027 continua construtiva, mas não deve ser confundida com um sinal de compra de curto prazo. <b>Agora a pergunta é se os fundamentos vão atrair compradores antes de uma nova perda de preço.</b></p></div><div class="source">Fonte principal: Fastmarkets, “Copper oversold as it approaches June low”, 17/11/2026. Comparativo histórico: research 13/11. Sem dados intradiários ao vivo.</div></section>
+</main><footer><b style="color:var(--brand-dark);letter-spacing:.08em">AURICCHIO</b> · Observatório do Cobre · inteligência de mercado</footer>
+<script>
+const guidedSteps = [
+ {title:'1. O que aconteceu com o preço?',intro:'O cobre LME de três meses perdeu a 200 DMA em US$ 13.612/t. Era suporte na análise de 13/11 e virou resistência em 17/11. O novo research registra Doji e RSI sobrevendido, mas estocástico ainda negativo.',chain:['Suporte de 200 dias rompido','Preço sob pressão','US$ 12.988/t entra no radar'],insight:'Fato: rompimento e RSI sobrevendido. Interpretação: pode ocorrer reação, mas não há fundo técnico confirmado.',labels:['Fato','Interpretação']},
+ {title:'2. O que pressiona a cotação?',intro:'A perda da referência técnica se combina com menor convicção dos fundos, maior estoque acumulado na LME/CME e incerteza financeira sobre chips avançados e investimentos futuros em IA.',chain:['Técnico se deteriora','Tecnologia pressiona sentimento','Investidores se tornam cautelosos'],insight:'A incerteza sobre data centers não prova redução imediata do consumo físico de cobre.',labels:['Fato','Interpretação']},
+ {title:'3. O que ainda sustenta o mercado?',intro:'Os estoques SHFE caíram para 27.642 t, os prêmios na Ásia seguem firmes na referência de 10/11, e a oferta de concentrado continua sob pressão. A Fastmarkets também cita greve prolongada na HVC e paralisação em Oyu Tolgoi.',chain:['Minas enfrentam restrições','Concentrado permanece disputado','Risco para oferta refinada'],insight:'Os eventos não têm impacto agregado em toneladas quantificado. A backwardation caiu para US$ 25,86/t, reduzindo o sinal de aperto imediato.',labels:['Fato','Interpretação','Hipótese']},
+ {title:'4. O que pode mudar a história?',intro:'Se a queda continuar, US$ 12.988/t é a mínima de junho mencionada como possível teste. Para aliviar o viés bearish, seria importante reconquistar US$ 13.612/t e depois as médias de 20 e 100 dias.',chain:['Defender 12.988 ou reagir','Recuperar a 200 DMA','Conferir confirmação no físico'],insight:'Sobrevenda é condição de mercado, não previsão de recuperação. O balanço de 2027 permanece projeção.',labels:['Hipótese','Interpretação']},
+ {title:'5. O que acompanhar agora?',intro:'O conjunto mínimo de sinais que permite verificar se a tese mudou.',bullets:['US$ 12.988/t será testado ou haverá recuperação?', 'O cobre volta acima de US$ 13.612/t?', 'Cash–3M permanece em backwardation depois de cair a US$ 25,86/t?', 'A SHFE continua caindo enquanto LME/CME acumulam estoques?', 'As paralisações de HVC e Oyu Tolgoi afetam volumes mensuráveis?'],insight:'Uma reversão mais convincente reuniria melhora técnica e confirmação do físico, não apenas um RSI sobrevendido.',labels:['Checklist']}
+];
+
+function renderGuided(i){const s=guidedSteps[i];let body=`<h3>${s.title}</h3><div class="intro">${s.intro}</div>`;
+ if(s.chain){body+=`<div class="cause"><div class="box">${s.chain[0]}</div><div class="arrow">→</div><div class="box">${s.chain[1]}</div><div class="arrow">→</div><div class="box">${s.chain[2]}</div></div>`;}
+ if(s.bullets){body+=`<div class="card" style="box-shadow:none"><ol style="margin:0;padding-left:20px;color:#526779;line-height:1.8">${s.bullets.map(x=>`<li>${x}</li>`).join('')}</ol></div>`;}
+ body+=`<div class="insight">${s.insight}</div><div class="mini-labels">${s.labels.map(x=>`<span class="label ${x==='Fato'?'fact':x==='Interpretação'?'interp':x==='Hipótese'?'hyp':'fact'}">${x}</span>`).join('')}</div>`;
+ document.getElementById('guidedPanel').innerHTML=body;}
+renderGuided(0);
+document.querySelectorAll('[data-step]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('[data-step]').forEach(x=>x.classList.remove('active'));btn.classList.add('active');renderGuided(Number(btn.dataset.step));}));
+const horizonData={
+ curto:[['Viés','Bearish / sobrevendido','A 200 DMA foi rompida; RSI em sobrevenda não confirma fundo.','bear'],['Resistência imediata','US$ 13.612/t','200 DMA e Fibonacci 61,8%; antes era suporte.','bear'],['Risco de queda','US$ 12.988/t','Mínima de junho; teste condicional.','bear'],['Contrapeso','Concentrado restrito','SHFE em queda e riscos de oferta nas minas.','bull']],
+ medio:[['Viés','Corretivo / cauteloso','20, 100 e 40 DMA continuam acima do preço.','bear'],['Recuperação','US$ 13.612 → 13.960','Reverter a ruptura e superar 20 DMA seria o começo.',''],['Físico','Aperto desacelerando','Cash–3M de 194,55 para 25,86 em novembro.',''],['Risco de produção','HVC + Oyu Tolgoi','Interrupções citadas, sem perda total quantificada.','bull']],
+ longo:[['Visão','Tese construtiva','Eletrificação/desglobalização seguem fatores bullish.','bull'],['2026','+150 mil t','Superávit global estimado Fastmarkets.',''],['2027','−340 mil t','Déficit previsto, não resultado realizado.','bull'],['Limite','Fundamentos ≠ timing','Déficit futuro não impede correções atuais.','']]
+};
+
+function renderHorizon(h){document.getElementById('horizonCards').innerHTML=horizonData[h].map(x=>`<div class="card"><small>${x[0]}</small><div class="value ${x[3]}">${x[1]}</div><p>${x[2]}</p></div>`).join('');}
+renderHorizon('curto');document.querySelectorAll('[data-h]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('[data-h]').forEach(x=>x.classList.remove('active'));btn.classList.add('active');renderHorizon(btn.dataset.h);}));
+const bears=[
+ ['200 DMA rompida','Alto','Fato: o preço perdeu a média de 200 dias, US$ 13.612/t, alinhada ao Fibonacci de 61,8%. Interpretação: antigo suporte vira resistência; risco de teste de US$ 12.988/t. Limite: o rompimento não determina o tamanho da queda.'],
+ ['RSI sobrevendido não reverte o estocástico','Médio','Fato: a Fastmarkets descreve RSI sobrevendido, Doji e estocástico negativo. Interpretação: há possibilidade de pausa, mas não há confirmação de fundo. Limite: indicadores não fornecem probabilidade ou data de reação.'],
+ ['Aperto próximo diminui','Alto','Fato: backwardation Cash–3M de US$ 194,55/t em 06/11 para US$ 25,86/t em 17/11 (-86,7%). Interpretação: menos prêmio por entrega imediata. Limite: o spread permanece positivo.'],
+ ['IA e fundos mais cautelosos','Médio','Fato: o research cita restrições a chips avançados e net long de fundos em 18.085 lotes (-6.325). Interpretação: expectativas financeiras de crescimento se enfraquecem. Limite: COT sem data de posição e repetido no relatório anterior.']
+];
+const bulls=[
+ ['Concentrado ainda apertado','Alto','Fato: TC CIF Ásia-Pacífico de -US$ 277,80/t em 13/11; segue fortemente negativo. Interpretação: competição por matérias-primas pressiona fundições. Limite: não há quantidade exata de metal refinado afetado.'],
+ ['SHFE e prêmios asiáticos','Médio','Fato: SHFE recuou 6.206 t para 27.642 t em 13/11, enquanto prêmios físicos asiáticos estavam firmes na leitura de 10/11. Interpretação: disponibilidade regional segue restrita. Limite: não comprova déficit mundial.'],
+ ['HVC e Oyu Tolgoi','Médio','Fato: greve da HVC na quarta semana e paralisação da operação subterrânea de Oyu Tolgoi após evento sísmico, segundo a fonte. Interpretação: riscos adicionais à produção. Limite: nenhuma perda total foi quantificada.'],
+ ['2027: déficit projetado','Médio','Fato: projeção Fastmarkets de -340 mil t em 2027, ante estimativa de +150 mil t em 2026. Interpretação: base estrutural de suporte. Limite: previsão não oferece gatilho técnico imediato.']
+];
+
+function renderDrivers(id,data){document.getElementById(id).innerHTML=data.map(x=>`<div class="driver" tabindex="0" role="button" aria-expanded="false"><div class="driver-top"><span class="driver-name">${x[0]}</span><div class="driver-top-right"><span class="impact-badge">Impacto: ${x[1]}</span><span aria-hidden="true">⌄</span></div></div><div class="detail">${x[2]}</div></div>`).join('');}
+renderDrivers('bearDrivers',bears);renderDrivers('bullDrivers',bulls);
+function toggleDriver(d){d.classList.toggle('open');d.setAttribute('aria-expanded',String(d.classList.contains('open')));}
+document.addEventListener('click',e=>{const d=e.target.closest('.driver');if(d)toggleDriver(d);});
+document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.classList.contains('driver')){e.preventDefault();toggleDriver(e.target);}});
+const scenarios={
+ base:['Correção segue dominante','A perda de US$ 13.612/t agravou a estrutura. RSI em sobrevenda e Doji sugerem hesitação, mas não neutralizam o estocástico negativo nem confirmam reversão.'],
+ bear:['US$ 12.988/t pode ser testado','A Fastmarkets identifica a mínima de 24/06 como próximo risco após a perda da 200 DMA. Não há confirmação de que esse patamar tenha sido atingido.'],
+ bull:['Primeiro: reconquistar US$ 13.612/t','Uma recuperação sustentada acima da 200 DMA daria o primeiro sinal de alívio; depois viriam a 20 DMA em US$ 13.960/t e a 100 DMA em US$ 14.065/t. RSI sobrevendido sozinho não basta.']
+};
+
+document.querySelectorAll('[data-s]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('[data-s]').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const d=scenarios[btn.dataset.s];document.getElementById('scenarioTitle').textContent=d[0];document.getElementById('scenarioText').textContent=d[1];}));
+function exportResumo(){const txt=`OBSERVATÓRIO AURICCHIO DO COBRE — RESUMO ANALÍTICO
+Fonte atual: Fastmarkets, Research - Copper oversold as it approaches June low, 17/11/2026 (07:49 GMT).
+Comparação: Fastmarkets, Copper supported but looks vulnerable, relatório de 13/11/2026.
+Não são cotações ao vivo.
+
+PERGUNTA CENTRAL
+O cobre está sobrevendido. Por que ainda pode cair?
+
+LEITURA POR HORIZONTE
+Curto: 200 DMA rompida; estocástico negativo, RSI sobrevendido e candle Doji.
+Médio: precisa recuperar 200 DMA/20 DMA; perda técnica reforça possibilidade de teste de junho.
+Longo: Fastmarkets estima superávit de +150 mil t em 2026 e projeta déficit de -340 mil t em 2027.
+
+NÍVEIS LME 3M (US$/t, pesquisa 17/11)
+14.204: 40 DMA, resistência
+14.065: 100 DMA, resistência
+13.960: 20 DMA, resistência
+13.612: 200 DMA / Fibonacci 61,8%, suporte rompido -> resistência
+12.988: mínima 24/06, possível teste de baixa (não confirmado)
+
+ESTOQUES E SPREAD (DATAS CONSERVADAS)
+LME: 225.425 t em 15/10; 328.600 t no research 13/11; 327.457 t no research 17/11.
+SHFE: 33.848 t em 06/11; 27.642 t em 13/11 (-6.206 t, -18,3%).
+CME: 93.173 t em 01/03/2025 e acima de 760.000 t no research atual (valor exato não divulgado).
+LME Cash–3M: backwardation de +US$ 194,55/t (06/11), +73,93/t (research 13/11), +25,86/t (research 17/11).
+
+OFERTA E DEMANDA
+TC CIF Ásia-Pacífico: -US$ 277,80/t em 13/11; -US$ 281,60/t em 30/10 (relatório anterior).
+Greve Highland Valley Copper (HVC): quarta semana na data do research.
+Oyu Tolgoi: parada subterrânea reportada após evento sísmico.
+Risco de ácido sulfúrico para SX-EW; impactos sem quantificação de tonelagem.
+Tecnologia: restrições a chips avançados e incerteza sobre IA afetam expectativas; não provam queda atual de consumo físico.
+China: prêmio de cátodo importado firme até 10/11; Europa: demanda spot fraca.
+
+POSICIONAMENTO
+Fundos LME net long: 18.085 lotes, -6.325 (-25,9%), dado repetido em ambos os reports; data exata não informada.
+
+FATO / INTERPRETAÇÃO / CENÁRIO
+Fato: perda da 200 DMA, redução de backwardation e menor estoque SHFE.
+Interpretação: queda do aperto próximo não apaga riscos estruturais de oferta.
+Cenário: US$ 12.988/t pode ser testado; reação técnica exige sinais além de RSI sobrevendido.
+
+LIMITES
+Estoques em bolsas não equivalem ao estoque global; datas distintas. Caixa lateral do PDF tem classificações de níveis inconsistentes; prevalece texto analítico. Não há quantificação de perdas de minas ou consumo por setor.
+
+CHECKLIST
+Reconquista de 13.612? Teste de 12.988? Spread zera? SHFE continua caindo? Interrupções viram perdas efetivas?`;
+const blob=new Blob([txt],{type:'text/plain;charset=utf-8'});const a=document.createElement('a');const u=URL.createObjectURL(blob);a.href=u;a.download='resumo_observatorio_cobre_17-11-2026.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1000);}
+(function(){const btn=document.querySelector('.menu-toggle'),nav=document.querySelector('.main-nav');btn.addEventListener('click',()=>{const on=nav.classList.toggle('open');btn.setAttribute('aria-expanded',String(on));});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');btn.setAttribute('aria-expanded','false');document.querySelector('.more-menu').open=false;}));document.addEventListener('click',e=>{if(window.innerWidth<=980&&!e.target.closest('.nav-shell')){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}});})();
+</script></body></html>
