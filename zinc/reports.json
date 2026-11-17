@@ -1,8 +1,17 @@
 {
   "metal": "Zinco",
   "symbol": "Zn",
-  "updated_at": "2026-11-16",
+  "updated_at": "2026-11-17",
   "reports": [
+    {
+      "date": "2026-11-17",
+      "display_date": "17/11/2026",
+      "title": "Zinc prices on the ropes, but bullish fundamentals remain in place",
+      "file": "./reports/2026-11-17.html",
+      "bias": "Neutro",
+      "physical": "Apertado",
+      "note": "O fundamento ainda sustenta o zinco — mas agora o gráfico precisa provar isso. O mercado chegou a uma região que separa uma correção normal de uma deterioração técnica mais séria. O dado novo de hoje torna a leitura menos óbvia: a LME re..."
+    },
     {
       "date": "2026-11-16",
       "display_date": "16/11/2026",
