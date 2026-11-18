@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#2c918b">
+<meta name="description" content="Observatório Auricchio do Estanho — atualização de 18/11/2026 baseada em research Fastmarkets.">
+<title>Auricchio | Observatório do Estanho — 18/11/2026</title>
+<style>
+:root{
+  --brand:#2c918b;--brand-dark:#236f6a;--brand-soft:#eaf5f3;
+  --ink:#1f3035;--muted:#6f7f84;--line:#dce5e5;--paper:#f6f8f7;--white:#fff;
+  --bear:#c84e4e;--bear-soft:#fff0ef;--bull:#2f7d68;--bull-soft:#edf8f4;
+  --amber:#8c6a25;--amber-soft:#fff8e8;--shadow:0 10px 26px rgba(32,55,58,.07);
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--paper);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar .wrap{max-width:1240px;margin:auto;min-height:74px;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;gap:12px;align-items:center}
+.brand-mark{width:5px;height:38px;border-radius:99px;background:linear-gradient(180deg,var(--brand) 0 68%,#98a5a8 68%)}
+.brand b{display:block;color:var(--brand-dark);letter-spacing:.11em;font-size:18px} .brand span{display:block;color:#849195;font-size:10px;letter-spacing:.15em;text-transform:uppercase;margin-top:5px}
+nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+nav a{padding:9px 10px;border-radius:9px;font-size:13px;font-weight:700;color:#53676c}
+nav a:hover{background:var(--brand-soft);color:var(--brand-dark)}
+.hero{background:linear-gradient(180deg,#edf5f4,#fff);border-bottom:1px solid var(--line)}
+.hero .wrap{max-width:1180px;margin:auto;padding:52px 22px 42px}
+.eyebrow{font-size:12px;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-dark)}
+h1{font-size:clamp(36px,5vw,62px);line-height:1;margin:12px 0 15px;letter-spacing:-.045em;max-width:980px}
+.lede{font-size:18px;line-height:1.62;color:#5f7075;max-width:930px}
+.hero-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow)}
+.kpi small{font-size:11px;color:#7d898d;text-transform:uppercase;letter-spacing:.08em;font-weight:800}
+.kpi strong{display:block;margin-top:7px;font-size:24px} .kpi p{font-size:13px;color:var(--muted);line-height:1.45;margin:6px 0 0}
+.bear{color:var(--bear)} .bull{color:var(--bull)}
+main{max-width:1180px;margin:auto;padding:24px 22px 50px}
+section{margin:24px 0 46px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:14px}
+.section-head h2{font-size:28px;margin:0;padding-left:14px;position:relative;letter-spacing:-.025em}
+.section-head h2:before{content:"";position:absolute;left:0;top:5px;bottom:5px;width:4px;border-radius:99px;background:var(--brand)}
+.section-head p{margin:4px 0 0;color:var(--muted);line-height:1.5}
+.grid{display:grid;gap:14px} .two{grid-template-columns:1fr 1fr} .three{grid-template-columns:repeat(3,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 6px 18px rgba(20,40,44,.035)}
+.card h3{margin:0 0 8px;font-size:18px} .card p{margin:0;color:var(--muted);line-height:1.58}
+.label{display:inline-block;padding:5px 8px;border-radius:999px;font-size:10px;font-weight:850;letter-spacing:.07em;text-transform:uppercase;border:1px solid;margin:0 6px 8px 0}
+.fact{color:#266866;background:#eaf7f5;border-color:#b8ddd8} .interp{color:#735f27;background:var(--amber-soft);border-color:#e4d49d} .hyp{color:#7b3d3d;background:var(--bear-soft);border-color:#ecc0bb}
+.question{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 24px;box-shadow:var(--shadow);font-size:22px;font-weight:800}
+.memory{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.memory .card strong{font-size:30px;color:#9cafb3} .memory .card b{display:block;font-size:18px;margin:7px 0}
+.levels{display:grid;gap:9px}
+.level{display:grid;grid-template-columns:155px 1fr;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px 15px}
+.level strong{font-size:17px} .level span{color:var(--muted);font-size:13px;line-height:1.45}
+.level.support{border-left:4px solid var(--bull)} .level.resistance{border-left:4px solid var(--bear)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.flow .step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px;position:relative}
+.flow .step:not(:last-child):after{content:"→";position:absolute;right:-18px;top:50%;transform:translateY(-50%);font-weight:900;color:#8da2a5}
+.flow b{display:block;margin-bottom:5px} .flow span{font-size:13px;color:var(--muted);line-height:1.45}
+.barwrap{margin-top:10px} .bar{height:9px;border-radius:99px;background:#e8eeee;overflow:hidden} .bar i{display:block;height:100%;background:var(--brand)}
+.table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.table th,.table td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;font-size:13px} .table th{background:#f2f6f5;color:#587075}
+.callout{background:linear-gradient(135deg,var(--brand-dark),#334b4d);color:#fff;border-radius:18px;padding:22px}
+.callout h3{margin:0 0 9px;font-size:22px} .callout p{margin:0;color:#e4efee;line-height:1.6}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.event{background:#fff;border:1px solid var(--line);border-top:4px solid #9aaeb1;border-radius:11px;padding:13px} .event.red{border-top-color:var(--bear)} .event.green{border-top-color:var(--bull)}
+.event time{font-size:11px;color:var(--muted);font-weight:800} .event b{display:block;margin:5px 0} .event p{font-size:12px;color:var(--muted);line-height:1.45;margin:0}
+details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px} summary{cursor:pointer;font-weight:800} details p{color:var(--muted);line-height:1.55;font-size:13px}
+.source{font-size:12px;color:#7c898c;line-height:1.5}
+footer{text-align:center;padding:28px 20px 46px;color:#7c898c;font-size:12px}
+@media(max-width:900px){.hero-grid,.three,.memory,.timeline{grid-template-columns:1fr 1fr}.two,.flow{grid-template-columns:1fr 1fr}nav{display:none}}
+@media(max-width:580px){.hero-grid,.three,.memory,.timeline,.two,.flow{grid-template-columns:1fr}.level{grid-template-columns:1fr}.flow .step:after{display:none}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="../"><span class="brand-mark"></span><div><b>AURICCHIO</b><span>Market Intelligence · Estanho</span></div></a>
+  <nav><a href="#visao">Visão geral</a><a href="#tecnico">Técnico</a><a href="#macro">Macro</a><a href="#fisico">Físico</a><a href="#oferta">Oferta</a><a href="#fundos">Fundos</a></nav>
+</div></header>
+
+<section class="hero" id="visao"><div class="wrap">
+  <div class="eyebrow">Observatório do Estanho · 18/11/2026</div>
+  <h1>A quebra da tendência aprofunda a correção — mesmo com a LME ainda apertada</h1>
+  <div class="lede">O estanho LME 3M abriu a US$ 44.885/t e caiu para a região de US$ 41,5 mil/t. A linha de tendência de alta foi rompida, o preço está abaixo de todas as principais médias móveis e o momentum entrou em sobrevenda profunda. O físico ainda ajuda — estoques LME continuam reduzidos e o cash segue com prêmio — mas a backwardation estreitou e a oferta refinada chinesa começa a se recuperar.</div>
+  <div class="hero-grid">
+    <div class="kpi"><small>Viés curto prazo</small><strong class="bear">Bearish</strong><p>Quebra técnica confirmada e follow-through vendedor.</p></div>
+    <div class="kpi"><small>Preço intraday</small><strong>~US$ 41,5 mil/t</strong><p>Após abertura em US$ 44.885/t.</p></div>
+    <div class="kpi"><small>Momentum</small><strong class="bear">Sobrevendido</strong><p>RSI 25 · Stochastics 7 / 13.</p></div>
+    <div class="kpi"><small>Físico</small><strong class="bull">Apertado, aliviando</strong><p>Cash–3M +US$ 300/t, abaixo de +US$ 745/t no dia anterior.</p></div>
+  </div>
+</div></section>
+
+<main>
+<section>
+  <div class="question">Pergunta central: a sobrevenda e os estoques LME reduzidos conseguem gerar um rebound antes de o preço perder US$ 41,6–41,7 mil/t?</div>
+</section>
+
+<section>
+  <div class="section-head"><div><h2>Se você lembrar de apenas 3 coisas</h2><p>O núcleo da leitura de hoje.</p></div></div>
+  <div class="memory">
+    <div class="card"><strong>01</strong><b>O técnico piorou de verdade</b><p>A quebra da linha de tendência de longo prazo não foi apenas intraday: veio acompanhada por uma grande vela bearish e aceleração da queda.</p></div>
+    <div class="card"><strong>02</strong><b>Sobrevenda não é fundo</b><p>RSI e stochastics aumentam a chance de rebound, mas o relatório é explícito: ainda não há confirmação de fundo.</p></div>
+    <div class="card"><strong>03</strong><b>O físico ainda sustenta, mas menos</b><p>Estoques LME continuam baixos e o cash mantém prêmio, porém a backwardation caiu forte, sinalizando menor pressão imediata.</p></div>
+  </div>
+</section>
+
+<section id="tecnico">
+  <div class="section-head"><div><h2>Técnico: estrutura bearish e preço esticado</h2><p>A quebra da antiga linha de suporte transformou a própria tendência em resistência.</p></div></div>
+  <div class="grid two">
+    <div class="card">
+      <span class="label fact">Fato</span><span class="label interp">Interpretação</span>
+      <h3>Preço abaixo de todas as médias relevantes</h3>
+      <p>20 DMA: US$ 47.802/t · 50 DMA: US$ 50.864/t · 200 DMA: US$ 51.597/t · 100 DMA: US$ 52.669/t. A configuração reforça a estrutura bearish. Ao mesmo tempo, a distância crescente até essas médias aumenta o risco de rebound técnico.</p>
+    </div>
+    <div class="card">
+      <span class="label fact">Fato</span><span class="label interp">Interpretação</span>
+      <h3>Momentum profundamente sobrevendido</h3>
+      <p>RSI em 25 e stochastics em 7/13. Isso eleva a probabilidade de uma recuperação corretiva, mas não comprova capitulação nem estabelece fundo.</p>
+    </div>
+  </div>
+
+  <div class="levels" style="margin-top:14px">
+    <div class="level resistance"><strong>US$ 44.800–45.300</strong><span>Principal zona de recuperação: abertura/máxima do dia + linha de tendência rompida. Reclaim sustentado aliviaria a pressão bearish.</span></div>
+    <div class="level resistance"><strong>US$ 42.200–42.500</strong><span>Primeira resistência imediata, antiga área de negociação.</span></div>
+    <div class="level support"><strong>US$ 41.600–41.700</strong><span>Suporte inicial citado no texto. A tabela lateral também registra mínima do dia em US$ 41.360/t.</span></div>
+    <div class="level support"><strong>US$ 40.000–40.500</strong><span>Vale de março + suporte psicológico. Entra no radar se US$ 41,6–41,7 mil/t ceder de forma sustentada.</span></div>
+    <div class="level support"><strong>US$ 38.000–38.500</strong><span>Área de negociação do início de janeiro; suporte mais profundo.</span></div>
+  </div>
+</section>
+
+<section id="macro">
+  <div class="section-head"><div><h2>Macro: dólar e juros voltaram a pressionar</h2><p>O ambiente financeiro está menos favorável aos metais.</p></div></div>
+  <div class="flow">
+    <div class="step"><b>DXY ~103,66</b><span>Perto de máxima de 19 meses no início da sessão asiática.</span></div>
+    <div class="step"><b>Expectativa de alta de juros</b><span>Dados dos EUA reforçaram a leitura de possível aumento em dezembro.</span></div>
+    <div class="step"><b>10Y ~5,10%</b><span>Custos financeiros permanecem elevados.</span></div>
+    <div class="step"><b>Metais sob pressão</b><span>Dólar forte + yields altos restringem o apetite por commodities.</span></div>
+  </div>
+  <div class="grid two" style="margin-top:14px">
+    <div class="card"><h3>Brent perto de US$ 92/barril</h3><p>O petróleo mais baixo oferece algum alívio ao risco de inflação via energia, mas não compensa o efeito do dólar forte e do custo de capital.</p></div>
+    <div class="card"><h3>Tecnologia ainda frágil</h3><p>O Philadelphia Semiconductor Index subiu apenas 0,34% em 17/11, após quedas de 5,28% em 16/11 e 3,43% em 13/11. Isso mantém frágil o prêmio financeiro associado à narrativa de demanda futura por IA.</p></div>
+  </div>
+</section>
+
+<section id="fisico">
+  <div class="section-head"><div><h2>Mercado físico: suporte existe, mas o aperto imediato diminuiu</h2><p>Outright price e disponibilidade física continuam contando histórias diferentes — mas menos divergentes que antes.</p></div></div>
+  <div class="grid two">
+    <div class="card">
+      <span class="label fact">LME</span>
+      <h3>3.600 t em 17/11</h3>
+      <p>Alta diária de 25 t, mas ainda 430 t abaixo do fim de outubro. O estoque reduzido continua sendo um contrapeso bullish para a correção.</p>
+    </div>
+    <div class="card">
+      <span class="label fact">Cash–3M</span>
+      <h3>Backwardation: +US$ 300/t</h3>
+      <p>Veio de +US$ 745/t em 16/11 e +US$ 790/t em 13/11. O cash ainda tem prêmio, porém a forte compressão indica que a pressão de disponibilidade imediata perdeu intensidade.</p>
+    </div>
+    <div class="card">
+      <span class="label fact">SHFE</span>
+      <h3>4.294 t · +290 t na semana</h3>
+      <p>O aumento reverte parte da queda de 786 t da semana anterior. Um único build não prova superávit sustentado, mas enfraquece a narrativa de aperto contínuo na China.</p>
+    </div>
+    <div class="card">
+      <span class="label interp">Leitura</span>
+      <h3>O físico não impediu a queda</h3>
+      <p>Estoques LME menores e cash premium continuam oferecendo suporte, porém não foram suficientes para neutralizar a quebra técnica, o macro restritivo e a recuperação de oferta refinada.</p>
+    </div>
+  </div>
+</section>
+
+<section id="oferta">
+  <div class="section-head"><div><h2>Oferta: a recuperação refinada começa a importar</h2><p>O foco muda da manutenção para a velocidade real de retorno da oferta.</p></div></div>
+  <div class="flow">
+    <div class="step"><b>Yunnan Tin retoma produção</b><span>Mercado relata retorno após manutenção.</span></div>
+    <div class="step"><b>Ramp-up ainda incerto</b><span>Data precisa de restart e velocidade não foram confirmadas nas divulgações revisadas.</span></div>
+    <div class="step"><b>SHFE recompõe estoque</b><span>Primeiro sinal de que disponibilidade refinada pode estar melhorando.</span></div>
+    <div class="step"><b>Teste de absorção</b><span>Novos builds reforçam oferta; novas retiradas indicariam compra física mais forte.</span></div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <span class="label fact">Myanmar</span><span class="label hyp">Risco</span>
+    <h3>Recuperação de mina ainda incompleta</h3>
+    <p>Isso limita a confiança em uma aceleração rápida da oferta de concentrado. Portanto, melhora de refinado na China não deve ser automaticamente interpretada como normalização completa da cadeia.</p>
+  </div>
+</section>
+
+<section id="fundos">
+  <div class="section-head"><div><h2>Fundos: convicção comprada diminuiu</h2><p>Agora há evidência clara de liquidação de longs na semana até 13/11.</p></div></div>
+  <table class="table">
+    <thead><tr><th>Métrica</th><th>Posição</th><th>Variação semanal</th><th>Leitura</th></tr></thead>
+    <tbody>
+      <tr><td>Net length</td><td>1.480 lotes</td><td>-118</td><td>Exposição bullish líquida menor</td></tr>
+      <tr><td>Longs</td><td>2.384 lotes</td><td>-128</td><td>Liquidação comprada foi o principal movimento da semana</td></tr>
+      <tr><td>Shorts</td><td>904 lotes</td><td>-10</td><td>Pequena cobertura de vendidos</td></tr>
+      <tr><td>Net length · 4 semanas</td><td>—</td><td>-366</td><td>Longs -179 e shorts +187: retirada bullish + aumento bearish</td></tr>
+    </tbody>
+  </table>
+  <div class="card" style="margin-top:14px">
+    <span class="label fact">Limite</span>
+    <p>Os números vão apenas até 13/11 e antecedem o forte sell-off de 18/11. Portanto, não confirmam quem vendeu a quebra mais recente. O estoque remanescente de longs, porém, mantém aberta a possibilidade de nova liquidação se o preço não estabilizar.</p>
+  </div>
+</section>
+
+<section>
+  <div class="section-head"><div><h2>O que mudou desde 16/11?</h2><p>A narrativa deteriorou mais rápido do que o físico.</p></div></div>
+  <div class="timeline">
+    <div class="event"><time>16 NOV</time><b>Dip buying ainda visível</b><p>Preço encontrava compradores perto de US$ 45,5 mil/t, apesar do momentum fraco.</p></div>
+    <div class="event red"><time>18 NOV</time><b>Trendline rompe</b><p>A base técnica falha e a correção acelera para a região de US$ 41,5 mil/t.</p></div>
+    <div class="event red"><time>18 NOV</time><b>Macro piora</b><p>Dólar forte, yields elevados e tecnologia frágil pressionam o sentimento.</p></div>
+    <div class="event green"><time>18 NOV</time><b>LME ainda apertada</b><p>Estoques permanecem reduzidos, mas a backwardation diminui fortemente.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="callout">
+    <h3>Mensagem final</h3>
+    <p>O estanho entrou em uma fase tecnicamente mais frágil. A quebra da linha de tendência e a perda da região de US$ 45 mil/t transferiram o controle do curto prazo para os vendedores. A sobrevenda extrema aumenta o risco de um rebound rápido, mas ainda não há sinal de fundo. No físico, a LME continua relativamente apertada, porém a queda da backwardation e a recomposição de estoque na China mostram que o suporte de disponibilidade está menos forte. Para mudar a leitura imediata, o preço precisa primeiro estabilizar e depois recuperar de forma sustentada a zona de <b>US$ 44,8–45,3 mil/t</b>. Se <b>US$ 41,6–41,7 mil/t</b> não segurar, <b>US$ 40,0–40,5 mil/t</b> passa a ser o próximo teste relevante.</p>
+  </div>
+</section>
+
+<section>
+  <div class="section-head"><div><h2>Fontes e limites</h2><p>O que veio diretamente do research e o que é interpretação do observatório.</p></div></div>
+  <details open><summary>Base documental</summary><p>Fonte principal: Fastmarkets, Rory Deng, “Tin’s trendline breakdown deepens correction despite tight LME availability”, 18/11/2026. Dados de preço, níveis técnicos, estoques, spreads, macro e posicionamento apresentados acima foram extraídos desse research. Relações de causa e efeito, classificação de impacto e síntese editorial são interpretações do observatório.</p></details>
+  <details><summary>Limitações importantes</summary><p>O relatório não prova que a queda das ações de semicondutores reduziu o consumo físico de solda; isso é tratado como canal de sentimento. Um aumento semanal de estoque SHFE não comprova superávit estrutural. O retorno da Yunnan Tin foi reportado pelo mercado, mas a velocidade do ramp-up não está confirmada. Os dados de fundos terminam em 13/11 e não capturam diretamente o sell-off de 18/11.</p></details>
+  <p class="source">Observatório informativo. Não constitui recomendação de negociação.</p>
+</section>
+</main>
+
+<footer><b style="color:var(--brand-dark);letter-spacing:.08em">AURICCHIO</b> · Market Intelligence · Observatório do Estanho</footer>
+
+<script id="report-meta" type="application/json">
+{
+  "metal": "tin",
+  "date": "2026-11-18",
+  "title": "Tin’s trendline breakdown deepens correction despite tight LME availability",
+  "bias": "Bearish / sobrevendido",
+  "physical": "Apertado, aliviando",
+  "note": "A quebra da linha de tendência aprofundou a correção: o estanho caiu para a região de US$ 41,5 mil/t. O físico ainda oferece suporte, mas a backwardation estreitou e a oferta refinada chinesa começa a se recuperar."
+}
+</script>
+</body></html>
