@@ -1,8 +1,17 @@
 {
   "metal": "Estanho",
   "symbol": "Sn",
-  "updated_at": "2026-11-16",
+  "updated_at": "2026-11-18",
   "reports": [
+    {
+      "date": "2026-11-18",
+      "display_date": "18/11/2026",
+      "title": "Tin’s trendline breakdown deepens correction despite tight LME availability",
+      "file": "./reports/2026-11-18.html",
+      "bias": "Bearish / sobrevendido",
+      "physical": "Apertado, aliviando",
+      "note": "A quebra da linha de tendência aprofundou a correção: o estanho caiu para a região de US$ 41,5 mil/t. O físico ainda oferece suporte, mas a backwardation estreitou e a oferta refinada chinesa começa a se recuperar."
+    },
     {
       "date": "2026-11-16",
       "display_date": "16/11/2026",

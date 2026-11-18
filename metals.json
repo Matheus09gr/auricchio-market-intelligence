@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17",
+  "updated_at": "2026-11-18",
   "metals": [
     {
       "id": "tin",
@@ -8,10 +8,10 @@
       "english": "Tin",
       "status": "available",
       "path": "./tin/",
-      "last_report": "16/11/2026",
-      "bias": "Bearish",
-      "physical": "Apertado",
-      "note": "Técnico e tecnologia pressionam, enquanto estoques baixos oferecem suporte ao físico."
+      "last_report": "18/11/2026",
+      "bias": "Bearish / sobrevendido",
+      "physical": "Apertado, aliviando",
+      "note": "A quebra da linha de tendência aprofundou a correção: o estanho caiu para a região de US$ 41,5 mil/t. O físico ainda oferece suporte, mas a backwardation estreitou e a oferta refinada chinesa começa a se recuperar."
     },
     {
       "id": "copper",
