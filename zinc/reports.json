@@ -1,8 +1,17 @@
 {
   "metal": "Zinco",
   "symbol": "Zn",
-  "updated_at": "2026-11-17",
+  "updated_at": "2026-11-18",
   "reports": [
+    {
+      "date": "2026-11-18",
+      "display_date": "18/11/2026",
+      "title": "Zinc has formed a topping pattern",
+      "file": "./reports/2026-11-18.html",
+      "bias": "Bearish",
+      "physical": "Apertado",
+      "note": "O alerta agora não é que os fundamentos ficaram bearish — é que o preço deixou de responder a fundamentos bullish. Concentrado escasso e backwardation continuam oferecendo suporte, mas a incapacidade de produzir uma nova perna de alta su..."
+    },
     {
       "date": "2026-11-17",
       "display_date": "17/11/2026",

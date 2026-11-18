@@ -545,4 +545,15 @@ Cenário: defender 12.400–12.500 e recuperar 13.000/13.180–13.300 para sinal
 LIMITAÇÕES
 Estoques de bolsa não são estoque global. Prêmios altos podem decorrer também de menor importação. Não há prova de redução física proporcional à reavaliação de IA; projeção de déficit 2027 vem de pesquisa histórica de 17/11, não de 18/11.`;
  const blob=new Blob([txt],{type:'text/plain;charset=utf-8'}),a=document.createElement('a'),u=URL.createObjectURL(blob);a.href=u;a.download='resumo_observatorio_cobre_18-11-2026.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1000);}
-(function(){const btn=document.querySelector('.menu-toggle'),nav=document.querySelector('.main-nav');btn.addEventListener('click',()=>{const on=nav.classList.toggle('open');btn.setAttribute('aria-expanded',String(on));});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');btn.setAttribute('aria-expanded','false');document.querySelector('.more-menu').open=false;}));document.addEventListener('click',e=>{if(window.innerWidth<=980&&!e.target.closest('.nav-shell')){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}});})();</script></body></html>
+(function(){const btn=document.querySelector('.menu-toggle'),nav=document.querySelector('.main-nav');btn.addEventListener('click',()=>{const on=nav.classList.toggle('open');btn.setAttribute('aria-expanded',String(on));});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');btn.setAttribute('aria-expanded','false');document.querySelector('.more-menu').open=false;}));document.addEventListener('click',e=>{if(window.innerWidth<=980&&!e.target.closest('.nav-shell')){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}});})();</script>
+<script id="report-meta" type="application/json">
+{
+  "metal": "copper",
+  "date": "2026-11-18",
+  "title": "final",
+  "bias": "Bearish",
+  "physical": "Apertado",
+  "note": "O cobre segue bearish no curto prazo: a queda financeira já levou o LME 3M para aproximadamente US$ 12.744/t, apesar dos sinais de sobrevenda. Ao mesmo tempo, os prêmios físicos em Xangai subiram fortemente e os estoques locais continuam..."
+}
+</script>
+</body></html>

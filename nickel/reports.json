@@ -1,8 +1,17 @@
 {
   "metal": "Níquel",
   "symbol": "Ni",
-  "updated_at": "2026-11-17",
+  "updated_at": "2026-11-18",
   "reports": [
+    {
+      "date": "2026-11-18",
+      "display_date": "18/11/2026",
+      "title": "Níquel: momentum resiste apesar das vendas de metais básicos",
+      "file": "./reports/2026-11-18.html",
+      "bias": "Neutral (improving momentum)",
+      "physical": "Estoques elevados; spread não atualizado",
+      "note": "Fechamento de 17/11 acima de 100 DMA (16.408 US$/t), 20 DMA em 15.901 US$/t; LME 274.140 t; net long fundos 3.478 lotes. Sem cotação exata de 18/11 no PDF."
+    },
     {
       "date": "2026-11-17",
       "display_date": "17/11/2026",

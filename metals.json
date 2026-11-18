@@ -20,10 +20,10 @@
       "english": "Copper",
       "status": "available",
       "path": "./copper/",
-      "last_report": "17/11/2026",
-      "bias": "Bearish / sobrevendido",
-      "physical": "Misto",
-      "note": "A correção técnica se aprofundou: a 200 DMA foi rompida, e o RSI sobrevendido ainda não confirma fundo. A queda da backwardation indica alívio no aperto imediato da LME, enquanto estoques mais baixos em Xangai e restrições nas minas sust..."
+      "last_report": "18/11/2026",
+      "bias": "Bearish",
+      "physical": "Apertado",
+      "note": "O cobre segue bearish no curto prazo: a queda financeira já levou o LME 3M para aproximadamente US$ 12.744/t, apesar dos sinais de sobrevenda. Ao mesmo tempo, os prêmios físicos em Xangai subiram fortemente e os estoques locais continuam..."
     },
     {
       "id": "zinc",
@@ -32,10 +32,10 @@
       "english": "Zinc",
       "status": "available",
       "path": "./zinc/",
-      "last_report": "17/11/2026",
-      "bias": "Neutro",
+      "last_report": "18/11/2026",
+      "bias": "Bearish",
       "physical": "Apertado",
-      "note": "O fundamento ainda sustenta o zinco — mas agora o gráfico precisa provar isso. O mercado chegou a uma região que separa uma correção normal de uma deterioração técnica mais séria. O dado novo de hoje torna a leitura menos óbvia: a LME re..."
+      "note": "O alerta agora não é que os fundamentos ficaram bearish — é que o preço deixou de responder a fundamentos bullish. Concentrado escasso e backwardation continuam oferecendo suporte, mas a incapacidade de produzir uma nova perna de alta su..."
     },
     {
       "id": "nickel",
@@ -44,10 +44,10 @@
       "english": "Nickel",
       "status": "available",
       "path": "./nickel/",
-      "last_report": "17/11/2026",
-      "bias": "Neutral-bearish",
-      "physical": "Folgado",
-      "note": "Níquel LME 3M em ~US$ 15.955/t; contango de US$ 195/t e estoques elevados limitam a recuperação. Suporte em US$ 15.800–15.950/t, confirmação acima de US$ 16.400–16.500/t."
+      "last_report": "18/11/2026",
+      "bias": "Neutral (improving momentum)",
+      "physical": "Estoques elevados; spread não atualizado",
+      "note": "Fechamento de 17/11 acima de 100 DMA (16.408 US$/t), 20 DMA em 15.901 US$/t; LME 274.140 t; net long fundos 3.478 lotes. Sem cotação exata de 18/11 no PDF."
     },
     {
       "id": "tungsten",

@@ -1,8 +1,17 @@
 {
   "metal": "Cobre",
   "symbol": "Cu",
-  "updated_at": "2026-11-17",
+  "updated_at": "2026-11-18",
   "reports": [
+    {
+      "date": "2026-11-18",
+      "display_date": "18/11/2026",
+      "title": "final",
+      "file": "./reports/2026-11-18.html",
+      "bias": "Bearish",
+      "physical": "Apertado",
+      "note": "O cobre segue bearish no curto prazo: a queda financeira já levou o LME 3M para aproximadamente US$ 12.744/t, apesar dos sinais de sobrevenda. Ao mesmo tempo, os prêmios físicos em Xangai subiram fortemente e os estoques locais continuam..."
+    },
     {
       "date": "2026-11-17",
       "display_date": "17/11/2026",
