@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18",
+  "updated_at": "2026-11-19",
   "metals": [
     {
       "id": "tin",
@@ -20,10 +20,10 @@
       "english": "Copper",
       "status": "available",
       "path": "./copper/",
-      "last_report": "18/11/2026",
-      "bias": "Bearish",
-      "physical": "Apertado",
-      "note": "O cobre segue bearish no curto prazo: a queda financeira já levou o LME 3M para aproximadamente US$ 12.744/t, apesar dos sinais de sobrevenda. Ao mesmo tempo, os prêmios físicos em Xangai subiram fortemente e os estoques locais continuam..."
+      "last_report": "19/11/2026",
+      "bias": "Bearish / sobrevendido",
+      "physical": "Misto",
+      "note": "O cobre entrou em sobrevenda acentuada, mas o relatório de 19/11 ainda não confirma um fundo. O RSI de 21 e os pavios sugerem compras nas quedas, enquanto a perda de US$ 13.000/t e US$ 12.988/t mantém o risco técnico de teste em US$ 11.7..."
     },
     {
       "id": "zinc",
@@ -32,10 +32,10 @@
       "english": "Zinc",
       "status": "available",
       "path": "./zinc/",
-      "last_report": "18/11/2026",
+      "last_report": "19/11/2026",
       "bias": "Bearish",
       "physical": "Apertado",
-      "note": "O alerta agora não é que os fundamentos ficaram bearish — é que o preço deixou de responder a fundamentos bullish. Concentrado escasso e backwardation continuam oferecendo suporte, mas a incapacidade de produzir uma nova perna de alta su..."
+      "note": "O relatório de 19/11 marca uma mudança de regime no curto prazo: o canal de alta rompeu e o mercado passou a negociar abaixo de todas as principais médias. A pressão agora vem de duas frentes — macro mais restritivo e redução de exposiçã..."
     },
     {
       "id": "nickel",

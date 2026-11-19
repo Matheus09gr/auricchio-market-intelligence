@@ -1,8 +1,17 @@
 {
   "metal": "Cobre",
   "symbol": "Cu",
-  "updated_at": "2026-11-18",
+  "updated_at": "2026-11-19",
   "reports": [
+    {
+      "date": "2026-11-19",
+      "display_date": "19/11/2026",
+      "title": "final",
+      "file": "./reports/2026-11-19.html",
+      "bias": "Bearish / sobrevendido",
+      "physical": "Misto",
+      "note": "O cobre entrou em sobrevenda acentuada, mas o relatório de 19/11 ainda não confirma um fundo. O RSI de 21 e os pavios sugerem compras nas quedas, enquanto a perda de US$ 13.000/t e US$ 12.988/t mantém o risco técnico de teste em US$ 11.7..."
+    },
     {
       "date": "2026-11-18",
       "display_date": "18/11/2026",

@@ -531,4 +531,15 @@ Hipótese: repique por sobrevenda ou teste em 11.700; investidores de longo praz
 CUIDADOS
 O relatório não informa preço exato de 19/11 nem valor do contango. Estoques de bolsa não são estoque global; dados de prêmios e COT possuem datas próprias. O balanço 2027 é projeção, não resultado realizado.`;
  const blob=new Blob([txt],{type:'text/plain;charset=utf-8'}),a=document.createElement('a'),u=URL.createObjectURL(blob);a.href=u;a.download='resumo_observatorio_cobre_19-11-2026.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1000);}
-(function(){const btn=document.querySelector('.menu-toggle'),nav=document.querySelector('.main-nav');btn.addEventListener('click',()=>{const on=nav.classList.toggle('open');btn.setAttribute('aria-expanded',String(on));});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');btn.setAttribute('aria-expanded','false');document.querySelector('.more-menu').open=false;}));document.addEventListener('click',e=>{if(window.innerWidth<=980&&!e.target.closest('.nav-shell')){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}});})();</script></body></html>
+(function(){const btn=document.querySelector('.menu-toggle'),nav=document.querySelector('.main-nav');btn.addEventListener('click',()=>{const on=nav.classList.toggle('open');btn.setAttribute('aria-expanded',String(on));});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');btn.setAttribute('aria-expanded','false');document.querySelector('.more-menu').open=false;}));document.addEventListener('click',e=>{if(window.innerWidth<=980&&!e.target.closest('.nav-shell')){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}});})();</script>
+<script id="report-meta" type="application/json">
+{
+  "metal": "copper",
+  "date": "2026-11-19",
+  "title": "final",
+  "bias": "Bearish / sobrevendido",
+  "physical": "Misto",
+  "note": "O cobre entrou em sobrevenda acentuada, mas o relatório de 19/11 ainda não confirma um fundo. O RSI de 21 e os pavios sugerem compras nas quedas, enquanto a perda de US$ 13.000/t e US$ 12.988/t mantém o risco técnico de teste em US$ 11.7..."
+}
+</script>
+</body></html>
