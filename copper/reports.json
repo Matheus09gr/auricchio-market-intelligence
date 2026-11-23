@@ -1,8 +1,17 @@
 {
   "metal": "Cobre",
   "symbol": "Cu",
-  "updated_at": "2026-11-19",
+  "updated_at": "2026-11-23",
   "reports": [
+    {
+      "date": "2026-11-23",
+      "display_date": "23/11/2026",
+      "title": "final",
+      "file": "./reports/2026-11-23.html",
+      "bias": "Bearish / sobrevendido",
+      "physical": "Misto",
+      "note": "O cobre permanece bearish, mas profundamente sobrevendido. A reação após US$ 11.948/t mostra interesse pontual de compra, não formação de fundo. O maior desafio do curto prazo deixou de ser apenas a baixa dos futuros diante do prêmio chi..."
+    },
     {
       "date": "2026-11-19",
       "display_date": "19/11/2026",

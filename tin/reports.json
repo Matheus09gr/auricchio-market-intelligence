@@ -1,8 +1,17 @@
 {
   "metal": "Estanho",
   "symbol": "Sn",
-  "updated_at": "2026-11-18",
+  "updated_at": "2026-11-23",
   "reports": [
+    {
+      "date": "2026-11-23",
+      "display_date": "23/11/2026",
+      "title": "Tin holds the March low; time to buy the dip?",
+      "file": "./reports/2026-11-23.html",
+      "bias": "Bearish / suporte em teste",
+      "physical": "Apertado",
+      "note": "O estanho segurou a mínima de março em US$ 40.555/t e forma um possível fundo duplo. O curto prazo segue bearish e sobrevendido, enquanto estoques baixos e déficits modestos sustentam a tese física."
+    },
     {
       "date": "2026-11-18",
       "display_date": "18/11/2026",

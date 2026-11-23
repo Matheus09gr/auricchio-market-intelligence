@@ -1,8 +1,17 @@
 {
   "metal": "Zinco",
   "symbol": "Zn",
-  "updated_at": "2026-11-19",
+  "updated_at": "2026-11-23",
   "reports": [
+    {
+      "date": "2026-11-23",
+      "display_date": "23/11/2026",
+      "title": "Zinc seeks support near $3,500 as physical tightness counters financial pressure",
+      "file": "./reports/2026-11-23.html",
+      "bias": "Bearish com estabilização",
+      "physical": "Apertado",
+      "note": "O relatório de 23/11 não mostra reversão — mostra a primeira tentativa consistente de estabilização depois do breakdown. Compradores apareceram abaixo de US$ 3.500/t justamente quando o físico ficou mais apertado: backwardation em US$ 16..."
+    },
     {
       "date": "2026-11-19",
       "display_date": "19/11/2026",

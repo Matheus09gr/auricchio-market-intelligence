@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19",
+  "updated_at": "2026-11-23",
   "metals": [
     {
       "id": "tin",
@@ -8,10 +8,10 @@
       "english": "Tin",
       "status": "available",
       "path": "./tin/",
-      "last_report": "18/11/2026",
-      "bias": "Bearish / sobrevendido",
-      "physical": "Apertado, aliviando",
-      "note": "A quebra da linha de tendência aprofundou a correção: o estanho caiu para a região de US$ 41,5 mil/t. O físico ainda oferece suporte, mas a backwardation estreitou e a oferta refinada chinesa começa a se recuperar."
+      "last_report": "23/11/2026",
+      "bias": "Bearish / suporte em teste",
+      "physical": "Apertado",
+      "note": "O estanho segurou a mínima de março em US$ 40.555/t e forma um possível fundo duplo. O curto prazo segue bearish e sobrevendido, enquanto estoques baixos e déficits modestos sustentam a tese física."
     },
     {
       "id": "copper",
@@ -20,10 +20,10 @@
       "english": "Copper",
       "status": "available",
       "path": "./copper/",
-      "last_report": "19/11/2026",
+      "last_report": "23/11/2026",
       "bias": "Bearish / sobrevendido",
       "physical": "Misto",
-      "note": "O cobre entrou em sobrevenda acentuada, mas o relatório de 19/11 ainda não confirma um fundo. O RSI de 21 e os pavios sugerem compras nas quedas, enquanto a perda de US$ 13.000/t e US$ 12.988/t mantém o risco técnico de teste em US$ 11.7..."
+      "note": "O cobre permanece bearish, mas profundamente sobrevendido. A reação após US$ 11.948/t mostra interesse pontual de compra, não formação de fundo. O maior desafio do curto prazo deixou de ser apenas a baixa dos futuros diante do prêmio chi..."
     },
     {
       "id": "zinc",
@@ -32,10 +32,10 @@
       "english": "Zinc",
       "status": "available",
       "path": "./zinc/",
-      "last_report": "19/11/2026",
-      "bias": "Bearish",
+      "last_report": "23/11/2026",
+      "bias": "Bearish com estabilização",
       "physical": "Apertado",
-      "note": "O relatório de 19/11 marca uma mudança de regime no curto prazo: o canal de alta rompeu e o mercado passou a negociar abaixo de todas as principais médias. A pressão agora vem de duas frentes — macro mais restritivo e redução de exposiçã..."
+      "note": "O relatório de 23/11 não mostra reversão — mostra a primeira tentativa consistente de estabilização depois do breakdown. Compradores apareceram abaixo de US$ 3.500/t justamente quando o físico ficou mais apertado: backwardation em US$ 16..."
     },
     {
       "id": "nickel",

@@ -535,4 +535,15 @@ LIMITES
 Não há preço de fechamento de 23/11, quantidades de cargas chegadas ou consumo final comprovado. Estoques de bolsa não equivalem ao estoque global.`;
 const blob=new Blob([txt],{type:'text/plain;charset=utf-8'}),a=document.createElement('a'),u=URL.createObjectURL(blob);a.href=u;a.download='resumo_observatorio_cobre_23-11-2026.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1000);}
 
-(function(){const btn=document.querySelector('.menu-toggle'),nav=document.querySelector('.main-nav');btn.addEventListener('click',()=>{const on=nav.classList.toggle('open');btn.setAttribute('aria-expanded',String(on));});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');btn.setAttribute('aria-expanded','false');document.querySelector('.more-menu').open=false;}));document.addEventListener('click',e=>{if(window.innerWidth<=980&&!e.target.closest('.nav-shell')){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}});})();</script></body></html>
+(function(){const btn=document.querySelector('.menu-toggle'),nav=document.querySelector('.main-nav');btn.addEventListener('click',()=>{const on=nav.classList.toggle('open');btn.setAttribute('aria-expanded',String(on));});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');btn.setAttribute('aria-expanded','false');document.querySelector('.more-menu').open=false;}));document.addEventListener('click',e=>{if(window.innerWidth<=980&&!e.target.closest('.nav-shell')){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}});})();</script>
+<script id="report-meta" type="application/json">
+{
+  "metal": "copper",
+  "date": "2026-11-23",
+  "title": "final",
+  "bias": "Bearish / sobrevendido",
+  "physical": "Misto",
+  "note": "O cobre permanece bearish, mas profundamente sobrevendido. A reação após US$ 11.948/t mostra interesse pontual de compra, não formação de fundo. O maior desafio do curto prazo deixou de ser apenas a baixa dos futuros diante do prêmio chi..."
+}
+</script>
+</body></html>
