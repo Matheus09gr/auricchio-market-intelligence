@@ -1,8 +1,17 @@
 {
   "metal": "Zinco",
   "symbol": "Zn",
-  "updated_at": "2026-11-23",
+  "updated_at": "2026-11-25",
   "reports": [
+    {
+      "date": "2026-11-25",
+      "display_date": "25/11/2026",
+      "title": "Zinc monthly chart: Runs the risk of a deeper correction - November 2026",
+      "file": "./reports/2026-11-25.html",
+      "bias": "Bearish",
+      "physical": "Apertado",
+      "note": "O relatório mensal de 25/11 reforça que o risco não é apenas uma queda adicional de curto prazo, mas uma correção mais profunda dentro do ciclo. A Fastmarkets continua aberta a um relief bounce porque o mercado está esticado para baixo,..."
+    },
     {
       "date": "2026-11-23",
       "display_date": "23/11/2026",
