@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#2c918b" />
+<title>Auricchio | Observatório do Zinco — LME</title>
+<style>
+  :root{
+    --ink:#243238; --ink2:#3f5158; --muted:#728086; --line:#dde4e5;
+    --paper:#f6f8f7; --white:#fff; --bear:#c85252; --bear-bg:#fff1ef;
+    --bull:#2b806b; --bull-bg:#edf8f4; --neutral:#708086; --nav:#263a3d;
+    --brand:#2c918b; --brand-dark:#23736f; --brand-soft:#e8f4f2; --metal:#8b979b;
+    --metal-light:#edf0f0; --gold:#9b7a3d; --gold-bg:#fff8e9; --blue-bg:#edf5f5;
+    --shadow:0 12px 30px rgba(38,58,61,.08);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+  a{color:inherit}
+  button{font:inherit}
+  .topbar{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.98);backdrop-filter:blur(10px);color:var(--ink);border-bottom:1px solid #e1e7e7;box-shadow:0 4px 18px rgba(38,58,61,.035)}
+  .topbar .wrap{max-width:1240px;margin:auto;min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:34px;padding:10px 24px}
+  .brand-lockup{display:flex;align-items:center;gap:13px;flex:0 0 auto;text-decoration:none}
+  .brand-accent{width:5px;height:38px;border-radius:99px;background:linear-gradient(180deg,var(--brand) 0 68%,#9aa6a9 68% 100%)}
+  .brand-copy{display:flex;flex-direction:column;line-height:1}
+  .brand-name{font-size:19px;font-weight:900;letter-spacing:.105em;color:var(--brand-dark)}
+  .brand-sub{margin-top:7px;font-size:10px;font-weight:750;letter-spacing:.16em;color:#8a969a;text-transform:uppercase}
+  .nav-shell{display:flex;align-items:center;gap:18px;min-width:0}
+  .main-nav{display:flex;align-items:center;gap:4px;font-size:13.5px;overflow:visible}
+  .main-nav>a,.more-menu>summary{display:flex;align-items:center;text-decoration:none;color:#53666b;padding:9px 10px;border-radius:9px;white-space:nowrap;font-weight:650;cursor:pointer;list-style:none}
+  .main-nav>a:hover,.more-menu>summary:hover{color:var(--brand-dark);background:var(--brand-soft)}
+  .main-nav>a.primary-nav{color:var(--brand-dark);background:#f1f7f6;font-weight:800}
+  .more-menu{position:relative}
+  .more-menu>summary::-webkit-details-marker{display:none}
+  .more-menu>summary:after{content:"⌄";font-size:12px;margin-left:6px;color:#8b989b}
+  .more-menu[open]>summary{color:var(--brand-dark);background:var(--brand-soft)}
+  .more-dropdown{position:absolute;right:0;top:calc(100% + 10px);width:190px;padding:8px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 18px 40px rgba(38,58,61,.14);display:grid;gap:2px}
+  .more-dropdown a{text-decoration:none;color:#53666b;padding:10px 11px;border-radius:8px;font-size:13px;font-weight:650}
+  .more-dropdown a:hover{background:var(--brand-soft);color:var(--brand-dark)}
+  .menu-toggle{display:none;border:1px solid #dce5e4;background:#fff;color:var(--brand-dark);border-radius:10px;padding:9px 11px;font-size:13px;font-weight:800}
+
+  .hero{background:linear-gradient(180deg,#edf5f4 0%,#f8faf9 72%,#ffffff 100%);border-bottom:1px solid var(--line)}
+  .hero .wrap{max-width:1180px;margin:auto;padding:54px 22px 40px}
+  .eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--brand-dark);text-transform:uppercase}
+  h1{font-size:clamp(34px,5vw,62px);line-height:.98;margin:12px 0 14px;max-width:940px;letter-spacing:-.045em}
+  .lede{font-size:18px;line-height:1.6;color:#647378;max-width:900px}
+  .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+  button,.pill{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:10px 15px;font-weight:750;cursor:pointer}
+  button.primary{background:var(--brand);color:white;border-color:var(--brand)}
+  button:hover{transform:translateY(-1px)}
+
+  main{max-width:1180px;margin:auto;padding:22px}
+  section{margin:26px 0 48px}
+  .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:16px}
+  .section-head h2{font-size:28px;margin:0;letter-spacing:-.025em;color:#2d4145;position:relative;padding-left:14px}.section-head h2:before{content:"";position:absolute;left:0;top:5px;bottom:5px;width:4px;border-radius:99px;background:var(--brand)}
+  .section-head p{margin:5px 0 0;color:var(--muted);line-height:1.5}
+  .grid{display:grid;gap:14px}
+  .columns{grid-template-columns:1fr 1fr}
+  .cards4{grid-template-columns:repeat(4,1fr)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 6px 18px rgba(16,37,63,.04)}
+  .card small{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#718292;font-weight:800}
+  .card .value{font-size:25px;font-weight:850;margin:7px 0 5px;letter-spacing:-.03em}
+  .card p{margin:0;color:#66798a;font-size:14px;line-height:1.5}
+  .bear{color:var(--bear)} .bull{color:var(--bull)}
+
+  .question{max-width:1180px;margin:26px auto 0;padding:0 22px}
+  .question-card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:22px 24px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
+  .question-card h2{margin:0 0 5px;font-size:22px}
+  .question-card p{margin:0;color:var(--muted);line-height:1.5}
+  .tag{padding:8px 11px;border-radius:10px;background:#eef3f7;color:#3a566e;font-size:12px;font-weight:800}
+
+  .starter{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
+  .starter-grid{display:grid;grid-template-columns:1.05fr 1.95fr;gap:18px;align-items:start}
+  .starter h3{margin:0 0 8px;font-size:23px}
+  .starter p{margin:0;color:var(--muted);line-height:1.6}
+  .four-blocks{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .block{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fbfcfd}
+  .block b{display:block;margin-bottom:5px}
+  .block span{font-size:13px;color:var(--muted);line-height:1.45}
+  .block .num{width:28px;height:28px;display:grid;place-items:center;border-radius:50%;background:var(--brand-dark);color:#fff;font-size:12px;font-weight:900;margin-bottom:10px}
+
+  .guided{display:grid;grid-template-columns:240px 1fr;gap:16px}
+  .guided-menu{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px;position:sticky;top:75px;height:max-content}
+  .guided-menu button{width:100%;border:0;border-radius:10px;text-align:left;padding:12px;background:transparent;font-weight:800;color:#496277}
+  .guided-menu button.active{background:#eef4f8;color:var(--ink)}
+  .guided-panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;min-height:300px}
+  .guided-panel h3{font-size:26px;margin:0 0 8px;letter-spacing:-.02em}
+  .guided-panel .intro{color:var(--muted);line-height:1.55;margin-bottom:18px}
+  .cause{display:grid;grid-template-columns:1fr 36px 1fr 36px 1fr;gap:8px;align-items:center;margin:18px 0}
+  .cause .box{border:1px solid var(--line);border-radius:12px;padding:13px;background:#fbfcfd;text-align:center;font-weight:750}
+  .cause .arrow{text-align:center;color:#91a5b5;font-size:22px;font-weight:900}
+  .insight{padding:14px 16px;border-radius:12px;background:var(--blue-bg);color:#315d5a;line-height:1.55}
+  .mini-labels{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+  .label{font-size:11px;font-weight:850;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:6px 9px;border:1px solid}
+  .fact{color:#275b7a;background:#edf6fb;border-color:#b9d9ea}
+  .interp{color:#7b5d1c;background:var(--gold-bg);border-color:#ead69c}
+  .hyp{color:#7a3a3a;background:#fff1ef;border-color:#edc0ba}
+
+  .memory3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .memory{background:#fff;border:1px solid var(--line);border-radius:15px;padding:18px}
+  .memory strong{font-size:30px;display:block;color:#9cb0bf;margin-bottom:8px}
+  .memory b{font-size:18px;display:block;margin-bottom:7px}
+  .memory p{color:var(--muted);line-height:1.5;margin:0}
+
+  .controls{display:flex;gap:8px;flex-wrap:wrap}
+  .seg{padding:8px 12px;border-radius:10px;background:#fff;border:1px solid var(--line);font-weight:750;font-size:13px;cursor:pointer}
+  .seg.active{background:var(--brand-dark);color:#fff;border-color:var(--brand-dark)}
+
+  .driver-list{display:grid;gap:10px;margin-top:12px}
+  .driver{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fbfcfd;cursor:pointer}
+  .driver-top{display:flex;justify-content:space-between;gap:14px;align-items:center}
+  .driver-name{font-weight:800}
+  .driver .detail{display:none;color:#607486;font-size:13px;line-height:1.5;margin-top:8px;padding-top:8px;border-top:1px solid var(--line)}
+  .driver.open .detail{display:block}
+  .bar{height:7px;border-radius:99px;background:#e8eef3;margin-top:9px;overflow:hidden}
+  .bar > i{display:block;height:100%;border-radius:99px}
+  .bearbar{background:var(--bear)} .bullbar{background:var(--bull)}
+  .balance{display:grid;grid-template-columns:1fr 160px 1fr;gap:16px;align-items:center}
+  .scale{height:16px;border-radius:99px;background:linear-gradient(90deg,var(--bear),#e7c8a6 48%,#dceee8 52%,var(--bull));position:relative}
+  .needle{position:absolute;top:-7px;width:3px;height:30px;background:var(--ink);left:36%;border-radius:2px}
+  .scale-label{font-size:12px;color:var(--muted);display:flex;justify-content:space-between;margin-top:7px}
+
+  .level-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
+  .level-ladder{position:relative;padding:12px 0}
+  .level-line{position:absolute;left:18px;top:20px;bottom:20px;width:2px;background:#cbd8e2}
+  .level{position:relative;margin:10px 0 10px 34px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:#fff}
+  .level:before{content:"";position:absolute;left:-23px;top:50%;transform:translateY(-50%);width:12px;height:12px;border-radius:50%;background:#9fb2c2;border:3px solid white;box-shadow:0 0 0 1px #9fb2c2}
+  .level.critical{border-color:#e7abab;background:#fff5f3}.level.critical:before{background:var(--bear);box-shadow:0 0 0 1px var(--bear)}
+  .level.support{border-color:#abd4c9;background:#f2fbf8}.level.support:before{background:var(--bull);box-shadow:0 0 0 1px var(--bull)}
+  .level b{font-size:17px}
+  .level span{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+
+  .mini-chart{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .metricbox{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fff}
+  .metricbox h3{margin:0 0 10px;font-size:16px}
+  .compare{display:grid;gap:8px}
+  .compare-row{display:grid;grid-template-columns:70px 1fr 70px;gap:10px;align-items:center;font-size:13px}
+  .track{height:12px;background:#eaf0f4;border-radius:8px;overflow:hidden}
+  .fill{height:100%;background:var(--neutral)}
+  .physical-note{margin-top:12px;padding:12px 14px;background:#edf5fa;border-radius:12px;color:#315d5a;font-weight:700;line-height:1.5}
+
+  .relation{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+  .relation-card{border:1px solid var(--line);border-radius:14px;background:#fff;padding:16px}
+  .relation-card h3{margin:0 0 10px;font-size:17px}
+  .relation-row{display:grid;grid-template-columns:1fr 34px 1fr;gap:8px;align-items:center}
+  .relation-box{padding:12px;border-radius:11px;text-align:center;background:#f7f9fb;border:1px solid var(--line);font-size:13px;font-weight:800}
+  .relation-arrow{text-align:center;color:#91a5b5;font-size:20px;font-weight:900}
+
+  .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;align-items:stretch}
+  .flow .step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px;position:relative}
+  .flow .step:not(:last-child):after{content:"→";position:absolute;right:-17px;top:50%;transform:translateY(-50%);color:#91a5b5;font-size:22px;font-weight:900;z-index:2}
+  .step b{display:block;margin-bottom:4px}.step span{font-size:13px;color:var(--muted)}
+
+  .timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+  .event{border-top:4px solid #9aaebe;background:#fff;border-radius:10px;border-left:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:13px}
+  .event.red{border-top-color:var(--bear)} .event.green{border-top-color:var(--bull)}
+  .event time{font-size:11px;color:var(--muted);font-weight:800}
+  .event b{display:block;margin:5px 0;font-size:14px}.event p{font-size:12px;color:var(--muted);margin:0;line-height:1.4}
+
+  .glossary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+  summary{cursor:pointer;font-weight:800}
+  details p{color:var(--muted);font-size:13px;line-height:1.5}
+
+  .checklist{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+  .check{background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px;display:flex;gap:10px;align-items:flex-start}
+  .check input{margin-top:3px}
+  .final{background:var(--brand-dark);color:#fff;border-radius:18px;padding:24px}
+  .final h2{margin:0 0 8px}.final p{margin:0;color:#dbe8f1;line-height:1.6}
+  .source{font-size:12px;color:#7d8b98;margin-top:12px}
+  footer{padding:30px 22px 50px;text-align:center;color:#7b8b99;font-size:12px}
+
+
+    .brand-rule{height:4px;background:linear-gradient(90deg,var(--brand) 0 58%,var(--metal) 58% 72%,transparent 72%);border-radius:99px;margin:0 0 20px;width:150px}
+  .auricchio-kicker{display:flex;align-items:center;gap:10px;color:var(--brand-dark);font-size:12px;font-weight:850;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+  .auricchio-kicker:before{content:"";width:26px;height:3px;background:var(--brand);border-radius:99px}
+  .industrial-band{border:1px solid #d9e2e1;background:linear-gradient(135deg,#273b3d 0%,#3c5052 52%,#6f7d7f 52%,#889497 100%);border-radius:16px;padding:18px;color:white;position:relative;overflow:hidden}
+  .industrial-band:after{content:"";position:absolute;right:-30px;top:-55px;width:180px;height:180px;border:32px solid rgba(255,255,255,.07);transform:rotate(35deg)}
+  .industrial-band b{position:relative;z-index:2;font-size:18px}.industrial-band p{position:relative;z-index:2;color:#e5eeee;margin:6px 0 0;max-width:760px;line-height:1.5}
+  .card,.starter,.question-card,.guided-panel,.guided-menu,.metricbox,.relation-card,.path,.demand-card,.source-panel,.memory,.evidence{border-color:#dfe6e5}
+  .tag{background:var(--brand-soft);color:var(--brand-dark)}
+  .seg.active{background:var(--brand-dark);border-color:var(--brand-dark)}
+  .guided-menu button.active{background:var(--brand-soft);color:var(--brand-dark)}
+  .block .num{background:var(--brand)}
+  .physical-note,.insight{background:var(--brand-soft);color:#315d5a}
+  .final{background:linear-gradient(135deg,var(--brand-dark),#2e4648)}
+  .final p{color:#e8f3f2}
+  .level.support{border-color:#a8d5cf;background:#f0f9f7}
+  .level.critical{border-color:#e5b3ad;background:#fff4f2}
+  .fact{color:#256b67;background:#eaf7f5;border-color:#b9ddd9}
+  .interp{color:#6a5b2a;background:#fff8e8;border-color:#e7d79e}
+  .hyp{color:#7a3a3a;background:#fff1ef;border-color:#edc0ba}
+
+  @media(max-width:900px){
+    .cards4,.timeline,.memory3{grid-template-columns:repeat(2,1fr)}
+    .columns,.level-wrap,.balance,.starter-grid,.guided,.relation{grid-template-columns:1fr}
+    .guided-menu{position:static;display:flex;overflow:auto}
+    .guided-menu button{min-width:180px}
+    .flow{grid-template-columns:1fr 1fr}.flow .step:after{display:none}
+    .checklist,.glossary{grid-template-columns:1fr 1fr}
+    .four-blocks{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:560px){
+    .topbar .wrap{align-items:flex-start;flex-direction:column;gap:8px}
+    .hero .wrap{padding-top:36px}
+    .cards4,.timeline,.flow,.checklist,.glossary,.mini-chart,.memory3,.four-blocks{grid-template-columns:1fr}
+    .question-card{grid-template-columns:1fr}
+    .cause{grid-template-columns:1fr}
+    .cause .arrow{transform:rotate(90deg)}
+  }
+  .impact-badge{font-size:11px;font-weight:850;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:5px 8px;background:#eef3f7;color:#496277;border:1px solid #d7e1e8}
+  .driver-top-right{display:flex;align-items:center;gap:8px}
+  .evidence-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .evidence{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+  .evidence h3{margin:0 0 8px;font-size:17px}
+  .evidence p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}
+  .big-callout{background:linear-gradient(180deg,#ffffff 0%,#f6f9fb 100%);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
+  .big-callout h3{margin:0 0 10px;font-size:22px}
+  .big-callout p{margin:0;color:var(--muted);line-height:1.6}
+  .two-paths{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .path{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+  .path h3{margin:0 0 10px;font-size:17px}
+  .path ul{margin:0;padding-left:18px;color:var(--muted);line-height:1.65;font-size:13px}
+  .data-table{width:100%;border-collapse:collapse;font-size:13px}
+  .data-table th,.data-table td{padding:11px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  .data-table th{color:#5b7184;font-size:11px;text-transform:uppercase;letter-spacing:.07em}
+  .data-table tr:last-child td{border-bottom:0}
+  .note-box{padding:13px 15px;border:1px dashed #b9c8d4;border-radius:12px;background:#fbfcfd;color:#5e7283;font-size:13px;line-height:1.55}
+  .source-panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+  .source-panel summary{font-weight:850}
+  .source-panel p,.source-panel li{font-size:13px;color:var(--muted);line-height:1.55}
+  .signal-row{display:grid;grid-template-columns:150px 1fr 120px;gap:10px;align-items:center;margin:9px 0}
+  .signal-name{font-weight:800;font-size:13px}
+  .signal-track{height:10px;background:#edf1f4;border-radius:99px;overflow:hidden}
+  .signal-fill{height:100%;border-radius:99px}
+  .signal-bear{background:var(--bear)} .signal-bull{background:var(--bull)} .signal-neutral{background:#8ca0b2}
+  .signal-label{text-align:right;font-size:12px;color:var(--muted);font-weight:800}
+  .demand-map{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .demand-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+  .demand-card h3{margin:0 0 6px;font-size:17px}
+  .demand-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}
+  .status-dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}
+  .dot-red{background:var(--bear)} .dot-green{background:var(--bull)} .dot-gray{background:#8ca0b2}
+
+  @media(max-width:980px){
+    .topbar .wrap{min-height:70px;padding:10px 18px}
+    .menu-toggle{display:block}
+    .nav-shell{position:relative}
+    .main-nav{display:none;position:absolute;right:0;top:48px;width:230px;padding:8px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 18px 40px rgba(38,58,61,.14);flex-direction:column;align-items:stretch;z-index:40}
+    .main-nav.open{display:flex}
+    .main-nav>a,.more-menu>summary{padding:11px 12px}
+    .more-dropdown{position:static;width:auto;margin:4px 0 0;box-shadow:none;border:0;border-left:2px solid var(--brand-soft);border-radius:0;padding:2px 0 2px 8px}
+  }
+  @media(max-width:560px){
+    .topbar .wrap{flex-direction:row;align-items:center;gap:12px}
+    .brand-name{font-size:17px}
+    .brand-sub{font-size:9px;letter-spacing:.12em}
+    .brand-accent{height:34px}
+    .main-nav{right:-2px;width:min(250px,calc(100vw - 28px))}
+  }
+
+
+  .flow.zinc-flow{grid-template-columns:repeat(6,1fr)}
+  .timeline.zinc-timeline{grid-template-columns:repeat(10,1fr)}
+  .market-conflict{display:grid;grid-template-columns:1fr 52px 1fr;gap:12px;align-items:stretch}
+  .market-conflict .versus{display:grid;place-items:center;color:var(--muted);font-weight:900;font-size:12px;letter-spacing:.08em}
+  .rating-note{margin-top:12px;padding:13px 15px;border-left:4px solid var(--brand);background:var(--brand-soft);border-radius:10px;color:#315d5a;font-size:13px;line-height:1.55}
+  @media(max-width:900px){
+    .flow.zinc-flow,.timeline.zinc-timeline{grid-template-columns:1fr 1fr}
+    .market-conflict{grid-template-columns:1fr}
+    .market-conflict .versus{min-height:28px}
+  }
+  @media(max-width:560px){
+    .flow.zinc-flow,.timeline.zinc-timeline{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand-lockup" href="#comece" aria-label="Auricchio Market Intelligence">
+      <span class="brand-accent" aria-hidden="true"></span>
+      <span class="brand-copy">
+        <span class="brand-name">AURICCHIO</span>
+        <span class="brand-sub">Market Intelligence · Zinco</span>
+      </span>
+    </a>
+
+    <div class="nav-shell">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button>
+      <nav class="main-nav" id="mainNav">
+        <a class="primary-nav" href="#guia">Visão geral</a>
+        <a href="#macro">Macro</a>
+        <a href="#niveis">Técnico</a>
+        <a href="#fisico">Físico</a>
+        <a href="#oferta">Oferta</a>
+        <a href="#demanda">Demanda</a>
+        <details class="more-menu">
+          <summary>Mais</summary>
+          <div class="more-dropdown">
+            <a href="#panorama">Panorama</a>
+            <a href="#forcas">Forças</a>
+            <a href="#posicionamento">Fundos</a>
+            <a href="#timeline">Linha do tempo</a>
+            <a href="#glossario">Glossário</a>
+            <a href="#fontes">Fontes e limites</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="brand-rule"></div>
+    <div class="eyebrow">AURICCHIO · MARKET INTELLIGENCE · LME · 25 NOVEMBRO 2026</div>
+    <h1>Um rebound resolve o problema — ou só prepara uma correção mais profunda?</h1>
+    <div class="lede">
+      O relatório mensal amplia o horizonte: <b>a Fastmarkets mantém postura tática cautelosa a bearish</b> depois da falha em construir base acima de US$ 4.000/t.
+      Um relief bounce de curto prazo continua possível porque o mercado está esticado para baixo, mas <b>isso não basta para reabrir uma fase bullish sustentável</b>.
+      A perda decisiva de US$ 3.450/t aumentaria o risco de correção mais profunda, com US$ 3.236/t (20 MMA) e US$ 3.024,50/t como referências mensais.
+    </div>
+    <div class="hero-actions">
+      <button class="primary" onclick="document.querySelector('#guia').scrollIntoView()">Entender em 5 minutos</button>
+      <button onclick="document.querySelector('#panorama').scrollIntoView()">Ir direto aos dados</button>
+      <button onclick="exportResumo()">↓ Exportar resumo</button>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="question-card">
+    <div>
+      <h2>Pergunta simples</h2>
+      <p>O próximo rebound consegue reconstruir uma base convincente — ou será apenas uma pausa antes de nova pressão vendedora?</p>
+    </div>
+    <div class="tag">RELATÓRIO-BASE · 25/11/2026 · GRÁFICO MENSAL</div>
+  </div>
+</div>
+
+<main>
+<section style="margin-top:8px">
+  <div class="industrial-band">
+    <b>Inteligência de mercado aplicada à cadeia de metais não ferrosos</b>
+    <p>Leitura dos drivers de preço, concentrado, fundições, estoques, exportações e demanda do zinco para apoiar acompanhamento de mercado e tomada de decisão.</p>
+  </div>
+</section>
+
+<section id="comece">
+  <div class="starter">
+    <div class="starter-grid">
+      <div>
+        <div class="eyebrow">Antes de analisar os gráficos</div>
+        <h3>A lente mensal pergunta se a tendência ainda merece confiança</h3>
+        <p>A Fastmarkets já havia reduzido a convicção bullish em outubro. Em novembro, a deterioração técnica reforça a postura cautelosa: bounce é possível, mas só uma base convincente e a recuperação da zona de breakdown mudariam a leitura.</p>
+      </div>
+      <div class="four-blocks">
+        <div class="block"><div class="num">1</div><b>Técnico</b><span>Suportes, resistências, triângulo descendente, momentum e tendência.</span></div>
+        <div class="block"><div class="num">2</div><b>Macro</b><span>Fraqueza do cobre e sentimento entre metais podem contaminar o zinco.</span></div>
+        <div class="block"><div class="num">3</div><b>Físico</b><span>Estoques LME/SHFE, Cash–3M e disponibilidade imediata.</span></div>
+        <div class="block"><div class="num">4</div><b>Oferta & demanda</b><span>Concentrado, smelters, exportações chinesas e consumo refinado.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="guia">
+  <div class="section-head">
+    <div>
+      <h2>Entenda este relatório em 5 minutos</h2>
+      <p>Uma leitura guiada para quem não abriu o documento original.</p>
+    </div>
+  </div>
+  <div class="guided">
+    <div class="guided-menu">
+      <button class="active" data-step="0">1. O que aconteceu?</button>
+      <button data-step="1">2. Por que importa?</button>
+      <button data-step="2">3. O que segura?</button>
+      <button data-step="3">4. O que pode mudar?</button>
+      <button data-step="4">5. O que acompanhar?</button>
+    </div>
+    <div class="guided-panel" id="guidedPanel"></div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <div>
+      <h2>Se você lembrar de apenas 3 coisas</h2>
+      <p>Essa é a versão de memória do relatório.</p>
+    </div>
+  </div>
+  <div class="memory3">
+    <div class="memory"><strong>01</strong><b>Viés mensal: cauteloso/bearish</b><p>A falha em sustentar uma base acima de US$ 4.000/t confirmou perda de momentum e piora do risco-retorno para posições outright bullish.</p></div>
+    <div class="memory"><strong>02</strong><b>Bounce não é reversão</b><p>O mercado está esticado para baixo e pode reagir, mas a Fastmarkets continua cética sobre a sustentabilidade de uma recuperação.</p></div>
+    <div class="memory"><strong>03</strong><b>US$ 3.450 é o gatilho</b><p>Perda decisiva desse nível danifica mais a estrutura e abre risco de busca por níveis mensais inferiores.</p></div>
+  </div>
+</section>
+
+<section id="evidencias">
+  <div class="section-head">
+    <div><h2>Como ler as afirmações do observatório</h2><p>Nem tudo tem o mesmo grau de certeza.</p></div>
+  </div>
+  <div class="evidence-grid">
+    <div class="evidence">
+      <div class="mini-labels" style="margin-top:0"><span class="label fact">Fato</span></div>
+      <h3>O relatório observou</h3>
+      <p>Ex.: suporte psicológico em US$ 3.500/t; 20 MMA em US$ 3.236/t; mínima de 2026 em US$ 3.024,50/t; máxima de 2026 em US$ 4.065/t.</p>
+    </div>
+    <div class="evidence">
+      <div class="mini-labels" style="margin-top:0"><span class="label interp">Interpretação</span></div>
+      <h3>O que isso pode significar</h3>
+      <p>O preço estar esticado para baixo aumenta a chance de relief bounce, mas isso não significa início de uma nova fase bullish sustentável.</p>
+    </div>
+    <div class="evidence">
+      <div class="mini-labels" style="margin-top:0"><span class="label hyp">Hipótese / risco</span></div>
+      <h3>O que ainda precisa acontecer</h3>
+      <p>Ex.: uma perda decisiva de US$ 3.450/t pode atrair vendedores de momentum e tendência; a profundidade da correção continua sendo cenário, não fato.</p>
+    </div>
+  </div>
+</section>
+
+<section id="mensal">
+  <div class="section-head"><div><h2>Lente mensal: o que mudou no horizonte maior</h2><p>Esta edição é técnica e mensal. Ela não atualiza estoques, spreads, China ou fundos.</p></div></div>
+  <div class="grid cards4">
+    <div class="card"><small>Curto prazo</small><div class="value bear">Bearish</div><p>Configuração de curto prazo deteriorou e stochastics estão virando para baixo.</p></div>
+    <div class="card"><small>Médio prazo</small><div class="value bear">Bearish</div><p>A Fastmarkets mantém postura tática neutral-to-mildly bearish / cautious-to-bearish.</p></div>
+    <div class="card"><small>Longo prazo</small><div class="value bull">Bullish</div><p>O painel mensal ainda marca longo prazo bullish, apesar do risco de correção mais profunda.</p></div>
+    <div class="card"><small>Questão-chave</small><div class="value">Base convincente?</div><p>Sem reconstruir base e recuperar a zona de breakdown, rally tende a ser tratado como alívio.</p></div>
+  </div>
+  <div class="rating-note"><b>Importante:</b> o relatório de 25/11 é um <b>monthly chart</b>. Os dados físicos exibidos mais abaixo são mantidos apenas como <b>último contexto diário disponível de 23/11</b>, não como atualização de 25/11.</div>
+</section>
+
+<section id="panorama">
+  <div class="section-head">
+    <div><h2>Panorama do mercado</h2><p>Selecione o horizonte para mudar a leitura.</p></div>
+    <div class="controls">
+      <button class="seg active" data-h="curto">Curto prazo</button>
+      <button class="seg" data-h="medio">Médio prazo</button>
+      <button class="seg" data-h="longo">Longo prazo</button>
+    </div>
+  </div>
+  <div class="grid cards4" id="horizonCards"></div>
+  <div class="rating-note">
+    <b>Nota de leitura:</b> o relatório mensal coloca curto e médio prazo como bearish e longo prazo como bullish. A Fastmarkets admite relief bounce, mas mantém postura cautious-to-bearish enquanto o zinco não reconstruir uma base convincente e recuperar a recente zona de breakdown.
+  </div>
+</section>
+
+<section id="forcas">
+  <div class="section-head">
+    <div><h2>O que está puxando o mercado?</h2><p>Clique em cada driver para entender fato, leitura e limitação.</p></div>
+  </div>
+  <div class="grid columns">
+    <div class="card">
+      <small>Pressiona o preço</small>
+      <div class="driver-list" id="bearDrivers"></div>
+    </div>
+    <div class="card">
+      <small>Dá suporte ao preço</small>
+      <div class="driver-list" id="bullDrivers"></div>
+    </div>
+  </div>
+
+  <div class="market-conflict" style="margin-top:14px">
+    <div class="card">
+      <small>Pressão visível</small>
+      <div class="value bear">Risco de correção mais profunda</div>
+      <p>A falha em construir base acima de US$ 4.000/t foi o alerta; agora uma perda decisiva de US$ 3.450/t pode atrair vendedores de momentum e tendência.</p>
+    </div>
+    <div class="versus">VERSUS</div>
+    <div class="card">
+      <small>Contrapeso</small>
+      <div class="value bull">Bounce de alívio é possível</div>
+      <p>O mercado está esticado para baixo e o fim do ano se aproxima. Isso abre espaço para rebound, mas não muda a leitura mensal sem reconstrução de base.</p>
+    </div>
+  </div>
+</section>
+
+<section id="macro">
+  <div class="section-head"><div><h2>Risco-retorno: por que a Fastmarkets reduziu a convicção bullish</h2><p>A edição mensal não é uma análise macroeconômica; o foco é o comportamento do preço em horizonte mais longo.</p></div></div>
+  <div class="big-callout">
+    <h3>A falha acima de US$ 4.000/t foi o primeiro grande aviso</h3>
+    <p>No relatório mensal de outubro, a Fastmarkets já dizia que manter uma postura outright bullish estava ficando menos atraente. A incapacidade de construir uma base firme acima de US$ 4.000/t confirmou perda de momentum e levou à postura neutral-to-mildly bearish, agora mantida.</p>
+    <div class="mini-labels"><span class="label fact">Fato</span><span class="label interp">Interpretação</span></div>
+  </div>
+  <div class="relation" style="margin-top:14px">
+    <div class="relation-card"><h3>Leitura tática</h3><div class="relation-row"><div class="relation-box">Base > US$ 4.000 falha</div><div class="relation-arrow">→</div><div class="relation-box">Momentum bullish perde força</div></div><div class="relation-row" style="margin-top:8px"><div class="relation-box">Risco-retorno piora</div><div class="relation-arrow">→</div><div class="relation-box">Postura cautious-to-bearish</div></div></div>
+    <div class="relation-card"><h3>O que um bounce significa?</h3><p style="margin:0;color:var(--muted);font-size:13px;line-height:1.6">Pode ser apenas um reset temporário antes de nova pressão vendedora. A Fastmarkets só mudaria a leitura se o zinco reconstruísse uma base convincente e recuperasse a zona recente de breakdown.</p><div class="mini-labels"><span class="label interp">Interpretação</span></div></div>
+  </div>
+</section>
+
+<section id="niveis">
+  <div class="section-head">
+    <div><h2>Gráfico mensal: níveis que importam</h2><p>Aqui a referência deixa de ser DMA diária e passa a ser estrutura mensal.</p></div>
+    <div class="controls"><button class="seg active" data-s="base">Cenário-base</button><button class="seg" data-s="bear">Se 3.450 romper</button><button class="seg" data-s="bull">Se recuperar</button></div>
+  </div>
+  <div class="level-wrap">
+    <div class="card"><div class="level-ladder"><div class="level-line"></div>
+      <div class="level"><b>US$ 4.896</b><span>Recorde histórico — referência extrema do ciclo.</span></div>
+      <div class="level"><b>US$ 4.065</b><span>Máxima de 2026 e principal resistência destacada no relatório.</span></div>
+      <div class="level"><b>US$ 4.000</b><span>Região que os bulls não conseguiram transformar em base firme; falha foi sinal de perda de momentum.</span></div>
+      <div class="level critical"><b>US$ 3.500 / 3.450</b><span>US$ 3.500 é suporte psicológico; perda decisiva de ~US$ 3.450 deteriora a estrutura e pode atrair trend-followers.</span></div>
+      <div class="level"><b>US$ 3.236</b><span>20 MMA — primeira referência mensal inferior destacada pela Fastmarkets.</span></div>
+      <div class="level support"><b>US$ 3.024,50</b><span>Mínima de 2026 — suporte estrutural mais profundo no gráfico mensal.</span></div>
+    </div></div>
+    <div class="card"><small>Leitura mensal</small><div class="value" id="scenarioTitle">Cautela bearish, com bounce possível</div><p id="scenarioText">A trajetória de baixa não precisa ser linear. Um relief rally é plausível, mas não deve ser tratado como nova fase bullish sem reconstrução de base e recuperação da zona de breakdown.</p><div class="mini-labels"><span class="label interp">Interpretação</span></div></div>
+  </div>
+</section>
+
+<section id="fisico">
+  <div class="section-head"><div><h2>Mercado físico — último contexto diário disponível</h2><p>O relatório mensal de 25/11 não atualiza físico. Abaixo permanecem, separados, os últimos dados do relatório diário de 23/11.</p></div></div>
+  <div class="mini-chart">
+    <div class="metricbox"><h3>Estoques LME · 20/11</h3><div class="compare"><div class="compare-row"><span>Semana ant.</span><div class="track"><div class="fill" style="width:97.95%"></div></div><b>142.625 t</b></div><div class="compare-row"><span>20/nov</span><div class="track"><div class="fill" style="width:100%"></div></div><b>145.675 t</b></div></div><div class="mini-labels"><span class="label fact">Fato histórico</span></div></div>
+    <div class="metricbox"><h3>Estoques SHFE · último dado</h3><div class="compare"><div class="compare-row"><span>Anterior</span><div class="track"><div class="fill" style="width:100%"></div></div><b>120.166 t</b></div><div class="compare-row"><span>Atual</span><div class="track"><div class="fill" style="width:92.6%;background:var(--bull)"></div></div><b>111.276 t</b></div></div><div class="mini-labels"><span class="label fact">Fato histórico</span></div></div>
+  </div>
+  <div class="grid columns" style="margin-top:12px"><div class="card"><small>Cash–3M · 20/11</small><div class="value bull">US$ 167,50/t</div><p>Último spread informado no relatório diário de 23/11. Não é cotação atual de 25/11.</p></div><div class="card"><small>Estoques combinados</small><div class="value">256.951 t</div><p>Último dado diário: queda semanal de 5.840 t.</p></div></div>
+  <div class="note-box" style="margin-top:12px"><b>Limite:</b> nenhum desses números foi atualizado pelo monthly chart de 25/11. Eles permanecem apenas para manter a continuidade da narrativa física.</div>
+</section>
+
+<section id="oferta">
+  <div class="section-head"><div><h2>Oferta — último contexto diário de 23/11</h2><p>O monthly chart de 25/11 não atualiza oferta; preservamos os últimos dados apenas como contexto histórico.</p></div></div>
+  <div class="flow zinc-flow"><div class="step"><b>Mineração</b><span>Produção global ainda ~4% menor a/a em jan–set.</span></div><div class="step"><b>Concentrado</b><span>TC CIF China permanece em −US$ 175 a −145/t.</span></div><div class="step"><b>Fundições</b><span>Margens apertadas podem limitar recuperação de output.</span></div><div class="step"><b>China</b><span>Exportações de refinado despencaram em outubro.</span></div><div class="step"><b>Estoques</b><span>SHFE cai e estoques combinados recuam.</span></div><div class="step"><b>Preço</b><span>Físico dá mais suporte à estabilização.</span></div></div>
+  <div class="grid columns" style="margin-top:14px"><div class="card"><small>Exportações chinesas · outubro</small><div class="value bear">23.269 t</div><p>Queda de 66,96% m/m. As importações subiram 134,93% para 1.394 t.</p><div class="mini-labels"><span class="label fact">Fato</span></div></div><div class="card"><small>Net exports</small><div class="value">21.875 t</div><p>Contra cerca de 69.800 t em setembro. A China continua exportadora líquida, mas o ritmo excepcional de setembro não se sustentou.</p><div class="mini-labels"><span class="label fact">Fato</span></div></div></div>
+  <div class="big-callout" style="margin-top:14px"><h3>Por que isso importa?</h3><p>A China tinha superávit calculado de ~286 kt em jan–set, enquanto o ex-China tinha déficit de ~201 kt antes do comércio. Menos exportação chinesa tende a preservar o aperto fora da China, embora os números de outubro não provem qual será o ritmo de novembro.</p><div class="mini-labels"><span class="label fact">Fato</span><span class="label interp">Interpretação</span><span class="label hyp">Risco</span></div></div>
+</section>
+
+<section id="demanda">
+  <div class="section-head">
+    <div><h2>Demanda: China ainda não mostra recuperação ampla nos setores intensivos em zinco</h2><p>O relatório de 19/11 traz evidência direta de fraqueza em investimento, infraestrutura e imobiliário.</p></div>
+  </div>
+  <div class="demand-map">
+    <div class="demand-card"><h3><span class="status-dot dot-gray"></span>Produção industrial</h3><p>Outubro: +4,8% a/a. Há atividade, mas isso não se traduziu em recuperação ampla dos setores zinc-intensive.</p><div class="mini-labels"><span class="label fact">Fato</span></div></div>
+    <div class="demand-card"><h3><span class="status-dot dot-red"></span>Investimento fixo</h3><p>Jan–out: −8,1%.</p><div class="mini-labels"><span class="label fact">Fato</span></div></div>
+    <div class="demand-card"><h3><span class="status-dot dot-red"></span>Infraestrutura</h3><p>Jan–out: −5,1%.</p><div class="mini-labels"><span class="label fact">Fato</span></div></div>
+  </div>
+  <div class="grid columns" style="margin-top:14px">
+    <div class="card"><small>Imobiliário chinês</small><div class="value bear">−21,6%</div><p>Investimento imobiliário em jan–out. Isso limita suporte vindo de construção e setores ligados a aço galvanizado.</p><div class="mini-labels"><span class="label fact">Fato</span><span class="label interp">Interpretação</span></div></div>
+    <div class="card"><small>Leitura</small><div class="value">Demanda ainda desigual</div><p>Manufatura avançada mostra força relativa, mas ainda não existe recuperação ampla suficiente para absorver confortavelmente mais produção refinada.</p><div class="mini-labels"><span class="label interp">Interpretação</span></div></div>
+  </div>
+</section>
+
+<section id="posicionamento">
+  <div class="section-head"><div><h2>Posicionamento de fundos — último contexto disponível</h2><p>O monthly chart de 25/11 não traz nova fotografia de fundos. Mantemos o último dado citado anteriormente, claramente identificado como histórico.</p></div></div>
+  <div class="grid cards4"><div class="card"><small>Último dado · semana até 13/11</small><div class="value bear">110.201 longs</div><p>Queda de 10.561 lots.</p></div><div class="card"><small>Gross shorts</small><div class="value">73.453</div><p>Queda de 7.794 lots.</p></div><div class="card"><small>Net long</small><div class="value">36.748</div><p>Queda de 2.768 lots.</p></div><div class="card"><small>Leitura histórica</small><div class="value bear">Long liquidation</div><p>Saída de longs superou short-covering antes da queda mais recente.</p></div></div>
+  <div class="note-box" style="margin-top:12px"><b>Importante:</b> esses dados não confirmam o posicionamento posterior ao breakdown. Servem apenas para mostrar que o suporte financeiro já estava enfraquecendo.</div>
+</section>
+
+<section id="timeline">
+  <div class="section-head"><div><h2>Como a narrativa do zinco mudou</h2><p>O objetivo é acompanhar a tese, não apenas acumular relatórios.</p></div></div>
+  <div class="timeline zinc-timeline">
+    <div class="event red"><time>01 OUT</time><b>Macro pressiona</b><p>Pullback ganha força, embora concentrado apertado ainda sustente o médio prazo.</p></div>
+    <div class="event red"><time>23 OUT</time><b>US$ 3.650 em teste</b><p>Estoques LME sobem e fundos adicionam shorts.</p></div>
+    <div class="event green"><time>26 OUT</time><b>Dip-buying aparece</b><p>Backwardation e concentrado apertado dão suporte à recuperação.</p></div>
+    <div class="event green"><time>27 OUT</time><b>Correção, não reversão</b><p>Fastmarkets vê boa chance de a tendência de alta continuar viva.</p></div>
+    <div class="event red"><time>03 NOV</time><b>US$ 3.900 falha</b><p>Recuperação trava apesar de retiradas contínuas de estoque.</p></div>
+    <div class="event red"><time>17 NOV</time><b>No limite técnico</b><p>LME recebe +7.100 t líquidas, mas backwardation amplia; US$ 3.650 continua decidindo a tese.</p></div>
+    <div class="event red"><time>18 NOV</time><b>Topping pattern</b><p>Curva segue apertada, mas outright price perde resposta; painel passa a curto e médio bearish.</p></div>
+    <div class="event red"><time>19 NOV</time><b>Channel breakdown</b><p>Preço cai abaixo da 200 DMA e do canal; macro hawkish + long liquidation passam a dominar.</p></div>
+    <div class="event green"><time>23 NOV</time><b>Busca por base</b><p>Compradores aparecem abaixo de US$ 3.500; físico aperta, mas reversão ainda não é confirmada.</p></div>
+    <div class="event red"><time>25 NOV</time><b>Lente mensal cautelosa</b><p>Falha acima de US$ 4.000 reforça viés cautious-to-bearish; perda de US$ 3.450 aumenta risco de correção profunda.</p></div>
+  </div>
+</section>
+
+<section id="glossario">
+  <div class="section-head"><div><h2>Glossário que vale memorizar</h2><p>Abra apenas o termo que precisar.</p></div></div>
+  <div class="glossary">
+    <details><summary>Backwardation</summary><p>O metal para entrega imediata vale mais do que o contrato futuro. Normalmente indica maior urgência por disponibilidade agora.</p></details>
+    <details><summary>Topping pattern</summary><p>Estrutura que sugere possível formação de topo após uma tendência de alta. Não confirma reversão sozinha; precisa de rompimentos e continuidade para ganhar validade.</p></details>
+    <details><summary>Channel breakdown</summary><p>Rompimento para baixo do canal de tendência. Neste caso, recuperação rápida para dentro dele pode caracterizar falso rompimento.</p></details>
+    <details><summary>Oversold</summary><p>Indicadores mostram pressão vendedora muito avançada. Pode abrir espaço para rebound, mas não confirma reversão por si só.</p></details>
+    <details><summary>Treatment Charge (TC)</summary><p>Taxa ligada ao processamento de concentrado por uma fundição. TC muito negativo sinaliza forte competição por matéria-prima e pior economia para smelters que compram concentrado.</p></details>
+    <details><summary>Descending triangle</summary><p>Formação técnica com suporte horizontal e topos descendentes. A perda do suporte pode reforçar uma leitura baixista, mas não é garantia de queda.</p></details>
+    <details><summary>HSL</summary><p>Horizontal Support Line: linha horizontal onde compradores já apareceram e o preço encontrou suporte.</p></details>
+    <details><summary>DTL</summary><p>Downtrend Line: linha de tendência descendente. Enquanto o preço não a supera, ela pode funcionar como resistência.</p></details>
+    <details><summary>Dip-buying</summary><p>Compradores entram após uma queda por considerarem o preço atrativo. Isso não confirma sozinho que a correção terminou.</p></details>
+    <details><summary>Long liquidation</summary><p>Quem estava comprado encerra posições, podendo pressionar o preço para baixo.</p></details>
+    <details><summary>Short covering</summary><p>Quem estava vendido recompra para fechar a posição; pode gerar alta sem representar nova convicção bullish.</p></details>
+    <details><summary>Outright price</summary><p>O preço do metal em si, separado da estrutura da curva e dos spreads físicos.</p></details>
+  </div>
+</section>
+
+<section>
+  <div class="section-head"><div><h2>Checklist do analista</h2><p>Cinco sinais para perceber se a tese está mudando.</p></div></div>
+  <div class="checklist">
+    <label class="check"><input type="checkbox"><span>US$ 3.500 / 3.450 continua sendo defendido?</span></label>
+    <label class="check"><input type="checkbox"><span>O próximo bounce reconstrói uma base convincente?</span></label>
+    <label class="check"><input type="checkbox"><span>O preço recupera a zona recente de breakdown?</span></label>
+    <label class="check"><input type="checkbox"><span>US$ 3.236 (20 MMA) começa a entrar no radar?</span></label>
+    <label class="check"><input type="checkbox"><span>Os fundamentos físicos continuam apertados nos próximos relatórios diários?</span></label>
+  </div>
+</section>
+
+<section id="fontes">
+  <div class="section-head">
+    <div><h2>Fontes e limites</h2><p>Relatório atual e contexto histórico ficam claramente separados.</p></div>
+  </div>
+  <details class="source-panel" open>
+    <summary>O que sustenta esta versão</summary>
+    <p><b>Relatório-base:</b> Fastmarkets, “Zinc monthly chart: Runs the risk of a deeper correction - November 2026”, 25/11/2026.</p>
+    <p><b>Contexto histórico utilizado:</b> relatórios diários de zinco até 23/11/2026 para físico, oferta, demanda, posicionamento e evolução da tese. Esses dados não são tratados como atualização de 25/11.</p>
+    <p><b>Posicionamento:</b> sem atualização no monthly chart de 25/11; o último dado exibido permanece histórico.</p>
+    <ul>
+      <li>O relatório de 25/11 é técnico e mensal; não atualiza LME, SHFE, Cash–3M, exportações, demanda ou fundos.</li>
+      <li>US$ 3.500 aparece como suporte psicológico no painel; o texto destaca US$ 3.450 como nível cuja perda deterioraria ainda mais a estrutura.</li>
+      <li>20 MMA = média móvel mensal de 20 períodos; não deve ser confundida com a 20 DMA dos relatórios diários.</li>
+      <li>Relief bounce é uma possibilidade reconhecida pela fonte, não previsão de reversão.</li>
+      <li>Os dados físicos mantidos no observatório são do último relatório diário disponível e aparecem marcados como históricos.</li>
+    </ul>
+  </details>
+</section>
+
+<section>
+  <div class="final">
+    <h2>Mensagem final</h2>
+    <p>
+      <b>O relatório mensal de 25/11 reforça que o risco não é apenas uma queda adicional de curto prazo, mas uma correção mais profunda dentro do ciclo.</b>
+      A Fastmarkets continua aberta a um relief bounce porque o mercado está esticado para baixo, mas não vê isso como suficiente para reabrir uma fase bullish sustentável.
+      O sinal que mudou a postura foi a incapacidade de construir uma base firme acima de US$ 4.000/t; agora, <b>US$ 3.450/t é o gatilho de deterioração adicional</b>.
+      Se esse nível for perdido de forma decisiva, US$ 3.236/t - a 20 MMA - e depois US$ 3.024,50/t passam a ganhar relevância como referências mensais.
+      A leitura, portanto, é simples: <b>bounce é possível; confiança bullish, ainda não.</b>
+    </p>
+  </div>
+  <div class="source">Base principal: Fastmarkets monthly chart, 25/11/2026. Dados físicos mantidos apenas como último contexto diário disponível de 23/11.</div>
+</section>
+</main>
+
+<footer><b style="color:var(--brand-dark);letter-spacing:.08em">AURICCHIO</b> · Observatório do Zinco · inteligência de mercado</footer>
+
+<script>
+const guidedSteps = [
+  {title:"1. O que mudou no relatório mensal?",intro:"A Fastmarkets confirma que a postura outright bullish perdeu atratividade. A falha em construir base acima de US$ 4.000/t e a deterioração recente mantêm o viés tático cauteloso/bearish.",chain:["Base > 4.000 falha","Momentum perde força","Risco-retorno piora"],insight:"A mudança principal é de horizonte: o problema agora é a sustentabilidade da tendência, não apenas o próximo rebound.",labels:["Fato","Interpretação"]},
+  {title:"2. Pode haver rebound?",intro:"Sim. O relatório diz que o preço está cada vez mais esticado para baixo e que, com o fim do ano se aproximando, um relief bounce não pode ser descartado.",chain:["Mercado esticado","Venda perde linearidade","Bounce pode aparecer"],insight:"Bounce não é sinônimo de reversão. Pode ser apenas um reset antes de nova pressão vendedora.",labels:["Fato","Interpretação"]},
+  {title:"3. Qual nível preocupa mais?",intro:"US$ 3.500 é suporte psicológico no painel, mas o texto destaca ~US$ 3.450/t como gatilho cuja perda decisiva danificaria ainda mais a estrutura.",chain:["3.450 rompe","Trend-followers entram","Níveis inferiores ganham relevância"],insight:"No gráfico mensal, US$ 3.236/t (20 MMA) e US$ 3.024,50/t são referências inferiores importantes.",labels:["Fato","Hipótese"]},
+  {title:"4. O que mudaria a leitura?",intro:"A Fastmarkets quer ver uma base convincente e recuperação da recente zona de breakdown. Sem isso, rallies continuam suspeitos.",chain:["Base se reconstrói","Breakdown é recuperado","Bull case ganha credibilidade"],insight:"O relatório não fornece um número mensal exato para a zona de breakdown; por isso o observatório não inventa um nível.",labels:["Fato","Interpretação"]},
+  {title:"5. O que eu acompanharia agora?",intro:"A lente mensal pede menos atenção ao ruído diário e mais aos sinais estruturais.",bullets:["US$ 3.500 / 3.450 continua sendo defendido?","O bounce reconstrói base ou falha rapidamente?","A zona de breakdown é recuperada?","US$ 3.236 (20 MMA) entra no radar?","Os relatórios diários continuam mostrando físico apertado?"],insight:"Objetivo: distinguir alívio técnico de mudança real da tendência mensal.",labels:["Checklist"]}
+];
+
+function renderGuided(i){
+  const s=guidedSteps[i];
+  let body=`<h3>${s.title}</h3><div class="intro">${s.intro}</div>`;
+  if(s.chain){
+    body+=`<div class="cause">
+      <div class="box">${s.chain[0]}</div><div class="arrow">→</div>
+      <div class="box">${s.chain[1]}</div><div class="arrow">→</div>
+      <div class="box">${s.chain[2]}</div>
+    </div>`;
+  }
+  if(s.bullets){
+    body+=`<div class="card" style="box-shadow:none"><ol style="margin:0;padding-left:20px;color:#526779;line-height:1.8">${s.bullets.map(x=>`<li>${x}</li>`).join("")}</ol></div>`;
+  }
+  body+=`<div class="insight">${s.insight}</div>`;
+  body+=`<div class="mini-labels">${s.labels.map(x=>`<span class="label ${x==="Fato"?"fact":x==="Interpretação"?"interp":x==="Hipótese"?"hyp":"fact"}">${x}</span>`).join("")}</div>`;
+  document.getElementById("guidedPanel").innerHTML=body;
+}
+renderGuided(0);
+
+document.querySelectorAll("[data-step]").forEach(btn=>btn.onclick=()=>{
+  document.querySelectorAll("[data-step]").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  renderGuided(Number(btn.dataset.step));
+});
+
+const horizonData = {
+  curto:[
+    ["Viés","Bearish","Configuração de curto prazo deteriorou e stochastics estão virando para baixo.","bear"],
+    ["Possibilidade","Relief bounce","Mercado esticado pode reagir sem mudar a tendência.","bull"],
+    ["Gatilho","~US$ 3.450","Perda decisiva aumenta risco de venda por momentum/trend-followers.","bear"],
+    ["Pergunta","Base ou pausa?","A recuperação precisa provar sustentabilidade.",""]
+  ],
+  medio:[
+    ["Viés","Bearish","Fastmarkets mantém postura tática cautious-to-bearish.","bear"],
+    ["Falha-chave","US$ 4.000","Bulls não conseguiram transformar a região em base firme.","bear"],
+    ["Próxima referência","US$ 3.236","20 MMA ganha importância se a correção aprofundar.",""],
+    ["Pergunta","Breakdown volta?","Sem recuperar a zona rompida, rally segue suspeito.",""]
+  ],
+  longo:[
+    ["Viés do painel","Bullish","O gráfico mensal ainda classifica o horizonte longo como bullish.","bull"],
+    ["Risco","Correção profunda","Longo bullish não impede correções relevantes dentro do ciclo.","bear"],
+    ["Suporte estrutural","US$ 3.024,50","Mínima de 2026 no gráfico mensal.",""],
+    ["Pergunta","Ciclo intacto?","A qualidade da próxima base será decisiva.",""]
+  ]
+};
+
+const bears = [
+ ["Falha em sustentar US$ 4.000","Alto","Fato: a Fastmarkets considerava uma base firme acima de US$ 4.000 crítica para os bulls. A falha reforçou a perda de momentum."],
+ ["Configuração de curto prazo deteriorada","Alto","Fato: o relatório mensal diz que a estrutura técnica piorou e os stochastics estão virando para baixo."],
+ ["Perda de US$ 3.450","Alto","Cenário: rompimento decisivo pode atrair vendedores de momentum e trend-followers e aprofundar a correção."],
+ ["Rally potencialmente temporário","Médio","Interpretação da fonte: uma recuperação pode ser apenas reset antes de nova pressão vendedora se a base não for reconstruída."]
+];
+
+const bulls = [
+ ["Mercado esticado para baixo","Médio","Fato: a Fastmarkets reconhece downside stretch crescente. Isso abre espaço para relief bounce de curto prazo."],
+ ["Fim do ano","Baixo/médio","A fonte cita a aproximação do year-end como um fator para não descartar reação de curto prazo."],
+ ["Longo prazo ainda bullish","Médio","Fato: o painel mensal mantém classificação bullish no longo prazo, apesar do viés tático cauteloso."],
+ ["Base ainda pode ser reconstruída","Médio","Cenário: uma base convincente e recuperação da zona de breakdown poderiam melhorar novamente a leitura."]
+];
+
+function renderHorizon(h){
+  document.getElementById('horizonCards').innerHTML=horizonData[h].map(x=>`<div class="card"><small>${x[0]}</small><div class="value ${x[3]}">${x[1]}</div><p>${x[2]}</p></div>`).join('');
+}
+function renderDrivers(id, data){
+  document.getElementById(id).innerHTML=data.map(x=>`
+  <div class="driver">
+    <div class="driver-top">
+      <span class="driver-name">${x[0]}</span>
+      <div class="driver-top-right"><span class="impact-badge">Impacto: ${x[1]}</span></div>
+    </div>
+    <div class="detail">${x[2]}</div>
+  </div>`).join('');
+}
+renderHorizon('curto');
+renderDrivers('bearDrivers',bears);
+renderDrivers('bullDrivers',bulls);
+
+document.querySelectorAll('[data-h]').forEach(btn=>btn.onclick=()=>{
+  document.querySelectorAll('[data-h]').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderHorizon(btn.dataset.h);
+});
+document.addEventListener('click',e=>{
+  const d=e.target.closest('.driver');
+  if(d) d.classList.toggle('open');
+});
+
+const scenarios={
+  base:["Cautela bearish, com bounce possível","A trajetória inferior não precisa ser linear. Um relief rally é plausível, mas não deve ser confundido com nova fase bullish sem reconstrução de base."],
+  bear:["Correção mensal aprofunda","Perda decisiva de ~US$ 3.450 deteriora mais a estrutura; US$ 3.236 (20 MMA) e US$ 3.024,50 ganham relevância como referências inferiores."],
+  bull:["Bull case precisa ser reconstruído","A Fastmarkets quer ver uma base convincente e recuperação da zona recente de breakdown antes de interpretar uma alta como início de fase bullish sustentável."]
+};
+document.querySelectorAll('[data-s]').forEach(btn=>btn.onclick=()=>{
+  document.querySelectorAll('[data-s]').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const s=scenarios[btn.dataset.s];
+  document.getElementById('scenarioTitle').textContent=s[0];
+  document.getElementById('scenarioText').textContent=s[1];
+});
+
+function exportResumo(){
+  const text=`OBSERVATÓRIO DO ZINCO — RESUMO ANALÍTICO
+Relatório-base: Fastmarkets monthly chart, 25/11/2026.
+
+PERGUNTA CENTRAL
+Um rebound resolve o problema — ou só prepara uma correção mais profunda?
+
+LEITURA MENSAL
+1) Curto prazo: bearish.
+2) Médio prazo: bearish / cautious-to-bearish.
+3) Longo prazo: bullish no painel mensal.
+4) Relief bounce é possível porque o preço está esticado para baixo.
+5) Sem base convincente e recuperação da zona de breakdown, rally não confirma nova fase bullish.
+
+NÍVEIS MENSAIS
+US$ 4.896 = recorde histórico
+US$ 4.065 = máxima de 2026
+US$ 4.000 = região que falhou como base firme
+US$ 3.500 = suporte psicológico
+~US$ 3.450 = gatilho de deterioração adicional destacado no texto
+US$ 3.236 = 20 MMA
+US$ 3.024,50 = mínima de 2026
+
+MENSAGEM
+A Fastmarkets mantém postura cautious-to-bearish. A queda não precisa ser linear e um bounce é possível, mas a leitura só melhora estruturalmente com reconstrução de base e recuperação da recente zona de breakdown.
+
+CONTEXTO
+O relatório mensal de 25/11 não atualiza estoques, spreads, China, demanda ou fundos. Os dados físicos do observatório permanecem como último contexto diário disponível de 23/11.
+
+PERGUNTA PARA AS PRÓXIMAS SEMANAS
+O próximo rebound reconstrói uma base convincente ou apenas oferece um reset antes de nova pressão vendedora?`;
+  const blob=new Blob([text],{type:'text/plain;charset=utf-8'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='resumo_observatorio_zinco_25-11-2026.txt';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+</script>
+
+<script>
+(function(){
+  const btn=document.querySelector('.menu-toggle');
+  const nav=document.querySelector('.main-nav');
+  if(!btn||!nav) return;
+  btn.addEventListener('click',()=>{
+    const open=nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded',String(open));
+  });
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    nav.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+  }));
+  document.addEventListener('click',(e)=>{
+    if(window.innerWidth<=980 && !e.target.closest('.nav-shell')){
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
