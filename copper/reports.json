@@ -1,8 +1,17 @@
 {
   "metal": "Cobre",
   "symbol": "Cu",
-  "updated_at": "2026-11-23",
+  "updated_at": "2026-11-25",
   "reports": [
+    {
+      "date": "2026-11-25",
+      "display_date": "25/11/2026",
+      "title": "final",
+      "file": "./reports/2026-11-25.html",
+      "bias": "Bearish / vulnerável",
+      "physical": "Misto",
+      "note": "O cobre segue bearish no curto prazo , com abertura em US$ 11.874,50/t em 25/11 e RSI 21. A tentativa recente de recuperação não venceu US$ 12.400–12.500/t. Agora a venda de fundos está mais associada à entrada de novos shorts , enquanto..."
+    },
     {
       "date": "2026-11-23",
       "display_date": "23/11/2026",
