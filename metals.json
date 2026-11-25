@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23",
+  "updated_at": "2026-11-25",
   "metals": [
     {
       "id": "tin",
@@ -8,10 +8,10 @@
       "english": "Tin",
       "status": "available",
       "path": "./tin/",
-      "last_report": "23/11/2026",
-      "bias": "Bearish / suporte em teste",
-      "physical": "Apertado",
-      "note": "O estanho segurou a mínima de março em US$ 40.555/t e forma um possível fundo duplo. O curto prazo segue bearish e sobrevendido, enquanto estoques baixos e déficits modestos sustentam a tese física."
+      "last_report": "25/11/2026",
+      "bias": "Bearish / abaixo de US$ 40 mil",
+      "physical": "Misto / aliviando",
+      "note": "O estanho caiu abaixo de US$ 40 mil/t após o rebound falhar. O técnico segue bearish e sobrevendido; a SHFE mostra reposição física, mas a LME entrou em contango, reduzindo o suporte do aperto imediato."
     },
     {
       "id": "copper",

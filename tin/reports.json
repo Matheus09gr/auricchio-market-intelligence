@@ -1,8 +1,17 @@
 {
   "metal": "Estanho",
   "symbol": "Sn",
-  "updated_at": "2026-11-23",
+  "updated_at": "2026-11-25",
   "reports": [
+    {
+      "date": "2026-11-25",
+      "display_date": "25/11/2026",
+      "title": "Tin falls below $40,000 as failed AI rebound reinforces bearish pressure",
+      "file": "./reports/2026-11-25.html",
+      "bias": "Bearish / abaixo de US$ 40 mil",
+      "physical": "Misto / aliviando",
+      "note": "O estanho caiu abaixo de US$ 40 mil/t após o rebound falhar. O técnico segue bearish e sobrevendido; a SHFE mostra reposição física, mas a LME entrou em contango, reduzindo o suporte do aperto imediato."
+    },
     {
       "date": "2026-11-23",
       "display_date": "23/11/2026",
