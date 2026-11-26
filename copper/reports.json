@@ -1,8 +1,17 @@
 {
   "metal": "Cobre",
   "symbol": "Cu",
-  "updated_at": "2026-11-25",
+  "updated_at": "2026-11-26",
   "reports": [
+    {
+      "date": "2026-11-26",
+      "display_date": "26/11/2026",
+      "title": "final",
+      "file": "./reports/2026-11-26.html",
+      "bias": "Bearish / vulnerável",
+      "physical": "Misto",
+      "note": "O cobre apresenta primeiros indícios de estabilização após uma queda intensa : o Doji de 25/11 sugere dip-buying próximo a US$ 11.571/t e o RSI 22 segue em sobrevenda. Entretanto, o death cross 55/100 DMA , a posição reduzida de fundos,..."
+    },
     {
       "date": "2026-11-25",
       "display_date": "25/11/2026",

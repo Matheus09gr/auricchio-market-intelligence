@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25",
+  "updated_at": "2026-11-26",
   "metals": [
     {
       "id": "tin",
@@ -8,10 +8,10 @@
       "english": "Tin",
       "status": "available",
       "path": "./tin/",
-      "last_report": "25/11/2026",
-      "bias": "Bearish / abaixo de US$ 40 mil",
-      "physical": "Misto / aliviando",
-      "note": "O estanho caiu abaixo de US$ 40 mil/t após o rebound falhar. O técnico segue bearish e sobrevendido; a SHFE mostra reposição física, mas a LME entrou em contango, reduzindo o suporte do aperto imediato."
+      "last_report": "26/11/2026",
+      "bias": "Bearish / extremamente sobrevendido",
+      "physical": "Apertado",
+      "note": "O estanho marcou nova mínima de 2026 em US$ 36.485/t. A tendência segue bearish, mas a queda quase vertical e o RSI em 22 aumentam a probabilidade de rebound técnico ou short covering."
     },
     {
       "id": "copper",
@@ -20,10 +20,10 @@
       "english": "Copper",
       "status": "available",
       "path": "./copper/",
-      "last_report": "25/11/2026",
+      "last_report": "26/11/2026",
       "bias": "Bearish / vulnerável",
       "physical": "Misto",
-      "note": "O cobre segue bearish no curto prazo , com abertura em US$ 11.874,50/t em 25/11 e RSI 21. A tentativa recente de recuperação não venceu US$ 12.400–12.500/t. Agora a venda de fundos está mais associada à entrada de novos shorts , enquanto..."
+      "note": "O cobre apresenta primeiros indícios de estabilização após uma queda intensa : o Doji de 25/11 sugere dip-buying próximo a US$ 11.571/t e o RSI 22 segue em sobrevenda. Entretanto, o death cross 55/100 DMA , a posição reduzida de fundos,..."
     },
     {
       "id": "zinc",
@@ -32,10 +32,10 @@
       "english": "Zinc",
       "status": "available",
       "path": "./zinc/",
-      "last_report": "25/11/2026",
+      "last_report": "26/11/2026",
       "bias": "Bearish",
       "physical": "Apertado",
-      "note": "O relatório mensal de 25/11 reforça que o risco não é apenas uma queda adicional de curto prazo, mas uma correção mais profunda dentro do ciclo. A Fastmarkets continua aberta a um relief bounce porque o mercado está esticado para baixo,..."
+      "note": "O rebound de 26/11 mostra que o zinco já encontra compradores em níveis deprimidos, mas ainda não mostra que a tendência virou. A estrutura permanece bearish, o preço continua abaixo de todas as médias e os fundos seguem reduzindo exposi..."
     },
     {
       "id": "nickel",
@@ -44,10 +44,10 @@
       "english": "Nickel",
       "status": "available",
       "path": "./nickel/",
-      "last_report": "25/11/2026",
-      "bias": "Bearish (análise mensal)",
-      "physical": "Sem atualização física em 25/11; referência LME 274.140 t do research 18/11",
-      "note": "Research mensal Fastmarkets Andy Farida 25/11; risco condicional em 14–15 mil e 10–12 mil US$/t; tese enfraquece com força mensal 19–20 mil e melhora de momentum. Dados fundamentais históricos rotulados."
+      "last_report": "26/11/2026",
+      "bias": "Curto neutro / lateral a moderadamente altista; médio bearish; longo neutro (26/11); mensal bearish (25/11)",
+      "physical": "LME+SHFE 380.846 t em 26/11, +26,1% vs início de 2026; Classe 1 difere de Classe 2",
+      "note": "Research diário William Adams 26/11; mensal Andy Farida 25/11 preservado; preços e riscos por horizonte; sem cotação ou Cash–3M novos no PDF do dia."
     },
     {
       "id": "tungsten",

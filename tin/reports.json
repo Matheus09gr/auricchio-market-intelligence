@@ -1,8 +1,17 @@
 {
   "metal": "Estanho",
   "symbol": "Sn",
-  "updated_at": "2026-11-25",
+  "updated_at": "2026-11-26",
   "reports": [
+    {
+      "date": "2026-11-26",
+      "display_date": "26/11/2026",
+      "title": "Tin oversold but downside bias remains",
+      "file": "./reports/2026-11-26.html",
+      "bias": "Bearish / extremamente sobrevendido",
+      "physical": "Apertado",
+      "note": "O estanho marcou nova mínima de 2026 em US$ 36.485/t. A tendência segue bearish, mas a queda quase vertical e o RSI em 22 aumentam a probabilidade de rebound técnico ou short covering."
+    },
     {
       "date": "2026-11-25",
       "display_date": "25/11/2026",

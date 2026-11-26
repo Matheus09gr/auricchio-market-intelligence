@@ -1,8 +1,17 @@
 {
   "metal": "Níquel",
   "symbol": "Ni",
-  "updated_at": "2026-11-25",
+  "updated_at": "2026-11-26",
   "reports": [
+    {
+      "date": "2026-11-26",
+      "display_date": "26/11/2026",
+      "title": "Níquel: suporte começa a formar base no diário, mas mensal ainda bearish",
+      "file": "./reports/2026-11-26.html",
+      "bias": "Curto neutro / lateral a moderadamente altista; médio bearish; longo neutro (26/11); mensal bearish (25/11)",
+      "physical": "LME+SHFE 380.846 t em 26/11, +26,1% vs início de 2026; Classe 1 difere de Classe 2",
+      "note": "Research diário William Adams 26/11; mensal Andy Farida 25/11 preservado; preços e riscos por horizonte; sem cotação ou Cash–3M novos no PDF do dia."
+    },
     {
       "date": "2026-11-25",
       "display_date": "25/11/2026",

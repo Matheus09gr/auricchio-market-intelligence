@@ -1,8 +1,17 @@
 {
   "metal": "Zinco",
   "symbol": "Zn",
-  "updated_at": "2026-11-25",
+  "updated_at": "2026-11-26",
   "reports": [
+    {
+      "date": "2026-11-26",
+      "display_date": "26/11/2026",
+      "title": "Zinc seeks support near $3,500 as physical tightness counters financial pressure",
+      "file": "./reports/2026-11-26.html",
+      "bias": "Bearish",
+      "physical": "Apertado",
+      "note": "O rebound de 26/11 mostra que o zinco já encontra compradores em níveis deprimidos, mas ainda não mostra que a tendência virou. A estrutura permanece bearish, o preço continua abaixo de todas as médias e os fundos seguem reduzindo exposi..."
+    },
     {
       "date": "2026-11-25",
       "display_date": "25/11/2026",
