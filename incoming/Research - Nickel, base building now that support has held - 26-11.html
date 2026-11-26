@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#2c918b" name="theme-color"/>
+<title>Auricchio | Observatório do Níquel — 26/11/2026 | LME</title>
+<style>
+  :root{
+    --ink:#243238; --ink2:#3f5158; --muted:#728086; --line:#dde4e5;
+    --paper:#f6f8f7; --white:#fff; --bear:#c85252; --bear-bg:#fff1ef;
+    --bull:#2b806b; --bull-bg:#edf8f4; --neutral:#708086; --nav:#263a3d;
+    --brand:#2c918b; --brand-dark:#23736f; --brand-soft:#e8f4f2; --metal:#8b979b;
+    --metal-light:#edf0f0; --gold:#9b7a3d; --gold-bg:#fff8e9; --blue-bg:#edf5f5;
+    --shadow:0 12px 30px rgba(38,58,61,.08);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+  a{color:inherit}
+  button{font:inherit}
+  .topbar{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.98);backdrop-filter:blur(10px);color:var(--ink);border-bottom:1px solid #e1e7e7;box-shadow:0 4px 18px rgba(38,58,61,.035)}
+  .topbar .wrap{max-width:1240px;margin:auto;min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:34px;padding:10px 24px}
+  .brand-lockup{display:flex;align-items:center;gap:13px;flex:0 0 auto;text-decoration:none}
+  .brand-accent{width:5px;height:38px;border-radius:99px;background:linear-gradient(180deg,var(--brand) 0 68%,#9aa6a9 68% 100%)}
+  .brand-copy{display:flex;flex-direction:column;line-height:1}
+  .brand-name{font-size:19px;font-weight:900;letter-spacing:.105em;color:var(--brand-dark)}
+  .brand-sub{margin-top:7px;font-size:10px;font-weight:750;letter-spacing:.16em;color:#8a969a;text-transform:uppercase}
+  .nav-shell{display:flex;align-items:center;gap:18px;min-width:0}
+  .main-nav{display:flex;align-items:center;gap:4px;font-size:13.5px;overflow:visible}
+  .main-nav>a,.more-menu>summary{display:flex;align-items:center;text-decoration:none;color:#53666b;padding:9px 10px;border-radius:9px;white-space:nowrap;font-weight:650;cursor:pointer;list-style:none}
+  .main-nav>a:hover,.more-menu>summary:hover{color:var(--brand-dark);background:var(--brand-soft)}
+  .main-nav>a.primary-nav{color:var(--brand-dark);background:#f1f7f6;font-weight:800}
+  .more-menu{position:relative}
+  .more-menu>summary::-webkit-details-marker{display:none}
+  .more-menu>summary:after{content:"⌄";font-size:12px;margin-left:6px;color:#8b989b}
+  .more-menu[open]>summary{color:var(--brand-dark);background:var(--brand-soft)}
+  .more-dropdown{position:absolute;right:0;top:calc(100% + 10px);width:190px;padding:8px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 18px 40px rgba(38,58,61,.14);display:grid;gap:2px}
+  .more-dropdown a{text-decoration:none;color:#53666b;padding:10px 11px;border-radius:8px;font-size:13px;font-weight:650}
+  .more-dropdown a:hover{background:var(--brand-soft);color:var(--brand-dark)}
+  .menu-toggle{display:none;border:1px solid #dce5e4;background:#fff;color:var(--brand-dark);border-radius:10px;padding:9px 11px;font-size:13px;font-weight:800}
+
+  .hero{background:linear-gradient(180deg,#edf5f4 0%,#f8faf9 72%,#ffffff 100%);border-bottom:1px solid var(--line)}
+  .hero .wrap{max-width:1180px;margin:auto;padding:54px 22px 40px}
+  .eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--brand-dark);text-transform:uppercase}
+  h1{font-size:clamp(34px,5vw,62px);line-height:.98;margin:12px 0 14px;max-width:940px;letter-spacing:-.045em}
+  .lede{font-size:18px;line-height:1.6;color:#647378;max-width:900px}
+  .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+  button,.pill{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:10px 15px;font-weight:750;cursor:pointer}
+  button.primary{background:var(--brand);color:white;border-color:var(--brand)}
+  button:hover{transform:translateY(-1px)}
+
+  main{max-width:1180px;margin:auto;padding:22px}
+  section{margin:26px 0 48px}
+  .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:16px}
+  .section-head h2{font-size:28px;margin:0;letter-spacing:-.025em;color:#2d4145;position:relative;padding-left:14px}.section-head h2:before{content:"";position:absolute;left:0;top:5px;bottom:5px;width:4px;border-radius:99px;background:var(--brand)}
+  .section-head p{margin:5px 0 0;color:var(--muted);line-height:1.5}
+  .grid{display:grid;gap:14px}
+  .columns{grid-template-columns:1fr 1fr}
+  .cards4{grid-template-columns:repeat(4,1fr)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 6px 18px rgba(16,37,63,.04)}
+  .card small{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#718292;font-weight:800}
+  .card .value{font-size:25px;font-weight:850;margin:7px 0 5px;letter-spacing:-.03em}
+  .card p{margin:0;color:#66798a;font-size:14px;line-height:1.5}
+  .bear{color:var(--bear)} .bull{color:var(--bull)}
+
+  .question{max-width:1180px;margin:26px auto 0;padding:0 22px}
+  .question-card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:22px 24px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
+  .question-card h2{margin:0 0 5px;font-size:22px}
+  .question-card p{margin:0;color:var(--muted);line-height:1.5}
+  .tag{padding:8px 11px;border-radius:10px;background:#eef3f7;color:#3a566e;font-size:12px;font-weight:800}
+
+  .starter{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
+  .starter-grid{display:grid;grid-template-columns:1.05fr 1.95fr;gap:18px;align-items:start}
+  .starter h3{margin:0 0 8px;font-size:23px}
+  .starter p{margin:0;color:var(--muted);line-height:1.6}
+  .four-blocks{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .block{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fbfcfd}
+  .block b{display:block;margin-bottom:5px}
+  .block span{font-size:13px;color:var(--muted);line-height:1.45}
+  .block .num{width:28px;height:28px;display:grid;place-items:center;border-radius:50%;background:var(--brand-dark);color:#fff;font-size:12px;font-weight:900;margin-bottom:10px}
+
+  .guided{display:grid;grid-template-columns:240px 1fr;gap:16px}
+  .guided-menu{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px;position:sticky;top:75px;height:max-content}
+  .guided-menu button{width:100%;border:0;border-radius:10px;text-align:left;padding:12px;background:transparent;font-weight:800;color:#496277}
+  .guided-menu button.active{background:#eef4f8;color:var(--ink)}
+  .guided-panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;min-height:300px}
+  .guided-panel h3{font-size:26px;margin:0 0 8px;letter-spacing:-.02em}
+  .guided-panel .intro{color:var(--muted);line-height:1.55;margin-bottom:18px}
+  .cause{display:grid;grid-template-columns:1fr 36px 1fr 36px 1fr;gap:8px;align-items:center;margin:18px 0}
+  .cause .box{border:1px solid var(--line);border-radius:12px;padding:13px;background:#fbfcfd;text-align:center;font-weight:750}
+  .cause .arrow{text-align:center;color:#91a5b5;font-size:22px;font-weight:900}
+  .insight{padding:14px 16px;border-radius:12px;background:var(--blue-bg);color:#315d5a;line-height:1.55}
+  .mini-labels{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+  .label{font-size:11px;font-weight:850;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:6px 9px;border:1px solid}
+  .fact{color:#275b7a;background:#edf6fb;border-color:#b9d9ea}
+  .interp{color:#7b5d1c;background:var(--gold-bg);border-color:#ead69c}
+  .hyp{color:#7a3a3a;background:#fff1ef;border-color:#edc0ba}
+
+  .memory3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .memory{background:#fff;border:1px solid var(--line);border-radius:15px;padding:18px}
+  .memory strong{font-size:30px;display:block;color:#9cb0bf;margin-bottom:8px}
+  .memory b{font-size:18px;display:block;margin-bottom:7px}
+  .memory p{color:var(--muted);line-height:1.5;margin:0}
+
+  .controls{display:flex;gap:8px;flex-wrap:wrap}
+  .seg{padding:8px 12px;border-radius:10px;background:#fff;border:1px solid var(--line);font-weight:750;font-size:13px;cursor:pointer}
+  .seg.active{background:var(--brand-dark);color:#fff;border-color:var(--brand-dark)}
+
+  .driver-list{display:grid;gap:10px;margin-top:12px}
+  .driver{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fbfcfd;cursor:pointer}
+  .driver-top{display:flex;justify-content:space-between;gap:14px;align-items:center}
+  .driver-name{font-weight:800}
+  .driver .detail{display:none;color:#607486;font-size:13px;line-height:1.5;margin-top:8px;padding-top:8px;border-top:1px solid var(--line)}
+  .driver.open .detail{display:block}
+  .bar{height:7px;border-radius:99px;background:#e8eef3;margin-top:9px;overflow:hidden}
+  .bar > i{display:block;height:100%;border-radius:99px}
+  .bearbar{background:var(--bear)} .bullbar{background:var(--bull)}
+  .balance{display:grid;grid-template-columns:1fr 160px 1fr;gap:16px;align-items:center}
+  .scale{height:16px;border-radius:99px;background:linear-gradient(90deg,var(--bear),#e7c8a6 48%,#dceee8 52%,var(--bull));position:relative}
+  .needle{position:absolute;top:-7px;width:3px;height:30px;background:var(--ink);left:36%;border-radius:2px}
+  .scale-label{font-size:12px;color:var(--muted);display:flex;justify-content:space-between;margin-top:7px}
+
+  .level-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
+  .level-ladder{position:relative;padding:12px 0}
+  .level-line{position:absolute;left:18px;top:20px;bottom:20px;width:2px;background:#cbd8e2}
+  .level{position:relative;margin:10px 0 10px 34px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:#fff}
+  .level:before{content:"";position:absolute;left:-23px;top:50%;transform:translateY(-50%);width:12px;height:12px;border-radius:50%;background:#9fb2c2;border:3px solid white;box-shadow:0 0 0 1px #9fb2c2}
+  .level.critical{border-color:#e7abab;background:#fff5f3}.level.critical:before{background:var(--bear);box-shadow:0 0 0 1px var(--bear)}
+  .level.support{border-color:#abd4c9;background:#f2fbf8}.level.support:before{background:var(--bull);box-shadow:0 0 0 1px var(--bull)}
+  .level b{font-size:17px}
+  .level span{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+
+  .mini-chart{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .metricbox{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fff}
+  .metricbox h3{margin:0 0 10px;font-size:16px}
+  .compare{display:grid;gap:8px}
+  .compare-row{display:grid;grid-template-columns:70px 1fr 70px;gap:10px;align-items:center;font-size:13px}
+  .track{height:12px;background:#eaf0f4;border-radius:8px;overflow:hidden}
+  .fill{height:100%;background:var(--neutral)}
+  .physical-note{margin-top:12px;padding:12px 14px;background:#edf5fa;border-radius:12px;color:#315d5a;font-weight:700;line-height:1.5}
+
+  .relation{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+  .relation-card{border:1px solid var(--line);border-radius:14px;background:#fff;padding:16px}
+  .relation-card h3{margin:0 0 10px;font-size:17px}
+  .relation-row{display:grid;grid-template-columns:1fr 34px 1fr;gap:8px;align-items:center}
+  .relation-box{padding:12px;border-radius:11px;text-align:center;background:#f7f9fb;border:1px solid var(--line);font-size:13px;font-weight:800}
+  .relation-arrow{text-align:center;color:#91a5b5;font-size:20px;font-weight:900}
+
+  .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;align-items:stretch}
+  .flow .step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px;position:relative}
+  .flow .step:not(:last-child):after{content:"→";position:absolute;right:-17px;top:50%;transform:translateY(-50%);color:#91a5b5;font-size:22px;font-weight:900;z-index:2}
+  .step b{display:block;margin-bottom:4px}.step span{font-size:13px;color:var(--muted)}
+
+  .timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+  .event{border-top:4px solid #9aaebe;background:#fff;border-radius:10px;border-left:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:13px}
+  .event.red{border-top-color:var(--bear)} .event.green{border-top-color:var(--bull)}
+  .event time{font-size:11px;color:var(--muted);font-weight:800}
+  .event b{display:block;margin:5px 0;font-size:14px}.event p{font-size:12px;color:var(--muted);margin:0;line-height:1.4}
+
+  .glossary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+  summary{cursor:pointer;font-weight:800}
+  details p{color:var(--muted);font-size:13px;line-height:1.5}
+
+  .checklist{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+  .check{background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px;display:flex;gap:10px;align-items:flex-start}
+  .check input{margin-top:3px}
+  .final{background:var(--brand-dark);color:#fff;border-radius:18px;padding:24px}
+  .final h2{margin:0 0 8px}.final p{margin:0;color:#dbe8f1;line-height:1.6}
+  .source{font-size:12px;color:#7d8b98;margin-top:12px}
+  footer{padding:30px 22px 50px;text-align:center;color:#7b8b99;font-size:12px}
+
+
+    .brand-rule{height:4px;background:linear-gradient(90deg,var(--brand) 0 58%,var(--metal) 58% 72%,transparent 72%);border-radius:99px;margin:0 0 20px;width:150px}
+  .auricchio-kicker{display:flex;align-items:center;gap:10px;color:var(--brand-dark);font-size:12px;font-weight:850;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+  .auricchio-kicker:before{content:"";width:26px;height:3px;background:var(--brand);border-radius:99px}
+  .industrial-band{border:1px solid #d9e2e1;background:linear-gradient(135deg,#273b3d 0%,#3c5052 52%,#6f7d7f 52%,#889497 100%);border-radius:16px;padding:18px;color:white;position:relative;overflow:hidden}
+  .industrial-band:after{content:"";position:absolute;right:-30px;top:-55px;width:180px;height:180px;border:32px solid rgba(255,255,255,.07);transform:rotate(35deg)}
+  .industrial-band b{position:relative;z-index:2;font-size:18px}.industrial-band p{position:relative;z-index:2;color:#e5eeee;margin:6px 0 0;max-width:760px;line-height:1.5}
+  .card,.starter,.question-card,.guided-panel,.guided-menu,.metricbox,.relation-card,.path,.demand-card,.source-panel,.memory,.evidence{border-color:#dfe6e5}
+  .tag{background:var(--brand-soft);color:var(--brand-dark)}
+  .seg.active{background:var(--brand-dark);border-color:var(--brand-dark)}
+  .guided-menu button.active{background:var(--brand-soft);color:var(--brand-dark)}
+  .block .num{background:var(--brand)}
+  .physical-note,.insight{background:var(--brand-soft);color:#315d5a}
+  .final{background:linear-gradient(135deg,var(--brand-dark),#2e4648)}
+  .final p{color:#e8f3f2}
+  .level.support{border-color:#a8d5cf;background:#f0f9f7}
+  .level.critical{border-color:#e5b3ad;background:#fff4f2}
+  .fact{color:#256b67;background:#eaf7f5;border-color:#b9ddd9}
+  .interp{color:#6a5b2a;background:#fff8e8;border-color:#e7d79e}
+  .hyp{color:#7a3a3a;background:#fff1ef;border-color:#edc0ba}
+
+  @media(max-width:900px){
+    .cards4,.timeline,.memory3{grid-template-columns:repeat(2,1fr)}
+    .columns,.level-wrap,.balance,.starter-grid,.guided,.relation{grid-template-columns:1fr}
+    .guided-menu{position:static;display:flex;overflow:auto}
+    .guided-menu button{min-width:180px}
+    .flow{grid-template-columns:1fr 1fr}.flow .step:after{display:none}
+    .checklist,.glossary{grid-template-columns:1fr 1fr}
+    .four-blocks{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:560px){
+    .topbar .wrap{align-items:flex-start;flex-direction:column;gap:8px}
+    .hero .wrap{padding-top:36px}
+    .cards4,.timeline,.flow,.checklist,.glossary,.mini-chart,.memory3,.four-blocks{grid-template-columns:1fr}
+    .question-card{grid-template-columns:1fr}
+    .cause{grid-template-columns:1fr}
+    .cause .arrow{transform:rotate(90deg)}
+  }
+  .impact-badge{font-size:11px;font-weight:850;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:5px 8px;background:#eef3f7;color:#496277;border:1px solid #d7e1e8}
+  .driver-top-right{display:flex;align-items:center;gap:8px}
+  .evidence-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .evidence{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+  .evidence h3{margin:0 0 8px;font-size:17px}
+  .evidence p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}
+  .big-callout{background:linear-gradient(180deg,#ffffff 0%,#f6f9fb 100%);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
+  .big-callout h3{margin:0 0 10px;font-size:22px}
+  .big-callout p{margin:0;color:var(--muted);line-height:1.6}
+  .two-paths{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .path{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+  .path h3{margin:0 0 10px;font-size:17px}
+  .path ul{margin:0;padding-left:18px;color:var(--muted);line-height:1.65;font-size:13px}
+  .data-table{width:100%;border-collapse:collapse;font-size:13px}
+  .data-table th,.data-table td{padding:11px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  .data-table th{color:#5b7184;font-size:11px;text-transform:uppercase;letter-spacing:.07em}
+  .data-table tr:last-child td{border-bottom:0}
+  .note-box{padding:13px 15px;border:1px dashed #b9c8d4;border-radius:12px;background:#fbfcfd;color:#5e7283;font-size:13px;line-height:1.55}
+  .source-panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+  .source-panel summary{font-weight:850}
+  .source-panel p,.source-panel li{font-size:13px;color:var(--muted);line-height:1.55}
+  .signal-row{display:grid;grid-template-columns:150px 1fr 120px;gap:10px;align-items:center;margin:9px 0}
+  .signal-name{font-weight:800;font-size:13px}
+  .signal-track{height:10px;background:#edf1f4;border-radius:99px;overflow:hidden}
+  .signal-fill{height:100%;border-radius:99px}
+  .signal-bear{background:var(--bear)} .signal-bull{background:var(--bull)} .signal-neutral{background:#8ca0b2}
+  .signal-label{text-align:right;font-size:12px;color:var(--muted);font-weight:800}
+  .demand-map{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .demand-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+  .demand-card h3{margin:0 0 6px;font-size:17px}
+  .demand-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}
+  .status-dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}
+  .dot-red{background:var(--bear)} .dot-green{background:var(--bull)} .dot-gray{background:#8ca0b2}
+
+  @media(max-width:980px){
+    .topbar .wrap{min-height:70px;padding:10px 18px}
+    .menu-toggle{display:block}
+    .nav-shell{position:relative}
+    .main-nav{display:none;position:absolute;right:0;top:48px;width:230px;padding:8px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 18px 40px rgba(38,58,61,.14);flex-direction:column;align-items:stretch;z-index:40}
+    .main-nav.open{display:flex}
+    .main-nav>a,.more-menu>summary{padding:11px 12px}
+    .more-dropdown{position:static;width:auto;margin:4px 0 0;box-shadow:none;border:0;border-left:2px solid var(--brand-soft);border-radius:0;padding:2px 0 2px 8px}
+  }
+  @media(max-width:560px){
+    .topbar .wrap{flex-direction:row;align-items:center;gap:12px}
+    .brand-name{font-size:17px}
+    .brand-sub{font-size:9px;letter-spacing:.12em}
+    .brand-accent{height:34px}
+    .main-nav{right:-2px;width:min(250px,calc(100vw - 28px))}
+  }
+
+
+/* Refinamentos do Observatório de Níquel preservando o design Auricchio v5 */
+html{scroll-padding-top:92px}
+.hero .wrap{padding-top:52px;padding-bottom:45px}
+.eyebrow{font-size:11px}
+.card .value{overflow-wrap:anywhere}
+.metric-large{font-size:clamp(29px,4vw,42px);font-weight:850;letter-spacing:-.035em;line-height:1.08;margin:8px 0}
+.sidenote{font-size:12px;color:var(--muted);line-height:1.5}
+.subhead{font-size:18px;color:#2d4145;margin:0 0 10px}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.stat-panel{padding:18px;border:1px solid var(--line);background:white;border-radius:16px}
+.stat-panel .big{font-size:29px;font-weight:850;letter-spacing:-.025em;margin:5px 0 4px}
+.stat-panel span{font-size:12px;color:var(--muted);line-height:1.5}
+.viz-stack{display:grid;gap:15px;margin-top:14px}
+.viz-row{display:grid;grid-template-columns:minmax(125px,190px) minmax(0,1fr) 105px;gap:14px;align-items:center}
+.viz-row .lbl{font-size:13px;font-weight:750;color:#44585e}
+.viz-row .num{text-align:right;font-size:14px;font-weight:800;white-space:nowrap}
+.viz-track{height:16px;background:#eef2f2;border-radius:7px;overflow:hidden}
+.viz-fill{height:100%;border-radius:7px;background:#84959a;min-width:2px}
+.viz-fill.brand{background:var(--brand)}
+.viz-fill.bear{background:var(--bear)}
+.viz-fill.bull{background:var(--bull)}
+.viz-legend{font-size:12px;color:#75868a;line-height:1.5;margin-top:10px}
+.dual-balance{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.balance-block{border-radius:14px;border:1px solid var(--line);padding:17px;background:white}
+.balance-block .balance-number{font-size:34px;font-weight:880;letter-spacing:-.04em;margin:10px 0 7px}
+.balance-block .foot{font-size:13px;color:var(--muted);line-height:1.5}
+.balance-block .stripe{height:5px;margin-top:15px;border-radius:99px;background:#a7b5b7}
+.balance-block.surplus .stripe{background:var(--bear)}
+.balance-block.deficit .stripe{background:var(--bull)}
+.technical-path{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0 18px}
+.technical-path div{border:1px solid var(--line);background:#fbfcfc;border-radius:12px;padding:12px}
+.technical-path small{display:block;color:var(--muted);margin-top:7px;font-size:12px;line-height:1.4}
+.technical-path b{font-size:18px}
+.technical-path .key{border-color:#b8dcd7;background:#f1f8f7}
+.technical-path .danger{border-color:#ead1cb;background:#fff7f5}
+.straight-note{display:flex;gap:12px;align-items:flex-start;border-left:4px solid var(--brand);background:#f3f8f7;padding:15px 17px;border-radius:0 12px 12px 0;color:#455f61;line-height:1.6}
+.straight-note b{color:var(--ink)}
+.grid-note{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid-note .note-box{height:100%}
+.rail{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.rail .label{font-weight:850}
+.rail .time{font-size:12px;color:var(--muted)}
+.driver .detail p{margin:5px 0 9px}
+.driver .detail b{color:#3a5a5b}
+.driver .detail .limitation{color:#79858a}
+.source-meta{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.source-meta span{border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:12px;background:#f8faf9;color:#586a6d}
+.glossary details{align-self:start}
+.check input{accent-color:var(--brand);width:17px;height:17px}
+.check.completed{background:#f0f9f7;border-color:#a8d5cf}
+.hidden-when-empty:empty{display:none}
+@media(max-width:900px){.stat-grid{grid-template-columns:1fr 1fr}.dual-balance{grid-template-columns:1fr 1fr}.evidence-grid,.demand-map{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.stat-grid,.dual-balance,.grid-note,.technical-path,.evidence-grid,.demand-map{grid-template-columns:1fr}.viz-row{grid-template-columns:minmax(84px,108px) minmax(0,1fr) 92px;gap:9px}.viz-row .lbl{font-size:12px}.viz-row .num{font-size:12px}.card{padding:16px}.hero h1{line-height:1.03}.section-head{align-items:stretch;flex-direction:column}.section-head h2{font-size:24px}.guided-menu{overflow-x:auto;scrollbar-width:thin}.guided-menu button{min-width:165px} .flow{grid-template-columns:1fr} .topbar .wrap{padding:10px 13px}}
+@media print{.topbar,.hero-actions,.controls,.menu-toggle,.guided-menu{display:none!important}.guided{grid-template-columns:1fr}.guided-panel{min-height:auto}.card,.source-panel{break-inside:avoid}body{background:#fff}}
+
+
+/* Atualização 25/11: leitura mensal em primeiro plano, sem reestilizar o observatório anterior */
+.monthly-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:15px;align-items:stretch}
+.monthly-ladder{display:grid;gap:9px;margin:18px 0}
+.month-level{display:grid;grid-template-columns:minmax(0,1fr) 55px 134px;gap:12px;align-items:center;padding:6px 2px}
+.month-label{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.month-label b{font-size:22px;letter-spacing:-.02em;white-space:nowrap}
+.month-label span{font-size:12px;color:var(--muted)}
+.month-track{position:relative;height:1px;background:#b9c5c7}
+.month-dot{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);height:8px;width:8px;border-radius:50%;background:#84979b}
+.month-type{font-size:12px;color:#6a7c81;text-align:right}
+.month-band{display:grid;grid-template-columns:38px 1fr;align-items:center;gap:12px;padding:14px 15px;border:1px solid var(--line);border-radius:12px;background:#f8faf9;transition:background .18s,border-color .18s,box-shadow .18s}
+.month-band-icon{font-size:21px;font-weight:850;text-align:center;color:#819295}
+.month-band b{display:block;font-size:19px;letter-spacing:-.015em;margin-bottom:4px}
+.month-band span{display:block;color:#667679;font-size:13px;line-height:1.55}
+.month-band.month-active{box-shadow:0 0 0 2px rgba(44,145,139,.12);border-color:#77b9b2;background:#f2f9f7}
+.month-band.washout-band.month-active{border-color:#dfa39b;background:#fff5f3;box-shadow:0 0 0 2px rgba(200,82,82,.10)}
+.month-band.reversal-band.month-active{border-color:#9bcdbb;background:#f1f9f5}
+.month-band.washout-band .month-band-icon,.month-band.base-band .month-band-icon{color:var(--bear)}
+.month-band.reversal-band .month-band-icon{color:var(--bull)}
+.monthly-reading>.value{font-size:24px;line-height:1.2;margin:12px 0 10px}
+.monthly-reading>p{font-size:15px;line-height:1.7}
+.monthly-steps{display:grid;gap:10px;margin-top:13px}
+.monthly-steps>div{display:grid;grid-template-columns:27px 1fr;gap:10px;align-items:start;font-size:13px;line-height:1.5;color:#50666a}
+.monthly-steps b{display:grid;place-items:center;width:27px;height:27px;border-radius:50%;background:#e8f4f2;color:var(--brand-dark)}
+.divider-inline{height:1px;background:var(--line);margin:20px 0 16px}
+#mensal{scroll-margin-top:84px}
+#mensal .section-head{align-items:center}
+@media(max-width:900px){.monthly-grid{grid-template-columns:1fr}.month-level{grid-template-columns:minmax(0,1fr) 30px minmax(90px,120px)}}
+@media(max-width:560px){.month-level{grid-template-columns:minmax(0,1fr) 25px 90px;gap:7px}.month-label{gap:2px}.month-label b{font-size:19px}.month-label span{display:block;width:100%;font-size:11px}.month-type{font-size:10px}.month-band b{font-size:17px}.month-band{padding:12px}.monthly-steps{gap:8px}.hero .wrap{padding-top:35px}.monthly-reading .value{font-size:22px}}
+@media print{.monthly-grid{grid-template-columns:1.1fr .9fr}.month-band{break-inside:avoid}}
+
+/* Incremento de 26/11: alinhamento ao sistema visual existente */
+.cards3{grid-template-columns:repeat(3,minmax(0,1fr))}
+#atual,#estoque26{scroll-margin-top:88px}
+#atual .section-head{align-items:center}
+#atual .stat-panel .big{font-size:25px}
+#atual .level-ladder .level b{font-variant-numeric:tabular-nums}
+#estoque26 .metricbox p{font-size:14px;color:#66798a;line-height:1.6}
+@media(max-width:960px){.cards3{grid-template-columns:1fr 1fr}#atual .section-head{align-items:flex-start;flex-direction:column}}
+@media(max-width:650px){.cards3{grid-template-columns:1fr}#atual .controls{width:100%}#atual .controls button{flex:1 1 auto}#estoque26 .relation-row{grid-template-columns:1fr 28px 1fr}#estoque26 .viz-row{grid-template-columns:80px 1fr 84px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+<div class="wrap">
+<a aria-label="Auricchio Market Intelligence" class="brand-lockup" href="#comece">
+<span aria-hidden="true" class="brand-accent"></span>
+<span class="brand-copy">
+<span class="brand-name">AURICCHIO</span>
+<span class="brand-sub">Market Intelligence · Níquel</span>
+</span>
+</a>
+<div class="nav-shell">
+<button aria-controls="mainNav" aria-expanded="false" class="menu-toggle" type="button">Menu</button>
+<nav class="main-nav" id="mainNav">
+<a class="primary-nav" href="#guia">Visão geral</a>
+<a href="#macro">Macro</a>
+<a href="#atual">Técnico</a>
+<a href="#fisico">Físico</a>
+<a href="#oferta">Oferta</a>
+<a href="#demanda">Demanda</a>
+<details class="more-menu">
+<summary>Mais</summary>
+<div class="more-dropdown"><a href="#mensal">Tese mensal · 25/11</a><a href="#estoque26">Estoques · 26/11</a><a href="#mudancas">O que mudou</a><a href="#niveis">Técnico diário</a>
+<a href="#panorama">Panorama</a>
+<a href="#forcas">Forças</a>
+<a href="#posicionamento">Fundos</a>
+<a href="#balanco">Balanço</a>
+<a href="#linha-do-tempo">Linha do tempo</a>
+<a href="#glossario">Glossário</a>
+<a href="#checklist">Checklist</a>
+<a href="#fontes">Fontes e limites</a>
+</div>
+</details>
+</nav>
+</div>
+</div>
+</header>
+<div class="hero"><div class="wrap"><div class="brand-rule"></div>
+<div class="eyebrow">AURICCHIO · MARKET INTELLIGENCE · NÍQUEL · 26 NOVEMBRO 2026</div>
+<h1>O níquel está construindo uma base — ela resiste ao risco de nova queda?</h1>
+<div class="lede">O relatório diário de <b>26/11</b> observa defesa de preços perto de <b>US$ 15 mil/t</b> e aponta espaço para movimento <b>lateral a moderadamente altista</b>. A Indonésia concentra riscos reais e potenciais de oferta, mas os estoques visíveis continuam elevados. A leitura mensal de <b>25/11 permanece estruturalmente baixista</b>: melhora de curto prazo não prova reversão do ciclo.</div>
+<div class="hero-actions"><button class="primary" onclick="document.querySelector('#guia').scrollIntoView()">Entender em 5 minutos</button><button onclick="document.querySelector('#atual').scrollIntoView()">Ver análise de 26/11</button><button onclick="document.querySelector('#mensal').scrollIntoView()">Comparar com o mensal</button><button onclick="exportResumo()">↓ Exportar resumo</button></div></div></div>
+<div class="question"><div class="question-card"><div><h2>A pergunta central</h2><p>O suporte perto de US$ 15 mil/t e as ameaças à produção indonésia são suficientes para sustentar o níquel, apesar dos estoques em bolsa e da tese mensal ainda baixista?</p></div><div class="tag">RESEARCH DIÁRIO · 26/11/2026 · 09:10 GMT</div></div></div>
+<main>
+<section style="margin-top:8px"><div class="industrial-band"><b>Visão integrada · diário × mensal</b><p><strong>26/11 — diário:</strong> formação de base, estocásticos virando para cima e viés lateral a moderadamente altista. <strong>25/11 — mensal:</strong> risco estrutural de nova queda persiste; a tese de reversão exige condições muito mais amplas.</p></div></section>
+<section id="comece"><div class="starter"><div class="starter-grid"><div><div class="eyebrow">Antes de analisar os gráficos</div><h3>O mercado pode formar uma base diária dentro de uma tendência mensal de baixa</h3><p>O research de 26/11 destaca maior resiliência do níquel em relação ao cobre. Mas, em 25/11, a Fastmarkets ainda via uma estrutura de queda de longo prazo. As análises não têm a mesma escala temporal e não devem ser fundidas em uma única indicação direcional.</p></div>
+<div class="four-blocks"><div class="block"><div class="num">1</div><b>Técnico do dia</b><span>Preço recuperou suportes intermediários; formação de base ainda depende de continuidade.</span></div><div class="block"><div class="num">2</div><b>Oferta</b><span>Água e eletricidade pressionam processos NPI e HPAL na Indonésia; cortes adicionais são incertos.</span></div><div class="block"><div class="num">3</div><b>Mercado físico</b><span>LME + SHFE somam 380.846 t em 26/11; metal em bolsa é Classe 1.</span></div><div class="block"><div class="num">4</div><b>Escala mensal</b><span>O relatório de 25/11 mantém risco de queda estrutural, mesmo com uma melhora diária.</span></div></div></div></div></section>
+<section id="guia"><div class="section-head"><div><h2>Entenda este relatório em 5 minutos</h2><p>Cinco etapas sobre o relatório diário de 26/11, com a tese mensal anterior mantida em separado.</p></div></div><div class="guided"><div aria-label="Leitura guiada" class="guided-menu" role="tablist"><button aria-selected="true" class="active" data-step="0" role="tab">1. O que aconteceu?</button><button aria-selected="false" data-step="1" role="tab">2. Por que sustentou?</button><button aria-selected="false" data-step="2" role="tab">3. O que contraria?</button><button aria-selected="false" data-step="3" role="tab">4. O que pode mudar?</button><button aria-selected="false" data-step="4" role="tab">5. O que acompanhar?</button></div><div aria-live="polite" class="guided-panel" id="guidedPanel" role="tabpanel"></div></div></section>
+<section><div class="section-head"><div><h2>Se você lembrar de apenas 3 coisas</h2><p>O núcleo da análise mensal de 25/11.</p></div></div><div class="memory3"><div class="memory"><strong>01</strong><b>O suporte reagiu</b><p>O níquel voltou a operar acima de níveis técnicos que haviam sido perdidos e testa a formação de base acima de US$ 15 mil/t.</p></div><div class="memory"><strong>02</strong><b>Estoques não resolvem tudo</b><p>LME + SHFE somam 380.846 t, mas a disponibilidade Classe 1 não corresponde automaticamente ao níquel Classe 2 afetado na Indonésia.</p></div><div class="memory"><strong>03</strong><b>Horizontes discordam</b><p>A perspectiva diária melhorou em 26/11, enquanto a análise mensal de 25/11 continua baixista.</p></div></div></section>
+<section id="atual">
+<div class="section-head"><div><h2>Leitura do dia: a base está ganhando consistência?</h2><p>Research Fastmarkets, William Adams, 26/11/2026, 09:10 GMT. Os patamares são técnicos, não cotação da sessão.</p></div><div class="controls"><button class="seg active" data-current="base">Base em formação</button><button class="seg" data-current="bull">Se recuperar</button><button class="seg" data-current="bear">Se perder suporte</button></div></div>
+<div class="stat-grid">
+<div class="stat-panel"><small>Curto prazo · 26/11</small><div class="big">Neutro</div><span>Seta lateral no quadro direcional; texto admite negociação lateral a moderadamente altista.</span></div>
+<div class="stat-panel"><small>Médio prazo · 26/11</small><div class="big bear">Baixista</div><span>Pressão de prazo intermediário ainda não superada.</span></div>
+<div class="stat-panel"><small>Longo prazo · 26/11</small><div class="big">Neutro</div><span>Leitura deste autor e gráfico diário; não substitui o bearish mensal de 25/11.</span></div>
+</div>
+<div class="level-wrap" style="margin-top:14px">
+<div class="card">
+<small>Zonas técnicas mencionadas · US$/t</small>
+<div class="level-ladder">
+<div class="level-line"></div>
+<div class="level"><b>18.185</b><span>Máxima de 17/06, resistência mais distante na escala do gráfico diário.</span></div>
+<div class="level"><b>17.500</b><span>Máxima de julho, resistência intermediária.</span></div>
+<div class="level"><b>16.690</b><span>Máxima de 23/09, barreira após o topo recente.</span></div>
+<div class="level"><b>16.545</b><span>Topo recente: primeira referência de retomada.</span></div>
+<div class="level support"><b>15.342–15.193</b><span>Suporte horizontal e antiga linha de baixa; foram rompidos e o preço voltou a ficar acima deles na manhã de 26/11.</span></div>
+<div class="level support"><b>15.170–15.070</b><span>Mínimas de outubro e nível recente próximos à defesa de US$ 15 mil/t.</span></div>
+</div>
+<div class="note-box"><b>Ressalva da fonte:</b> US$ 15.193 aparece tanto entre as resistências quanto nos suportes da tabela original. Como o texto descreve uma antiga linha de baixa recuperada, o observatório a trata como referência de suporte potencial, sem assumir suporte confirmado.</div>
+</div>
+<div class="card">
+<small>Cenário selecionado · análise do observatório</small>
+<div class="value" id="currentTitle">Estabilização ainda em construção</div>
+<p id="currentText">O níquel voltou a negociar acima das referências rompidas e resiste à fraqueza de outros metais. A Fastmarkets espera, por ora, oscilação lateral a moderadamente altista, mas ainda aguarda confirmação da base acima de US$ 15 mil/t.</p>
+<div class="mini-labels"><span class="label fact">Fato do relatório</span><span class="label interp">Interpretação</span><span class="label hyp">Cenário condicional</span></div>
+<div class="divider-inline"></div>
+<small>O que muda a leitura?</small>
+<div class="monthly-steps"><div><b>1</b><span>Defesa sustentada da região de US$ 15.000–15.342/t</span></div><div><b>2</b><span>Reaproximação das resistências em US$ 16.545 e US$ 16.690/t</span></div><div><b>3</b><span>Novos dados de produção indonésia e da estrutura de estoques confirmam ou não o aperto físico</span></div></div>
+<div class="note-box" style="margin-top:16px">O PDF de 26/11 não fornece uma cotação numérica exata do níquel 3M, nem indica que US$ 16.545/t já foi rompido. Este quadro não é um sinal de compra.</div>
+</div>
+</div>
+</section><section id="mensal">
+<div class="section-head"><div><h2>Tese mensal de 25/11: risco estrutural ainda aberto</h2><p>Research mensal anterior de Andy Farida (25/11), mantido como contrapeso de longo prazo. Níveis em US$/t; o relatório de 26/11 não reavalia esse mapa mensal.</p></div><div class="controls"><button class="seg active" data-month="base">Tese vigente</button><button class="seg" data-month="washout">Se romper suporte</button><button class="seg" data-month="reversal">Se reverter</button></div></div>
+<div class="monthly-grid">
+<div class="card month-levels">
+<div class="rail"><b>Mapa de referência · escala mensal</b><span class="time">Fastmarkets · 25/11/2026</span></div>
+<div class="monthly-ladder">
+<div class="month-level"><div class="month-label"><b>21.750</b><span>Máxima de 2024</span></div><div class="month-track"><div class="month-dot"></div></div><span class="month-type">Referência histórica</span></div>
+<div class="month-level monthly-alt"><div class="month-label"><b>20.000</b><span>Máxima de 2026</span></div><div class="month-track"><div class="month-dot"></div></div><span class="month-type">Resistência</span></div>
+<div class="month-band reversal-band" data-band="reversal"><div class="month-band-icon">↑</div><div><b>US$ 19.000–20.000/t</b><span>Força mensal sustentada nessa faixa começaria a questionar a tese de baixa, se acompanhada por momentum e ruptura da sequência de topos descendentes.</span></div></div>
+<div class="month-band base-band month-active" data-band="base"><div class="month-band-icon">↓</div><div><b>US$ 14.000–15.000/t</b><span>Primeira zona de teste estrutural na visão da Fastmarkets. US$ 15.000 é também suporte psicológico.</span></div></div>
+<div class="month-band washout-band" data-band="washout"><div class="month-band-icon">!</div><div><b>US$ 10.000–12.000/t</b><span>Região estrutural mais profunda que entra no radar se o teste em US$ 14–15 mil/t falhar.</span></div></div>
+<div class="month-level"><div class="month-label"><b>10.865</b><span>Mínima da pandemia em 2020</span></div><div class="month-track"><div class="month-dot"></div></div><span class="month-type">Referência histórica</span></div>
+</div>
+<p class="sidenote">O research descreve zonas e condições de confirmação, mas não informa a cotação exata do dia 25/11. As barras acima representam <b>níveis</b>, não distâncias proporcionais, séries históricas ou probabilidades.</p>
+</div>
+<div class="card monthly-reading">
+<small>LEITURA DO CENÁRIO SELECIONADO</small>
+<div class="value bear" id="monthTitle">Ciclo baixista ainda não encerrado</div>
+<p id="monthText">Na análise mensal, a Fastmarkets considera possível um último movimento de capitulação. A primeira região decisiva fica entre US$ 14.000 e US$ 15.000/t. Isso é uma hipótese técnica, não um evento já ocorrido.</p>
+<div class="mini-labels"><span class="label fact">Research mensal · 25/11</span><span class="label hyp">Cenário condicional</span></div>
+<div class="divider-inline"></div>
+<small>O QUE MUDARIA A TESE?</small>
+<div class="monthly-steps"><div><b>1</b><span>Avanço mensal consistente acima de US$ 19–20 mil/t</span></div><div><b>2</b><span>Momentum mensal mais forte</span></div><div><b>3</b><span>Rompimento da sequência de topos descendentes</span></div></div>
+<div class="note-box" style="margin-top:16px"><b>Não confundir:</b> a 100 DMA de 18/11 (US$ 16.408/t) é uma referência de curto prazo da edição anterior. Ela não substitui os critérios mensais de reversão descritos em 25/11.</div>
+</div>
+</div>
+<div class="grid columns" style="margin-top:14px"><div class="card"><small>Como ler o gráfico de décadas</small><p>O painel histórico da página 1 percorre ciclos de alta extrema, correções prolongadas e recuperações. O analista utiliza essa estrutura para argumentar que um repique recente ainda pode ocorrer dentro de um ciclo baixista maior.</p><div class="mini-labels"><span class="label interp">Leitura da Fastmarkets</span></div></div><div class="card"><small>O que o PDF não determina</small><p>Ele não oferece prazo, probabilidade ou cotação exata do dia para um eventual teste de US$ 10–12 mil/t. Tampouco atualiza estoques, Cash–3M, fundos, produção ou demanda física.</p><div class="mini-labels"><span class="label fact">Limite documental</span></div></div></div>
+</section><section id="mudancas"><div class="section-head"><div><h2>O que mudou entre 18, 25 e 26/11?</h2><p>Uma sequência de leituras em escalas diferentes, não três previsões equivalentes.</p></div></div><div class="grid cards3"><div class="card"><small>18/11 · James Moore · diário</small><div class="value">Momentum recupera</div><p>Fechamento anterior acima da 100 DMA e estocásticos cruzando para cima. Foi uma recuperação ainda frágil, não reversão estrutural comprovada.</p><div class="mini-labels"><span class="label fact">Histórico</span></div></div><div class="card"><small>25/11 · Andy Farida · mensal</small><div class="value bear">Baixa estrutural</div><p>A análise de décadas mantém risco de último movimento de capitulação: primeiro teste entre US$ 14–15 mil/t; faixa de US$ 10–12 mil/t somente se o suporte falhar.</p><div class="mini-labels"><span class="label fact">Histórico mensal</span><span class="label hyp">Risco condicional</span></div></div><div class="card"><small>26/11 · William Adams · diário</small><div class="value bull">Base em construção</div><p>O níquel resiste à pressão do cobre e volta a operar acima de referências rompidas, enquanto cresce a atenção a riscos de oferta na Indonésia.</p><div class="mini-labels"><span class="label fact">Relatório atual</span><span class="label interp">Viés mais construtivo</span></div></div></div><div class="straight-note" style="margin-top:14px"><b>A síntese:</b> os dois últimos relatórios analisam gráficos diferentes e foram escritos por autores diferentes. Uma consolidação diária perto de US$ 15 mil/t pode coexistir com uma estrutura mensal bearish. Só dados posteriores permitirão concluir se a formação de base se fortaleceu.</div></section>
+<section id="evidencias"><div class="section-head"><div><h2>Fato, interpretação e hipótese</h2><p>Como distinguir o que a pesquisa de 26/11 observou, a interpretação econômica e o que permanece apenas cenário.</p></div></div><div class="evidence-grid"><div class="evidence"><div class="mini-labels" style="margin-top:0"><span class="label fact">Fato da pesquisa</span></div><h3>Defesa técnica e estoque elevado</h3><p>Segundo a Fastmarkets, o níquel estava acima das referências rompidas na manhã de 26/11. LME + SHFE somavam 380.846 t.</p></div><div class="evidence"><div class="mini-labels" style="margin-top:0"><span class="label interp">Interpretação</span></div><h3>O descasamento importa</h3><p>A Classe 1 visível em bolsa e os materiais Classe 2 impactados pela Indonésia não são substitutos perfeitos em todas as aplicações.</p></div><div class="evidence"><div class="mini-labels" style="margin-top:0"><span class="label hyp">Hipótese / risco</span></div><h3>Menos produção no futuro</h3><p>Cortes coordenados ainda não confirmados, quotas de fim de ano e proposta de maior participação estatal podem conter investimentos ou oferta, mas seus efeitos não foram quantificados.</p></div></div></section>
+<section id="panorama"><div class="section-head"><div><h2>Panorama do mercado</h2><p>Mude o horizonte. A referência de 26/11 é o relatório diário; a leitura mensal bearish de 25/11 aparece como contrapeso de prazo longo.</p></div><div class="controls"><button class="seg active" data-h="curto">Curto prazo</button><button class="seg" data-h="medio">Médio prazo</button><button class="seg" data-h="longo">Longo prazo</button></div></div><div class="grid cards4" id="horizonCards"></div></section>
+<section id="forcas"><div class="section-head"><div><h2>Forças que disputam o preço</h2><p>Drivers atuais de 26/11 com fatores herdados de relatórios anteriores rotulados como históricos.</p></div></div><div class="grid columns"><div class="card"><small>Pressões baixistas</small><div class="driver-list" id="bearDrivers"></div></div><div class="card"><small>Vetores de suporte</small><div class="driver-list" id="bullDrivers"></div></div></div>
+<div class="note-box">As relações de causa e efeito abaixo priorizam a análise de 26/11. A seção mensal de 25/11 continua disponível para comparar o horizonte estrutural.</div><div class="relation"><div class="relation-card"><h3>Oferta indonésia: transmissão possível</h3><div class="relation-row"><div class="relation-box">Seca / menos energia disponível</div><div class="relation-arrow">→</div><div class="relation-box">Restrição em NPI e HPAL</div></div><div class="relation-row" style="margin-top:8px"><div class="relation-box">Menos oferta efetiva</div><div class="relation-arrow">→</div><div class="relation-box">Suporte potencial ao níquel</div></div><div class="mini-labels"><span class="label fact">Restrições relatadas</span><span class="label interp">Impacto interpretado</span></div></div><div class="relation-card"><h3>Por que o estoque não encerra a discussão?</h3><div class="relation-row"><div class="relation-box">Bolsas com Classe 1</div><div class="relation-arrow">≠</div><div class="relation-box">NPI / Classe 2</div></div><div class="relation-row" style="margin-top:8px"><div class="relation-box">Estoques agregados sobem</div><div class="relation-arrow">→</div><div class="relation-box">Aperto por classe ainda é possível</div></div><div class="mini-labels"><span class="label fact">Composição citada</span><span class="label interp">Risco interpretado</span></div></div></div></section>
+<section id="macro"><div class="section-head"><div><h2>Macro — contexto histórico de 17–18/11</h2><p>O research mensal de 25/11 não atualiza DXY, Fed ou bolsas; abaixo, a última fotografia disponível nos anexos (17–18/11).</p></div></div><div class="big-callout"><h3>Sentimento financeiro e consumo físico têm velocidades diferentes</h3><p>Segundo o research, o alívio após resultados da Nvidia ajudou a moderar a incerteza ligada à inteligência artificial. Isso altera a disposição dos investidores a assumir risco, mas não mede consumo físico de níquel no mesmo dia.</p><div class="mini-labels"><span class="label fact">Fato citado pela fonte</span><span class="label interp">Mecanismo interpretado</span></div></div><div class="grid-note" style="margin-top:14px"><div class="note-box"><b>Macro na edição atual:</b> pressão generalizada entre metais básicos; bolsas de ações mistas; incerteza persistente sobre IA.</div><div class="note-box"><b>Contexto de 17/11:</b> DXY ~103,66 e discurso restritivo do Fed foram reportados ontem, mas não são atualizados na pesquisa de 18/11. Não atribuímos números macro de 17/11 à sessão atual.</div></div></section>
+<section id="niveis"><div class="section-head"><div><h2>Arquivo técnico de 18/11 — comparação histórica</h2><p>Médias móveis da edição diária de 18/11, arquivadas para comparar a evolução. Para as zonas atuais, veja a leitura do dia de 26/11 acima.</p></div><div class="controls"><button class="seg active" data-s="base">Cenário-base</button><button class="seg" data-s="bear">Perda de suporte</button><button class="seg" data-s="bull">Alta confirmada</button></div></div>
+<div class="technical-path"><div class="danger"><b>15.100</b><small>Referência de suporte mais profunda: mínimas de outubro.</small></div><div class="key"><b>15.901</b><small>20 DMA: suporte dinâmico a preservar no repique.</small></div><div class="key"><b>16.408</b><small>100 DMA: cruzada no fechamento de 17/11; confirmação requer sustentação.</small></div></div>
+<div class="level-wrap"><div class="card"><div class="level-ladder"><div class="level-line"></div><div class="level"><b>US$ 20.000/t</b><span>Resistência distante de referência — não é gatilho imediato.</span></div><div class="level critical"><b>US$ 17.169/t</b><span>200 DMA: resistência superior se houver continuidade da recuperação.</span></div><div class="level critical"><b>US$ 16.408/t</b><span>100 DMA: principal limiar discutido no relatório; fechamento de 17/11 acima dela.</span></div><div class="level support"><b>US$ 15.901/t</b><span>20 DMA: preço permanece acima segundo o research, apesar do recuo.</span></div><div class="level support"><b>US$ 15.830/t</b><span>40 DMA: suporte técnico adicional.</span></div><div class="level support"><b>~US$ 15.100/t</b><span>Mínimas de outubro: referência inferior caso a recuperação falhe.</span></div></div></div><div class="card"><small>Leitura do cenário selecionado</small><div class="value" id="scenarioTitle">Momentum melhora, sem reversão confirmada</div><p id="scenarioText">O fechamento de 17/11 acima da 100 DMA e o cruzamento dos estocásticos são favoráveis; a queda de 18/11 mostra que falta continuidade. A defesa da 20 DMA e uma nova sustentação acima da 100 DMA são sinais a acompanhar.</p><div class="mini-labels"><span class="label interp">Cenário condicional</span></div><div class="note-box" style="margin-top:16px"><b>Observação:</b> a coluna lateral do PDF lista médias também sob “Support”, mesmo quando estão acima do preço; a leitura foi organizada pela posição e função técnica descritas no texto, sem copiar classificações duplicadas.</div></div></div></section>
+<section id="estoque26">
+<div class="section-head"><div><h2>Estoques: muito metal visível, mas nem todo ele é substituível</h2><p>Dados agregados LME + SHFE informados no relatório de 26/11; volumes em toneladas.</p></div></div>
+<div class="stat-grid">
+<div class="stat-panel"><small>Início de 2026</small><div class="big">301.932 t</div><span>LME + SHFE, base anual citada pela Fastmarkets.</span></div>
+<div class="stat-panel"><small>26/11/2026</small><div class="big">380.846 t</div><span>LME + SHFE, dado mais recente do relatório do dia.</span></div>
+<div class="stat-panel"><small>Variação no período</small><div class="big bear">+26,1%</div><span>+78.914 t, calculadas a partir dos totais reportados.</span></div>
+</div>
+<div class="grid columns" style="margin-top:14px">
+<div class="metricbox"><h3>Evolução do estoque combinado</h3><div class="viz-stack"><div class="viz-row"><div class="lbl">Início/26</div><div class="viz-track"><div class="viz-fill" style="width:79.28%"></div></div><div class="num">301.932 t</div></div><div class="viz-row"><div class="lbl">26/11</div><div class="viz-track"><div class="viz-fill brand" style="width:100%"></div></div><div class="num">380.846 t</div></div></div><div class="viz-legend">Escala relativa ao maior total (100%). Comparação apenas de estoques registrados em LME + SHFE, não estoques mundiais.</div></div>
+<div class="metricbox"><h3>Por que a classe do metal importa?</h3><div class="relation-row"><div class="relation-box">Bolsas: níquel Classe 1</div><div class="relation-arrow">≠</div><div class="relation-box">Cortes indonésios: sobretudo Classe 2</div></div><p style="margin-top:12px">Estoques altos de Classe 1 podem amortecer choques para certos usos, mas não equivalem automaticamente à disponibilidade de NPI ou outros materiais Classe 2 usados por diferentes rotas industriais.</p><div class="mini-labels"><span class="label fact">Fato citado</span><span class="label interp">Interpretação</span></div></div>
+</div>
+<div class="note-box" style="margin-top:12px"><b>Limite:</b> o research não desagrega o total por bolsa, não traz série diária nem atualiza o spread Cash–3M. O contango de US$ 195/t mencionado no observatório é exclusivamente histórico (17/11). O descasamento Classe 1/Classe 2 pode gerar volatilidade, mas não prova escassez imediata de níquel Classe 1.</div>
+</section><section id="fisico"><div class="section-head"><div><h2>Série anterior do físico — pesquisa de 17–18/11</h2><p>Dados históricos mantidos para comparar com o novo total combinado de 380.846 t de 26/11; não representam o estoque LME de 26/11.</p></div></div>
+<div class="stat-grid"><div class="stat-panel"><small>LME · research 18/11</small><div class="big">274.140 t</div><span>Estoque de armazéns LME citado na edição de 18/11 (histórico).</span></div><div class="stat-panel"><small>Início de 2025</small><div class="big">164.028 t</div><span>Base comparativa apresentada pela Fastmarkets.</span></div><div class="stat-panel"><small>Variação vs início 2025</small><div class="big bear">+67,1%</div><span>+110.112 t; cálculo com os dois valores reportados.</span></div></div>
+<div class="grid columns" style="margin-top:14px"><div class="metricbox"><h3>Estoques LME · evolução reportada</h3><div class="viz-stack"><div class="viz-row"><div class="lbl">Início de 2025</div><div class="viz-track"><div class="viz-fill" style="width:59.83%"></div></div><div class="num">164.028 t</div></div><div class="viz-row"><div class="lbl">16/11*</div><div class="viz-track"><div class="viz-fill" style="width:99.47%"></div></div><div class="num">272.682 t</div></div><div class="viz-row"><div class="lbl">Research 18/11</div><div class="viz-track"><div class="viz-fill brand" style="width:100%"></div></div><div class="num">274.140 t</div></div></div><div class="viz-legend">Escala comum: maior valor = 100%. *16/11 vem da edição anterior, de 17/11. A diferença de 1.458 t foi calculada a partir dos dois documentos.</div></div><div class="metricbox"><h3>Spread Cash–3M: último dado disponível</h3><div class="metric-large">−US$ 195/t</div><p>O research de 17/11 informou contango com desconto de US$ 195/t para o cash contra o contrato de três meses, ante US$ 165/t em 05/11.</p><div class="mini-labels"><span class="label fact">Histórico: 17/11</span></div><div class="note-box" style="margin-top:12px">A pesquisa de 18/11 não informa o spread atualizado. Não é correto dizer que o contango <b>hoje</b> ficou em US$ 195/t. O indicador serve apenas como contexto da sessão anterior.</div></div></div>
+<div class="physical-note"><b>Interpretação:</b> uma recuperação técnica não exige, necessariamente, escassez física no mesmo momento. Mas estoques visíveis altos e contango no último dado conhecido exigem cautela antes de concluir que a oferta já está apertada.</div><div class="note-box" style="margin-top:12px"><b>Limites:</b> estoque LME não é estoque mundial; estoque SHFE de <b>106.356 t</b> refere-se a <b>13/11</b>, apesar de reaparecer no relatório de 18/11. Não há novas informações sobre prêmios, cancelled warrants ou níveis de Cash–3M em 18/11.</div></section>
+<section id="oferta"><div class="section-head"><div><h2>Oferta: Indonésia combina riscos operacionais e regulatórios</h2><p>O research de 26/11 amplia o foco para a realocação de energia, a escassez de água, as quotas futuras e as condições de investimento.</p></div></div><div class="grid columns" style="margin-top:14px"><div class="card"><small>26/11 · restrições já relatadas</small><div class="value">Água + eletricidade</div><p>A Fastmarkets relata níveis de água reduzidos pelo El Niño, afetando NPI e HPAL, e transferência de capacidade elétrica antes direcionada ao níquel para a produção de alumínio. Não informa o volume agregado de níquel perdido por esses fatores.</p><div class="mini-labels"><span class="label fact">Relatado na fonte</span><span class="label interp">Impacto ainda incerto</span></div></div><div class="card"><small>26/11 · políticas e intenção</small><div class="value">Quotas e participação estatal</div><p>Há discussões sobre cortes coordenados por perdas operacionais (não confirmados) e dúvidas sobre quotas/atrasos nas autorizações. O relatório também descreve <b>plano</b> do governo indonésio de obter 70% de participação societária ou dos resultados em operações de mineração. A implementação e o impacto não são comprovados na pesquisa.</p><div class="mini-labels"><span class="label hyp">Proposta / risco</span></div></div></div><div class="stat-grid"><div class="stat-panel"><small>Histórico 18/11 · RKAB 2025</small><div class="big">379 mi t</div><span>Quota reportada de minério úmido (wet metric tonnes).</span></div><div class="stat-panel"><small>Histórico 18/11 · RKAB 2026</small><div class="big">260–270 mi t</div><span>Faixa de quota indicada pela Fastmarkets, nas mesmas unidades.</span></div><div class="stat-panel"><small>2027 · cenário</small><div class="big">Cortes possíveis</div><span>Autoridades sugerem redução adicional; sem quota final informada.</span></div></div>
+<div class="flow" style="margin-top:14px"><div class="step"><b>1. Regulamentação</b><span>Quotas menores e maior fiscalização podem reduzir extração autorizada.</span></div><div class="step"><b>2. Minério disponível</b><span>Menor entrega efetiva às usinas depende da execução dos limites.</span></div><div class="step"><b>3. Processamento</b><span>RKEF e HPAL dependem também de água, energia e enxofre.</span></div><div class="step"><b>4. Níquel refinado</b><span>Menor produção sustentada pode reduzir superávit e apoiar preços.</span></div></div>
+<div class="grid columns" style="margin-top:14px"><div class="card"><small>Restrição operacional já relatada</small><div class="value">Seca em Sulawesi</div><p>Baixos níveis de água levaram algumas linhas RKEF no parque IMIP a operar abaixo da capacidade e atrasaram o ramp-up do projeto HPAL Excelsior. A mineração e logística de minério ainda não tiveram grande interrupção segundo a fonte.</p><div class="mini-labels"><span class="label fact">Fato relatado</span><span class="label hyp">Risco adicional</span></div></div><div class="card"><small>Outros fatores de oferta</small><div class="value">Custos, insumos e Cuba</div><p>Preços de energia elevados e risco na cadeia de enxofre pressionam processadores. O relatório também informa fechamento da refinaria Fort Saskatchewan, da Sherritt, devido às restrições ligadas à mina de Moa em Cuba.</p><div class="mini-labels"><span class="label fact">Fato relatado</span></div></div></div><div class="note-box" style="margin-top:12px"><b>O que não se sabe:</b> o documento não quantifica a perda agregada de níquel refinado decorrente da seca, tampouco define a quota efetiva de 2027. Redução de quota de minério <b>não equivale automaticamente</b> a redução da mesma proporção no níquel refinado.</div></section>
+<section id="demanda"><div class="section-head"><div><h2>Demanda — último dado específico de 17–18/11</h2><p>O relatório de 26/11 não traz novos volumes de consumo final para aço inox ou baterias. Conservamos o contexto anterior datado, sem inferir melhora da demanda.</p></div></div><div class="demand-map"><div class="demand-card"><h3><span class="status-dot dot-gray"></span>Aço inox global</h3><p>A Fastmarkets espera preços dentro de faixas nas três regiões acompanhadas até o fim do trimestre: demanda fraca ou incerta não sustenta avanço expressivo.</p></div><div class="demand-card"><h3><span class="status-dot dot-gray"></span>China: atividade</h3><p>O relatório anterior trouxe produção industrial +4,8% e varejo +0,4% em outubro, mas esses números não foram atualizados em 18/11.</p><div class="mini-labels"><span class="label fact">Contexto 17/11</span></div></div><div class="demand-card"><h3><span class="status-dot dot-gray"></span>Baterias / HPAL</h3><p>O relatório atual discute limitações na expansão do HPAL, mas não quantifica crescimento nem retração da demanda por níquel para baterias.</p></div></div>
+<div class="two-paths" style="margin-top:14px"><div class="path"><h3>Canal financeiro</h3><ul><li>Ativos de tecnologia e metais sofrem reprecificação.</li><li>Investidores ajustam posições e expectativas.</li><li>Preço na LME reage antes de pedidos físicos mudarem.</li></ul></div><div class="path"><h3>Canal físico</h3><ul><li>Usinas de inox e cadeias de baterias alteram compras efetivas.</li><li>Os volumes podem afetar estoques e preços dos contratos.</li><li>É necessário observar fluxo real, não apenas sentimento.</li></ul></div></div><div class="big-callout" style="margin-top:14px"><h3>Preço firme no inox não implica consumo crescente</h3><p>Segundo o research, custos e medidas comerciais contribuem para pisos regionais de preços do aço inox, enquanto a demanda permanece insuficiente ou incerta. São mecanismos diferentes.</p><div class="mini-labels"><span class="label fact">Fonte</span><span class="label interp">Interpretação econômica</span></div></div></section>
+<section id="posicionamento"><div class="section-head"><div><h2>Fundos — último COT apresentado em 18/11</h2><p>O relatório de 26/11 não atualiza posição long/short dos fundos. Os valores abaixo são históricos e não refletem a posição de hoje.</p></div></div><div class="stat-grid"><div class="stat-panel"><small>Net long · relatório anterior (13/11)</small><div class="big">2.188 lotes</div><span>Fotografia histórica citada na pesquisa anterior.</span></div><div class="stat-panel"><small>Net long · novo dado</small><div class="big bull">3.478 lotes</div><span>Posição líquida especulativa reportada em 18/11.</span></div><div class="stat-panel"><small>Variação semanal segundo a fonte</small><div class="big bull">+1.289 lotes</div><span>Atribuída a short covering na semana até 13/11.</span></div></div><div class="metricbox" style="margin-top:14px"><h3>Posição líquida comprada · comparação de relatórios</h3><div class="viz-stack"><div class="viz-row"><div class="lbl">13/11 (pesquisa)</div><div class="viz-track"><div class="viz-fill" style="width:62.91%"></div></div><div class="num">2.188</div></div><div class="viz-row"><div class="lbl">18/11 (pesquisa)</div><div class="viz-track"><div class="viz-fill bull" style="width:100%"></div></div><div class="num">3.478</div></div></div><p class="viz-legend">Os números pertencem a edições distintas. A subtração aritmética resulta em 1.290 lotes, enquanto o research novo declara aumento semanal de 1.289; os dois valores são mantidos sem ajuste artificial. Isso pode refletir revisões ou diferença de referência, mas o PDF não esclarece.</p></div><div class="note-box" style="margin-top:12px"><b>Como interpretar short covering?</b> Fundos que estavam vendidos recompram para encerrar posições; isso pode elevar a posição líquida comprada sem comprovar grande entrada de novos longs. O relatório descreve posicionamento ainda polarizado.</div></section>
+<section id="balanco"><div class="section-head"><div><h2>Balanço global — projeção histórica do relatório de 18/11</h2><p>O research de 26/11 não revisa o balanço previsto para 2026 e 2027; projeções abaixo pertencem à edição de 18/11.</p></div></div><div class="stat-grid"><div class="stat-panel"><small>1º sem. 2026 · INSG</small><div class="big bear">+81.100 t</div><span>Superávit observado e citado pela Fastmarkets.</span></div><div class="stat-panel"><small>2026 · previsão Fastmarkets</small><div class="big bear">+24.000 t</div><span>Superávit anual projetado.</span></div><div class="stat-panel"><small>2027 · previsão Fastmarkets</small><div class="big bull">−37.000 t</div><span>Déficit global previsto.</span></div></div><div class="dual-balance" style="margin-top:14px"><div class="balance-block surplus"><small>2026 · mercado ainda em excesso</small><div class="balance-number">+24 mil t</div><div class="foot">Projeção anual de superávit, não equivalente ao número do primeiro semestre.</div><div class="stripe"></div></div><div class="balance-block deficit"><small>2027 · aperto previsto</small><div class="balance-number">−37 mil t</div><div class="foot">Projeção de déficit condicionada ao comportamento da produção e do consumo.</div><div class="stripe"></div></div></div><div class="straight-note" style="margin-top:14px"><div><b>Leitura:</b> a previsão de déficit oferece sustentação estrutural, mas não descreve a disponibilidade imediata de 18/11. Um balanço futuro deficitário pode coexistir com estoques elevados hoje.</div></div></section>
+<section id="linha-do-tempo"><div class="section-head"><div><h2>Como a narrativa evoluiu</h2><p>Evolução diária e mensal, com os dados mais recentes em 26/11.</p></div></div><div class="timeline"><div class="event"><time>13 NOV · diário</time><b>100 DMA como barreira</b><p>Fechamento acima da média era exigência para continuidade da recuperação.</p></div><div class="event red"><time>17 NOV · diário</time><b>Recuperação estagnada</b><p>~US$ 15.955/t, estocásticos perdendo impulso, contango informado em US$ 195/t.</p></div><div class="event green"><time>18 NOV · diário</time><b>Momentum mais forte</b><p>Fechamento anterior acima da 100 DMA e estocásticos cruzando para cima; retomada ainda frágil.</p></div><div class="event red"><time>25 NOV · mensal</time><b>Estrutura bearish persiste</b><p>Fastmarkets vê risco de teste em US$ 14–15 mil/t e, condicionalmente, US$ 10–12 mil/t.</p></div><div class="event green"><time>26 NOV · diário</time><b>Suporte sustenta base</b><p>Preço resiste à fraqueza do cobre, estocásticos viram para cima; foco volta a riscos de oferta indonésios.</p></div><div class="event"><time>TESTE FUTURO</time><b>O que quebra a tese?</b><p>Força mensal sustentada acima de US$ 19–20 mil/t, momentum e fim dos topos descendentes.</p></div></div></section>
+<section id="glossario"><div class="section-head"><div><h2>Glossário para entender os sinais</h2><p>Termos do relatório mensal e do contexto diário — abra só o que precisar.</p></div></div><div class="glossary"><details><summary>DMA / média móvel</summary><p>Média do preço dos últimos N dias de pregão. A 20 DMA é mais sensível que a 100 ou a 200 DMA; cruzamentos e fechamento acima não garantem tendência.</p></details><details><summary>Estocásticos</summary><p>Oscilador de momentum. Quando suas linhas cruzam para cima, pode indicar melhora do impulso comprador, mas não é confirmação isolada de alta.</p></details><details><summary>Sell the rally</summary><p>Vender o metal durante repiques de preço. O research sugere que esse comportamento pode estar diminuindo.</p></details><details><summary>Short covering</summary><p>Fechamento de posições vendidas por recompra. Pode elevar preços ou saldo líquido comprado sem representar entrada equivalente de novos longs.</p></details><details><summary>Net long</summary><p>Posição comprada líquida: número de posições long menos short. Não é a quantidade de metal físico comprada.</p></details><details><summary>Contango / Cash–3M</summary><p>Quando o metal imediato vale menos do que para três meses, geralmente há contango. A última leitura disponível veio do research de 17/11, não do de 18/11.</p></details><details><summary>RKAB</summary><p>Autorização/planejamento de produção de minério na Indonésia. Quotas de minério úmido não são equivalentes a toneladas de níquel refinado.</p></details><details><summary>RKEF e HPAL</summary><p>Rotas diferentes de processamento de minério de níquel: RKEF usa forno elétrico e HPAL utiliza lixiviação ácida sob alta pressão.</p></details><details><summary>Mercado físico vs futuro</summary><p>Estoques, entregas e compras reais não se confundem com oscilações de expectativa e posicionamento financeiro no contrato LME.</p></details><details><summary>Capitulação / washout</summary><p>Fase de venda intensa em que participantes desistem de posições, provocando quedas abruptas. O relatório cita um risco futuro, não um evento confirmado.</p></details><details><summary>Gráfico mensal</summary><p>Agrega a ação de preço por mês. Ajuda a avaliar ciclos mais longos; uma melhoria no gráfico diário pode não mudar sua tendência.</p></details><details><summary>Topos descendentes (lower highs)</summary><p>Sequência de recuperações que param em preços máximos cada vez menores. Romper essa sequência é um dos critérios citados para enfraquecer a tese baixista.</p></details><details><summary>Mean reversion</summary><p>Retorno do preço em direção a patamares mais comuns após movimentos extremos. Não define, por si só, quando nem a que preço a correção terminará.</p></details></div></section>
+<section id="checklist"><div class="section-head"><div><h2>Checklist do analista</h2><p>Cinco verificações para saber se a defesa recente evoluiu de simples estabilização para recuperação convincente.</p></div></div><div class="checklist"><label class="check"><input type="checkbox"/><span>A região de US$ 15.000–15.342/t segue sendo defendida?</span></label><label class="check"><input type="checkbox"/><span>O preço recupera US$ 16.545 e depois US$ 16.690/t?</span></label><label class="check"><input type="checkbox"/><span>A Indonésia confirma cortes ou quotas efetivamente mais restritivas?</span></label><label class="check"><input type="checkbox"/><span>Os estoques e spreads passam a mostrar aperto consistente por tipo de metal?</span></label><label class="check"><input type="checkbox"/><span>A melhora diária altera, de fato, a estrutura de baixa do gráfico mensal?</span></label></div></section>
+<section id="fontes"><div class="section-head"><div><h2>Fontes, datas e limites</h2><p>A edição de 26/11 é a fonte principal. A tese mensal de 25/11 e os dados históricos de 17–18/11 permanecem separados.</p></div></div><details class="source-panel" open=""><summary>Relatório-base, histórico e metodologia</summary><div class="source-meta"><span>Fastmarkets · William Adams</span><span>26/11/2026 · 09:10 GMT</span><span>LME Níquel 3M · análise diária</span></div><p><b>Fonte principal:</b> “Nickel, base building now that support has held”, Fastmarkets, 26/11/2026 (William Adams), p. 1. Fornece níveis técnicos, resiliência relativa ao cobre, estocásticos, estoques combinados LME + SHFE e riscos indonésios.</p><p><b>Contexto mensal anterior:</b> “Nickel monthly chart: Deep in bearish territory - November 2026”, Fastmarkets, 25/11/2026 (Andy Farida), p. 1. Origem exclusiva da tese bearish mensal e cenários US$ 14–15 mil/t, US$ 10–12 mil/t e mudança de leitura acima de US$ 19–20 mil/t.</p><p><b>Histórico diário:</b> Fastmarkets 18/11 (James Moore), 17/11 (Rory Deng) e research publicado em 13/11, com PDF datado 16/11 (James Moore). Estoques LME pontuais, spread Cash–3M, fundos COT e projeções anuais dessas pesquisas não foram atualizados na edição de 26/11.</p><ul><li>Não há cotação exata de LME 3M em 26/11 nem novo spread Cash–3M ou posicionamento de fundos.</li><li>Estoques de bolsa são visíveis, não equivalentes a todo o estoque mundial; a composição por classe importa e os totais de 26/11 não são desagregados por bolsa.</li><li>O texto relata restrições operacionais à produção indonésia, mas não quantifica perdas globais nem confirma os cortes coordenados.</li><li>Quotas futuras, possíveis atrasos e proposta de participação estatal são possibilidades/intenções reportadas, não resultados concretizados.</li><li>O relatório apresenta o patamar US$ 15.193 tanto na lista de resistências quanto de suportes; a leitura funcional considera a recuperação da antiga linha descendente descrita no corpo.</li><li>O viés do gráfico diário de 26/11 e o risco do gráfico mensal de 25/11 foram preservados, sem forçar uma conclusão única.</li></ul></details></section>
+<section><div class="final"><h2>Mensagem final</h2><p>O níquel mostrou <b>resiliência de curto prazo</b>: manteve-se acima de patamares recuperados e a Fastmarkets passou a considerar uma negociação lateral a moderadamente altista. Os riscos de restrição da oferta indonésia cresceram em importância, especialmente para materiais <b>Classe 2</b>. Em contrapartida, os estoques LME + SHFE permanecem altos, e não há confirmação de cortes coordenados. <b>Formação de base diária não é reversão mensal comprovada</b>: os próximos sinais são a defesa de US$ 15 mil/t, o comportamento nas resistências de US$ 16.545–16.690/t e a concretização das restrições de produção.</p></div><div class="source">Fonte principal: Fastmarkets 26/11/2026 (William Adams). Research mensal 25/11 e histórico diário 17–18/11 apresentados apenas quando identificados.</div></section>
+</main>
+<footer><b style="color:var(--brand-dark);letter-spacing:.08em">AURICCHIO</b> · Observatório do Níquel · pesquisa de 26/11/2026 · inteligência de mercado</footer>
+<script>
+const guidedSteps = [
+  {
+    "title": "1. O que aconteceu com o preço?",
+    "intro": "O novo research diz que o níquel fechou terça-feira (17/11) acima da média de 100 dias (US$ 16.408/t). Em 18/11, voltou a sofrer pressão junto aos metais básicos, mas seguiu acima da 20 DMA (US$ 15.901/t), segundo a fonte.",
+    "chain": [
+      "Fechamento > 100 DMA",
+      "Venda generalizada em 18/11",
+      "Momentum ainda mais construtivo"
+    ],
+    "insight": "O relatório não informa a cotação exata do níquel em 18/11. A leitura central é de melhora relativa, não de rompimento definitivamente confirmado.",
+    "labels": [
+      "Fato",
+      "Interpretação"
+    ]
+  },
+  {
+    "title": "2. Por que não houve continuidade imediata?",
+    "intro": "A pesquisa atribui a fraqueza à venda generalizada nos metais básicos. Bolsas operaram mistas e a melhora de sentimento ligada aos resultados da Nvidia apenas moderou incertezas com IA.",
+    "chain": [
+      "Pressão em metais",
+      "Recuperação perde sequência",
+      "Investidores ainda reavaliam risco"
+    ],
+    "insight": "Não se deve assumir que a oscilação das ações de tecnologia alterou na mesma proporção a demanda física por níquel.",
+    "labels": [
+      "Fato",
+      "Interpretação"
+    ]
+  },
+  {
+    "title": "3. O que sustenta a tentativa de recuperação?",
+    "intro": "Estocásticos cruzaram para cima; fundos registraram short covering e net long de 3.478 lotes; além disso, o governo da Indonésia mantém medidas para conter sobreoferta, e seca pressiona parte das operações.",
+    "chain": [
+      "Momento técnico melhora",
+      "Short covering reduz pressão",
+      "Oferta futura pode apertar"
+    ],
+    "insight": "O posicionamento de fundos é semanal, não intradiário, e as quotas de 2027 e impactos de capacidade ainda não foram quantificados no relatório.",
+    "labels": [
+      "Fato",
+      "Interpretação",
+      "Hipótese"
+    ]
+  },
+  {
+    "title": "4. O que mudaria a tese?",
+    "intro": "Sustentar a 100 DMA de US$ 16.408/t e progredir rumo à 200 DMA de US$ 17.169/t fortaleceria a recuperação. Perder a 20 DMA (US$ 15.901/t) e a 40 DMA (US$ 15.830/t) recolocaria em foco o suporte próximo de US$ 15.100/t.",
+    "chain": [
+      "Técnico ganha confirmação",
+      "Compras físicas se firmam",
+      "Tese de recuperação fica mais robusta"
+    ],
+    "insight": "O simples fechamento acima de uma média não prova mudança estrutural. Estoques e oferta efetiva precisam ser monitorados.",
+    "labels": [
+      "Hipótese",
+      "Interpretação"
+    ]
+  },
+  {
+    "title": "5. O que acompanhar daqui para frente?",
+    "intro": "Cinco verificações centrais para comparar a próxima edição com o research atual.",
+    "bullets": [
+      "O preço sustenta novos fechamentos acima da 100 DMA em US$ 16.408/t?",
+      "O recuo preserva a 20 DMA de US$ 15.901/t e a 40 DMA de US$ 15.830/t?",
+      "Os estoques LME de 274.140 t passam a recuar de forma consistente?",
+      "O novo Cash–3M confirma contango menor que o último dado de 17/11?",
+      "Quotas/cortes na Indonésia e compras de aço inox trazem quantificações verificáveis?"
+    ],
+    "insight": "Acompanhar preço, posicionamento e fluxo físico separadamente ajuda a distinguir rebound de mudança de fundamentos.",
+    "labels": [
+      "Checklist"
+    ]
+  }
+];
+function renderGuided(i){
+ const s=guidedSteps[i];let body=`<h3>${s.title}</h3><div class="intro">${s.intro}</div>`;
+ if(s.chain)body+=`<div class="cause"><div class="box">${s.chain[0]}</div><div class="arrow">→</div><div class="box">${s.chain[1]}</div><div class="arrow">→</div><div class="box">${s.chain[2]}</div></div>`;
+ if(s.bullets)body+=`<div class="card" style="box-shadow:none"><ol style="margin:0;padding-left:20px;color:#526779;line-height:1.8">${s.bullets.map(x=>`<li>${x}</li>`).join('')}</ol></div>`;
+ body+=`<div class="insight">${s.insight}</div><div class="mini-labels">${s.labels.map(x=>`<span class="label ${x==='Fato'?'fact':x==='Interpretação'?'interp':x==='Hipótese'?'hyp':'fact'}">${x}</span>`).join('')}</div>`;
+ document.getElementById('guidedPanel').innerHTML=body;
+}
+renderGuided(0);
+document.querySelectorAll('[data-step]').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('[data-step]').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false')});
+ btn.classList.add('active');btn.setAttribute('aria-selected','true');renderGuided(Number(btn.dataset.step));
+}));
+const horizonData={
+  "curto": [
+    [
+      "Viés",
+      "Neutro, mais construtivo",
+      "O momentum melhorou, embora o preço sofra com a venda nos metais.",
+      ""
+    ],
+    [
+      "Sinal de força",
+      "100 DMA cruzada",
+      "Fechamento de 17/11 acima de US$ 16.408/t, segundo o relatório.",
+      "bull"
+    ],
+    [
+      "Contrapeso",
+      "Metais pressionados",
+      "Não houve continuidade automática em 18/11.",
+      "bear"
+    ],
+    [
+      "Pergunta",
+      "Suporte resiste?",
+      "A 20 DMA em US$ 15.901/t continua sendo defendida?",
+      ""
+    ]
+  ],
+  "medio": [
+    [
+      "Viés",
+      "Recuperação condicional",
+      "É necessário sustentar as médias e buscar a 200 DMA.",
+      ""
+    ],
+    [
+      "Driver",
+      "Oferta indonésia",
+      "Quotas e seca podem restringir processamento.",
+      "bull"
+    ],
+    [
+      "Contrapeso",
+      "Estoque elevado",
+      "LME em 274.140 t e contango histórico ainda sugerem cautela.",
+      "bear"
+    ],
+    [
+      "Pergunta",
+      "Fluxo melhora?",
+      "Há redução de estoques e compras reais de níquel?",
+      ""
+    ]
+  ],
+  "longo": [
+    [
+      "Viés",
+      "Aperto projetado",
+      "A Fastmarkets espera déficit global em 2027.",
+      "bull"
+    ],
+    [
+      "2026",
+      "Superávit: 24 mil t",
+      "Ainda há excesso de oferta projetado para este ano.",
+      "bear"
+    ],
+    [
+      "2027",
+      "Déficit: 37 mil t",
+      "Projeção, não dado realizado.",
+      "bull"
+    ],
+    [
+      "Pergunta",
+      "Cortes se efetivam?",
+      "Produção e consumo confirmarão a mudança de balanço?",
+      ""
+    ]
+  ]
+};
+const bears=[
+  [
+    "Venda nos metais básicos",
+    "Alto",
+    "O research relata fraqueza generalizada no complexo de metais em 18/11.",
+    "A pressão entre ativos pode interromper altas mesmo quando sinais individuais melhoram.",
+    "Não permite medir quanto da oscilação do níquel decorreu desse fator isoladamente."
+  ],
+  [
+    "Estoques LME elevados",
+    "Alto",
+    "Armazéns LME somam 274.140 t, contra 164.028 t no início de 2025.",
+    "A maior disponibilidade visível limita a percepção de escassez imediata.",
+    "Estoques de bolsa não equivalem a disponibilidade global nem provam causalidade direta."
+  ],
+  [
+    "Demanda de inox incerta",
+    "Médio",
+    "A Fastmarkets espera preços laterais em três regiões do aço inox; custos e política comercial ajudam a formar pisos.",
+    "A falta de vigor nas compras finais reduz o impulso físico para o níquel.",
+    "O relatório não quantifica consumo global de níquel por aço inox."
+  ],
+  [
+    "Reversão técnica não confirmada",
+    "Médio",
+    "A terça fechou acima da 100 DMA, mas a quarta apresentou recuo.",
+    "Se faltar continuidade, o movimento pode permanecer como recuperação técnica.",
+    "O PDF não fornece preço exato de 18/11 nem confirma rompimento de múltiplas sessões."
+  ]
+];
+const bulls=[
+  [
+    "Estocásticos cruzam para cima",
+    "Alto",
+    "O indicador de momentum cruzou para cima e o preço é descrito como acima da 20 DMA de US$ 15.901/t.",
+    "Sinal de maior disposição compradora e menor padrão de venda nos repiques.",
+    "Osciladores são indicadores, não causas nem garantia de tendência."
+  ],
+  [
+    "Fechamento acima da 100 DMA",
+    "Alto",
+    "O research registra fechamento de 17/11 acima da média de 100 dias em US$ 16.408/t.",
+    "Superação de média relevante pode atrair interesse técnico e exigir resposta dos vendidos.",
+    "O recuo de 18/11 impede tratar a reversão como confirmada."
+  ],
+  [
+    "Short covering de fundos",
+    "Médio",
+    "COT: aumento semanal de 1.289 lotes para net long de 3.478 até 13/11, segundo a fonte.",
+    "Recompra de posições vendidas reduz parte da pressão especulativa.",
+    "Aumento de net long por short covering não é entrada equivalente de fresh longs; dado tem defasagem."
+  ],
+  [
+    "Riscos de redução da oferta",
+    "Médio",
+    "Quotas 2026 de 260–270 milhões t úmidas vs 379 milhões em 2025; seca já afeta algumas unidades RKEF e projeto HPAL.",
+    "Menor oferta efetiva poderia aproximar o mercado do déficit projetado para 2027.",
+    "Quotas futuras, efeitos líquidos em metal e duração dos cortes seguem incertos."
+  ]
+];
+function renderHorizon(h){document.getElementById('horizonCards').innerHTML=horizonData[h].map(x=>`<div class="card"><small>${x[0]}</small><div class="value ${x[3]}">${x[1]}</div><p>${x[2]}</p></div>`).join('')}
+function renderDrivers(id, data){document.getElementById(id).innerHTML=data.map(x=>`<div class="driver" role="button" tabindex="0" aria-expanded="false"><div class="driver-top"><span class="driver-name">${x[0]}</span><div class="driver-top-right"><span class="impact-badge">Impacto: ${x[1]}</span><span aria-hidden="true">+</span></div></div><div class="detail"><p><b>Fato:</b> ${x[2].replace(/^Fato:\s*/,'')}</p><p><b>Interpretação:</b> ${x[3].replace(/^Interpretação:\s*/,'')}</p><p class="limitation"><b>Limite:</b> ${x[4].replace(/^Limite:\s*/,'')}</p></div></div>`).join('')}
+renderHorizon('curto');renderDrivers('bearDrivers',bears);renderDrivers('bullDrivers',bulls);
+document.querySelectorAll('[data-h]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('[data-h]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderHorizon(btn.dataset.h)}));
+function toggleDriver(el){const opened=el.classList.toggle('open');el.setAttribute('aria-expanded',String(opened))}
+document.addEventListener('click',e=>{const el=e.target.closest('.driver');if(el)toggleDriver(el)});
+document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.classList.contains('driver')){e.preventDefault();toggleDriver(e.target)}});
+const scenarios={
+  "base": [
+    "Momentum melhora, sem reversão confirmada",
+    "O cruzamento ascendente dos estocásticos e o fechamento de 17/11 acima da 100 DMA são positivos. O recuo da quarta mostra que falta continuidade; preservar a 20 DMA é o teste de curto prazo."
+  ],
+  "bear": [
+    "A tentativa de recuperação perde apoio",
+    "Se o níquel perder de forma sustentada a 20 DMA (US$ 15.901/t) e a 40 DMA (US$ 15.830/t), aumentará a atenção às mínimas de outubro, em torno de US$ 15.100/t. São cenários, não níveis efetivamente rompidos hoje."
+  ],
+  "bull": [
+    "Sustentação acima de US$ 16.408/t",
+    "Novos fechamentos sustentados acima da 100 DMA e avanço rumo à 200 DMA (US$ 17.169/t), idealmente acompanhados por melhora dos fundamentos físicos, fortaleceriam a hipótese de recuperação mais ampla."
+  ]
+};
+document.querySelectorAll('[data-s]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('[data-s]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const s=scenarios[btn.dataset.s];document.getElementById('scenarioTitle').textContent=s[0];document.getElementById('scenarioText').textContent=s[1]}));
+document.querySelectorAll('.check input').forEach(input=>input.addEventListener('change',()=>input.closest('.check').classList.toggle('completed',input.checked)));
+function exportResumo(){
+ const content = "OBSERVATÓRIO AURICCHIO DO NÍQUEL — 18/11/2026\nRelatório-base: Fastmarkets, James Moore, “Nickel momentum holds despite base-metals sell-off”, 18/11/2026 às 08:59 GMT.\nContexto histórico: Rory Deng 17/11; James Moore 13/11 (PDF datado de 16/11).\n\nPERGUNTA CENTRAL\nO fechamento de 17/11 acima da média móvel de 100 dias será sustentado ou a recuperação continuará vulnerável ao ambiente de mercado e à disponibilidade física?\n\nCURTO PRAZO\nO relatório afirma que o níquel fechou 17/11 acima da 100 DMA (US$ 16.408/t), mas enfraqueceu em 18/11 na venda generalizada dos metais básicos. O estocástico cruzou para cima e o níquel permanece acima da 20 DMA (US$ 15.901/t), sugerindo momentum mais construtivo, não reversão confirmada. O preço exato de 18/11 não é informado.\n\nPRESSÕES\n- Venda generalizada de metais básicos e bolsas mistas.\n- Estoques LME em 274.140 t, contra 164.028 t no início de 2025 (+67,1%, cálculo).\n- Mercado de aço inox com demanda ainda fraca/incerta segundo a Fastmarkets.\n\nSUPORTES E HIPÓTESES\n- 100 DMA superada no fechamento de 17/11; stochastics cruzaram para cima.\n- Short covering: posição líquida comprada dos fundos em 3.478 lotes, +1.289 lotes na semana até 13/11, segundo a fonte.\n- Indonésia: quotas RKAB 2026 de ~260–270 milhões t úmidas vs 379 milhões t úmidas em 2025; quotas 2027 poderão ser mais restritas, sem valor final no research.\n- Seca em Sulawesi reduziu operações de algumas linhas RKEF e atrasou projeto HPAL. Não há quantificação de perda global de produção.\n\nNÍVEIS TÉCNICOS — US$/t\n20 DMA 15.901 — suporte dinâmico.\n40 DMA 15.830 — referência adicional abaixo.\n100 DMA 16.408 — média cruzada no fechamento de 17/11, requer sustentação.\n200 DMA 17.169 — resistência superior.\nMínimas de outubro ~15.100 — suporte mais profundo.\n20.000 — referência distante no quadro lateral do PDF.\n\nMERCADO FÍSICO\nLME: 274.140 t no research de 18/11; 272.682 t no research anterior, referentes a 16/11 (+1.458 t entre referências, cálculo). Frente a 164.028 t no início de 2025: +110.112 t (+67,1%).\nSHFE: 106.356 t em 13/11, reproduzido na edição de 18/11; não é atualização de 18/11.\nÚltimo Cash–3M informado foi −US$ 195/t na pesquisa de 17/11 (contango); não há novo spread no documento atual.\n\nBALANÇO E DEMANDA\nINSG: superávit de 81.100 t no primeiro semestre de 2026.\nFastmarkets: superávit global de 24.000 t projetado em 2026 e déficit de 37.000 t projetado em 2027.\nAço inox global: custos e política comercial sustentam pisos de preço, enquanto a demanda ainda é fraca/incerta.\n\nFATO / INTERPRETAÇÃO / HIPÓTESE\nFato da fonte: fechamento de 17/11 acima da 100 DMA; stochastics em alta; estoques LME elevados; posição líquida comprada dos fundos; seca em Sulawesi e algumas restrições operacionais.\nInterpretação: venda nos repiques pode estar perdendo força, mas a confirmação física não está presente no relatório.\nHipótese: redução efetiva da oferta em 2027 e compras mais firmes podem apoiar uma tendência de recuperação; magnitude e prazo não confirmados.\n\nPERGUNTA PARA A PRÓXIMA EDIÇÃO\nO preço sustentará a 100 DMA e avançará na direção da 200 DMA enquanto os estoques LME recuam e as restrições indonésias ganham efeito verificável?\n\nLIMITES\nO research não traz cotação exata de 18/11, Cash–3M atualizado, nova fotografia SHFE, prêmios físicos ou cancelled warrants. A comparação entre net long 2.188 e 3.478 sugere diferença aritmética de 1.290, ao passo que o relatório descreve ganho semanal de 1.289 lotes. Esses números não foram alterados ou conciliados artificialmente. Não é recomendação de investimento.";
+ const blob=new Blob([content],{type:'text/plain;charset=utf-8'});
+ const url=URL.createObjectURL(blob);
+ const a=document.createElement('a');a.href=url;a.download='resumo_observatorio_niquel_18-11-2026.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),500);
+}
+
+</script>
+<script>
+(function(){
+ const btn=document.querySelector('.menu-toggle');const nav=document.querySelector('.main-nav');if(!btn||!nav)return;
+ btn.addEventListener('click',()=>{const open=nav.classList.toggle('open');btn.setAttribute('aria-expanded',String(open))});
+ nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');btn.setAttribute('aria-expanded','false')}));
+ document.addEventListener('click',e=>{if(window.innerWidth<=980&&!e.target.closest('.nav-shell')){nav.classList.remove('open');btn.setAttribute('aria-expanded','false')}});
+})();
+</script>
+<script>
+// Pesquisa mensal de 25/11/2026: atualiza camadas dinâmicas sem substituir a arquitetura anterior.
+guidedSteps.splice(0,guidedSteps.length,
+ {title:'1. O que mudou em 25/11?',intro:'A nova pesquisa da Fastmarkets é um gráfico mensal do níquel, não uma atualização intradiária. Ela considera que o ciclo bearish pode não ter terminado, apesar da melhora de momentum descrita no relatório diário de 18/11.',chain:['Sinal diário melhora em 18/11','Estrutura mensal segue bearish em 25/11','Reversão longa ainda não confirmada'],insight:'Uma tendência maior pode continuar baixista durante repiques diários. Os dois relatórios usam horizontes e critérios diferentes.',labels:['Fato','Interpretação']},
+ {title:'2. Por que a leitura mensal permanece bearish?',intro:'Andy Farida destaca o histórico de booms extremos, reversões prolongadas e episódios de capitulação. A sequência de topos descendentes e o momentum mensal ainda não formam, na leitura do autor, uma reversão estrutural.',chain:['Topos descendentes persistem','Momentum mensal é bearish','Permanece risco de nova queda'],insight:'Esse é o argumento técnico do relatório. Ele não mede a probabilidade estatística de nova capitulação.',labels:['Fato','Interpretação']},
+ {title:'3. Onde o mercado seria testado?',intro:'O research define US$ 14.000–15.000/t como a primeira grande zona de teste estrutural. Se essa região falhar, o autor destaca o suporte mais profundo de US$ 10.000–12.000/t. O quadro lateral cita US$ 15.000 (psicológico) e US$ 10.865 (mínima de 2020).',chain:['Teste em 14–15 mil','Se falhar: 10–12 mil','Revisar estrutura de preço'],insight:'As duas faixas são condicionais. A fonte não informa cotação exata de 25/11 nem quando esses testes poderiam ocorrer.',labels:['Fato','Hipótese']},
+ {title:'4. O que desafia a tese de baixa?',intro:'Segundo a Fastmarkets, força mensal sustentada acima de aproximadamente US$ 19.000–20.000/t começaria a enfraquecer a leitura bearish, mas também seriam necessários melhora de momentum e rompimento da estrutura de topos descendentes.',chain:['Recuperar 19–20 mil no mensal','Momentum melhora','Topo descendente é rompido'],insight:'Um simples toque de preço no patamar não é igual a reversão mensal confirmada.',labels:['Fato','Hipótese']},
+ {title:'5. O que acompanhar agora?',intro:'Use os cinco pontos essenciais do relatório mensal e verifique, em pesquisas seguintes, se o mercado físico confirma ou contradiz a leitura técnica.',bullets:['Comportamento da zona estrutural US$ 14–15 mil/t.','Possível abertura de risco para US$ 10–12 mil/t apenas se o primeiro suporte falhar.','Fechamentos mensais sustentados sobre US$ 19–20 mil/t.','Evolução do estocástico mensal e da sequência de topos descendentes.','Novos estoques, spreads e demanda — ausentes no PDF de 25/11.'],insight:'Não apresente os dados físicos históricos de 18/11 como números atuais de 25/11.',labels:['Checklist']}
+);
+renderGuided(0);
+horizonData.curto=[['Leitura atual','Bearish (mensal)','O quadro direcional de 25/11 marca viés baixista também para o curto prazo; não apresenta cotação diária atual.','bear'],['Sinal histórico','Momentum em 18/11','O cruzamento ascendente dos estocásticos foi visto no research anterior.','bull'],['Limite','Sem preço em 25/11','O documento mensal não atualiza cotações nem médias diárias.',''],['Pergunta','Repique ou reversão?','Um sinal de curto prazo não basta para validar reversão de vários meses.','']];
+horizonData.medio=[['Viés mensal','Bearish','A Fastmarkets ainda não considera o ciclo de queda concluído.','bear'],['Primeiro teste','US$ 14–15 mil/t','Faixa de suporte estrutural indicada no texto de 25/11.','bear'],['Risco condicional','US$ 10–12 mil/t','Só ganha foco se o suporte inicial falhar; não é destino garantido.',''],['Pergunta','Suporte será defendido?','Observar o comportamento do preço ao testar a faixa.','']];
+horizonData.longo=[['Viés mensal','Bearish','A edição de 25/11 mostra seta baixista também para o longo prazo.','bear'],['Reversão','US$ 19–20 mil/t','Força mensal sustentada, momentum melhor e ruptura dos topos descendentes.','bull'],['Suporte profundo','US$ 10–12 mil/t','Área de risco, não projeção de probabilidade ou prazo.','bear'],['Contrapeso anterior','Déficit 2027 projetado','Projeção fundamentalista da edição de 18/11; não atualizada em 25/11.','']];
+renderHorizon('curto');
+bears.unshift(['Estrutura mensal ainda baixista','Alto','O relatório de 25/11 atribui viés bearish aos horizontes de curto, médio e longo prazo, com estocástico bearish.','Topos descendentes e risco de correção adicional dificultam tratar um repique como reversão estrutural.','Trata-se de análise técnica qualitativa; não informa probabilidade nem timing do movimento.']);
+bears.unshift(['Risco de perda do suporte estrutural','Alto','A Fastmarkets aponta US$ 14–15 mil/t como primeiro teste e US$ 10–12 mil/t como zona posterior se houver ruptura.','Perda consistente do primeiro suporte deslocaria o foco do mercado para níveis de longo prazo inferiores.','O cenário profundo é condicional, não preço confirmado nem previsão pontual.']);
+bulls.unshift(['Critérios para enfraquecer a tese bearish','Alto','O relatório de 25/11 exige força mensal sustentada acima de US$ 19–20 mil/t, momentum melhor e quebra dos topos descendentes.','A combinação modificaria a leitura de risco do ciclo, não apenas o impulso de curto prazo.','A edição de 25/11 não informa que essas condições tenham ocorrido.']);
+renderDrivers('bearDrivers',bears);renderDrivers('bullDrivers',bulls);
+// Cenários mensais ilustram consequências condicionais, nunca probabilidade numérica.
+const monthScenarios={
+ base:['Ciclo baixista ainda não encerrado','O gráfico mensal continua vulnerável na visão de Andy Farida. A primeira grande zona a observar é US$ 14–15 mil/t; a pesquisa não confirma que esse nível já tenha sido testado.','bear'],
+ washout:['Uma falha em US$ 14–15 mil/t abre risco adicional','Se houver perda sustentada da primeira faixa de suporte, a Fastmarkets direciona a atenção a US$ 10–12 mil/t, incluindo a referência histórica de US$ 10.865/t. Não há prazo nem probabilidade informados.','bear'],
+ reversal:['Mudança estrutural exige confirmação mensal','Força sustentada no mensal acima de aproximadamente US$ 19–20 mil/t, com momentum melhor e rompimento dos topos descendentes, começaria a desafiar a tese bearish.','bull']
+};
+document.querySelectorAll('[data-month]').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('[data-month]').forEach(b=>b.classList.toggle('active',b===btn));
+ const selected=btn.dataset.month;const sc=monthScenarios[selected];
+ const title=document.getElementById('monthTitle');title.textContent=sc[0];title.classList.remove('bear','bull');title.classList.add(sc[2]);
+ document.getElementById('monthText').textContent=sc[1];
+ document.querySelectorAll('[data-band]').forEach(el=>el.classList.toggle('month-active',el.dataset.band===selected));
+}));
+// Mantém o recurso de exportar TXT já existente, substituindo apenas o texto e a data.
+exportResumo=function(){
+ const content=`OBSERVATÓRIO AURICCHIO DO NÍQUEL — PESQUISA MENSAL 25/11/2026
+Relatório-base: Fastmarkets, Andy Farida, "Nickel monthly chart: Deep in bearish territory - November 2026", 25/11/2026 às 06:00 GMT.
+Contexto histórico: Fastmarkets James Moore 18/11; Rory Deng 17/11; James Moore 13/11 (PDF datado 16/11).
+
+PERGUNTA CENTRAL
+A melhora técnica diária de 18/11 significa uma reversão de longo prazo? O relatório mensal de 25/11 sugere que ainda não.
+
+LEITURA MENSAL — FATO DA FONTE
+- O research mensal classifica curto, médio e longo prazo como bearish; estocástico mensal bearish.
+- O analista não considera provado o encerramento do ciclo de baixa.
+- Resistências de referência: US$ 20.000/t (máxima de 2026) e US$ 21.750/t (máxima de 2024).
+- Suportes pontuais: US$ 15.000/t (psicológico) e US$ 10.865/t (mínima de 2020).
+
+CENÁRIOS CONDICIONAIS — NÃO SÃO FATOS REALIZADOS
+- US$ 14.000–15.000/t: primeira região importante de teste no longo prazo.
+- US$ 10.000–12.000/t: região estrutural mais profunda, somente se a primeira zona falhar.
+- Recuperação mensal sustentada acima de aproximadamente US$ 19.000–20.000/t, com melhoria de momentum e ruptura dos topos descendentes, começaria a questionar a tese de baixa.
+- O PDF não oferece prazo, probabilidade ou cotação exata em 25/11 para esses cenários.
+
+COMPARAÇÃO COM A ANÁLISE DIÁRIA ANTERIOR
+- O relatório de 18/11 registrou fechamento de 17/11 acima da média de 100 dias (US$ 16.408/t) e estocásticos cruzando para cima; esses dados são históricos, não atualizados em 25/11.
+- Um repique no diário pode coexistir com viés bearish no mensal. Os critérios de reversão de longo prazo são diferentes.
+
+PRESSÕES E CONTRAPESOS FUNDAMENTAIS — ÚLTIMA FOTOGRAFIA DE 17–18/11
+- Estoque LME de 274.140 t foi citado no relatório de 18/11; sem atualização de 25/11.
+- Último contango Cash–3M citado: US$ 195/t no research de 17/11; não atualizado em 25/11.
+- COT de 18/11: posição líquida comprada de 3.478 lotes, semana até 13/11; não atualizado em 25/11.
+- Projeção Fastmarkets no relatório de 18/11: superávit de 24.000 t em 2026 e déficit de 37.000 t em 2027; não reestimada no research mensal.
+
+FATO / INTERPRETAÇÃO / HIPÓTESE
+Fato: a edição de 25/11 declara viés mensal bearish e informa níveis históricos, zonas de teste e critérios de reversão.
+Interpretação: a tendência mensal pode continuar fraca apesar da melhora técnica descrita em 18/11.
+Hipótese: suporte entre US$ 14–15 mil/t pode falhar e expor a faixa US$ 10–12 mil/t; a hipótese não tem probabilidade calculada.
+
+A ACOMPANHAR
+1. Reação perto do primeiro suporte mensal US$ 14–15 mil/t.
+2. Relevância eventual da região US$ 10–12 mil/t se houver ruptura.
+3. Recuperação mensal sustentada acima de US$ 19–20 mil/t.
+4. Melhoria de momentum e ruptura de topos descendentes.
+5. Novos dados físicos (estoques, Cash–3M e demanda), ausentes em 25/11.
+
+LIMITES
+O research de 25/11 não traz preço exato na data, estoques, spreads, COT ou novos dados físicos. O mapa visual é um esquema de patamares, não série de cotações nem previsão probabilística. Sem recomendações de negociação ou de investimento.`;
+ const blob=new Blob([content],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);
+ const a=document.createElement('a');a.href=url;a.download='resumo_observatorio_niquel_25-11-2026.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),500);
+};
+</script><script>
+// Research Fastmarkets de 26/11/2026; preserva a arquitetura do Observatório Auricchio.
+guidedSteps.splice(0,guidedSteps.length,
+ {title:'1. O que aconteceu?',intro:'O relatório diário de 26/11 observa o níquel resistindo à fraqueza de outros metais, especialmente o cobre. Depois de perder referências em outubro, o preço voltou a ficar acima delas nesta manhã. A Fastmarkets aguarda saber se a base acima de US$ 15 mil/t terá continuidade.',chain:['Suportes foram rompidos','Preço volta acima das referências','Base começa a se formar'],insight:'A fonte não informa cotação exata de 26/11. Recuperar um suporte não confirma, sozinho, uma tendência de alta.',labels:['Fato','Interpretação']},
+ {title:'2. Por que está mais resiliente?',intro:'A Fastmarkets aponta três fontes de risco à produção indonésia: baixo nível de água associado ao El Niño em operações NPI/HPAL; capacidade elétrica deslocada do níquel para o alumínio; e possíveis reduções coordenadas de produção, ainda não confirmadas.',chain:['Água/energia pressionam processamento','Disponibilidade de Classe 2 pode diminuir','Mercado considera risco de oferta'],insight:'Impacto no preço é interpretação, não produção global perdida quantificada. O documento não mede a redução total de oferta.',labels:['Fato','Interpretação','Hipótese']},
+ {title:'3. O que contraria a tese de alta?',intro:'O total visível de estoques LME + SHFE cresceu de 301.932 t no início do ano para 380.846 t em 26/11. Esse aumento oferece amortecimento potencial, mas as bolsas concentram Classe 1 enquanto a preocupação com a Indonésia envolve Classe 2.',chain:['Estoques combinados crescem 26,1%','Classe 1 e Classe 2 diferem','Sinal de aperto não é uniforme'],insight:'O documento não informa o spread de 26/11 nem uma posição financeira atualizada; sem eles, não se deve declarar escassez imediata.',labels:['Fato','Interpretação']},
+ {title:'4. O que poderia mudar o cenário?',intro:'Para uma recuperação diária ganhar força, acompanhe a defesa de US$ 15 mil/t e as resistências de US$ 16.545 e US$ 16.690/t. Na Indonésia, importa saber se quotas são emitidas com atraso ou se os cortes anunciados são de fato executados. Na escala mensal, a tese de 25/11 permanece bearish.',chain:['Base técnica se sustenta','Restrição de oferta se confirma','Viés de curto prazo melhora'],insight:'A relação é condicional. Sem mudança mensal sustentada, um repique diário ainda pode coexistir com tendência estrutural de baixa.',labels:['Hipótese','Interpretação']},
+ {title:'5. O que acompanhar nos próximos dias?',intro:'Cinco verificações enxutas para acompanhar a evolução desta hipótese.',bullets:['A região de US$ 15.000–15.342/t continua funcionando como apoio?','O preço supera US$ 16.545 e depois US$ 16.690/t?','Quotas e cortes indonésios se tornam atos verificáveis?','Estoques, spreads e disponibilidade por classe passam a demonstrar aperto físico?','O gráfico mensal começa a romper sua estrutura de topos descendentes?'],insight:'O observatório reúne critérios de acompanhamento, não recomenda uma operação.',labels:['Checklist']}
+);
+renderGuided(0);
+horizonData.curto=[['Viés','Neutro / lateral a mais firme','A análise diária de 26/11 favorece negociação lateral a moderadamente altista, aguardando a consolidação da base.','bull'],['Suporte','~US$ 15.000/t','Referência psicológica central; níveis 15.070–15.342 foram recuperados na manhã do relatório.','bull'],['Resistência','US$ 16.545–16.690','Topo recente e máxima de 23/09, barreiras a observar.',''],['Pergunta','Base se sustenta?','Não existe confirmação definitiva de reversão.','']];
+horizonData.medio=[['Viés','Bearish','Painel direcional da edição de 26/11 ainda aponta pressão no médio prazo.','bear'],['Oferta','Riscos na Indonésia','Água e realocação de eletricidade afetam NPI/HPAL; cortes coordenados ainda não confirmados.','bull'],['Estoque visível','380.846 t','LME+SHFE em 26/11, +26,1% em relação ao início do ano.','bear'],['Pergunta','Restrição terá escala?','É preciso quantificar a oferta efetivamente retirada.','']];
+horizonData.longo=[['Quadro 26/11','Neutro','Seta lateral para longo prazo no relatório diário de William Adams.',''],['Mensal 25/11','Bearish','Andy Farida mantém risco estrutural de capitulação; horizonte e autor distintos.','bear'],['Possível impacto','Regras e investimentos','Quotas e proposta de 70% de participação estatal podem alterar projetos; efeitos ainda não comprovados.',''],['Pergunta','Mensal muda?','Força sustentada em US$ 19–20 mil/t e quebra de topos descendentes são critérios de 25/11.','']];
+renderHorizon('curto');
+// Primeiros fatores visíveis são os mais recentes, mas os históricos seguem identificados.
+bears.unshift(['Estoques visíveis elevados','Alto','Fato 26/11: LME + SHFE somam 380.846 t, ante 301.932 t no começo do ano.','A disponibilidade Classe 1 visível ajuda a amortecer choques para determinados consumidores.','Estoques de bolsa não são globais e não substituem perfeitamente materiais Classe 2.']);
+bears.unshift(['Cortes ainda não confirmados','Médio','Fato 26/11: o relatório menciona discussões de cortes coordenados devido a perdas operacionais; o próprio documento frisa que não foram confirmados.','Sem execução e volume retirado, a narrativa pode não transformar-se em aperto real.','Não foi fornecido calendário, volume nem probabilidade de implementação.']);
+bulls.unshift(['Base técnica em formação','Alto','Fato 26/11: o preço se encontra novamente acima das referências rompidas e resiste à fraqueza do cobre; estocásticos viram para cima.','Se a defesa da região US$ 15 mil/t persistir, o movimento lateral a mais firme ganha plausibilidade.','Sem cotação exata ou confirmação de rompimento das próximas resistências.']);
+bulls.unshift(['Risco operacional na Indonésia','Alto','Fato 26/11: restrições de água afetam NPI/HPAL e parte da energia é realocada do níquel para o alumínio.','Menor disponibilidade efetiva de Classe 2 pode sustentar determinadas cadeias industriais.','A fonte não informa o total de toneladas perdidas.']);
+bulls.unshift(['Quotas e política de mineração','Médio','Fato da fonte: mercado aguarda quotas, possíveis atrasos e discussão de participação governamental de 70% em capital ou resultados.','Mudança regulatória poderia frear investimentos ou oferta futura.','Política/proposta ainda não equivale a implementação ou corte de produção comprovado.']);
+renderDrivers('bearDrivers',bears);renderDrivers('bullDrivers',bulls);
+const currentScenarios={
+ base:['Estabilização ainda em construção','A Fastmarkets descreve preços acima de antigas referências rompidas e considera viés lateral a moderadamente altista, sem declarar reversão confirmada.',''],
+ bull:['Avanço requer superar os topos recentes','Manter a base e voltar a desafiar US$ 16.545 e US$ 16.690/t tornaria o repique mais convincente. Resistências superiores ficam em US$ 17.500 e US$ 18.185/t; são níveis, não alvos previstos.','bull'],
+ bear:['Perda da base reacenderia o risco baixista','Uma quebra sustentada da região US$ 15.070–15.150/t e do patamar psicológico de US$ 15 mil/t fragilizaria a base diária. A pesquisa mensal de 25/11 menciona US$ 14–15 mil/t como próximo teste estrutural.','bear']
+};
+document.querySelectorAll('[data-current]').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('[data-current]').forEach(b=>b.classList.toggle('active',b===btn));
+ const x=currentScenarios[btn.dataset.current];
+ const title=document.getElementById('currentTitle');title.textContent=x[0];title.classList.remove('bear','bull');if(x[2])title.classList.add(x[2]);
+ document.getElementById('currentText').textContent=x[1];
+}));
+// The old monthly controls remain active and unmodified.
+exportResumo=function(){
+ const content=`OBSERVATÓRIO AURICCHIO — NÍQUEL | 26/11/2026
+FONTE PRINCIPAL: Fastmarkets, William Adams, "Nickel, base building now that support has held", 26/11/2026, 09:10 GMT.
+CONTEXTO: monthly chart de Andy Farida 25/11 e reports diários de 17–18/11; sempre históricos.
+
+PERGUNTA CENTRAL
+O níquel pode sustentar a formação de base acima de US$ 15 mil/t enquanto a tendência mensal ainda é baixista?
+
+RELATÓRIO DO DIA — FATO
+- Resiliência relativa em relação a outros metais (especialmente cobre) e retomada de níveis anteriormente rompidos.
+- Painel direcional: curto neutro, médio bearish, longo neutro; stochastics virando para cima.
+- Suportes/referências: US$ 15.342 (SL), US$ 15.193 (antiga linha descendente), US$ 15.170 (mínima de 30/10), US$ 15.150 (mínima recente), US$ 15.070 (mínima de 15/10).
+- Resistências: US$ 16.545, 16.690, 17.500, 18.185 e 20.000/t. O quadro também lista 15.193 como resistência; no corpo, a antiga DTL recuperada assume função potencial de suporte.
+- LME + SHFE: 380.846 t em 26/11, ante 301.932 t no início do ano (+78.914 t; +26,1%). Estoques em bolsa são Classe 1; restrições indonésias afetam principalmente Classe 2.
+- Indonésia: restrições de água no NPI/HPAL e realocação de eletricidade do níquel para o alumínio são citadas como dificuldades operacionais.
+- Possíveis cortes coordenados por perdas operacionais são mencionados, mas não confirmados. Quotas futuras/atrasos e plano do governo de obter 70% de participação no capital ou nos lucros são hipóteses e propostas, não medidas implementadas comprovadas.
+
+INTERPRETAÇÃO
+- Base diária potencial pode favorecer movimento lateral a moderadamente altista se US$ 15 mil/t for defendido.
+- A diferença entre estoques Classe 1 e restrições de produção Classe 2 limita conclusões baseadas apenas no total agregado.
+
+CENÁRIOS CONDICIONAIS
+- Se recuperar US$ 16.545 e 16.690/t, o movimento diário teria sinais de continuidade; não é reversão mensal confirmada.
+- Se perder de modo sustentado a zona de 15.070–15.150/t e US$ 15 mil/t, a base enfraqueceria.
+- No mensal de 25/11: primeiro teste estrutural US$ 14–15 mil/t; se falhar, região mais profunda US$ 10–12 mil/t. Reversão da tese exigiria força mensal sustentada sobre US$ 19–20 mil/t, melhor momentum e quebra de topos descendentes.
+
+ÚLTIMOS DADOS NÃO ATUALIZADOS
+- Último Cash–3M informado no conjunto de anexos: contango de US$ 195/t em 17/11.
+- Fundos e projeção de balanço permanecem nos relatórios anteriores, não na edição de 26/11.
+
+QUESTÃO PARA OS PRÓXIMOS DIAS
+A recuperação do suporte conseguirá evoluir em paralelo a reduções concretas de oferta indonésia ou os estoques e a tendência mensal continuarão limitando a alta?
+
+LIMITES
+Não há preço numérico de 26/11, spread atualizado, COT atualizado ou perdas de produção quantificadas. Estoque de bolsas não equivale a estoque global. Nenhum patamar é previsão probabilística nem recomendação de investimento.`;
+ const blob=new Blob([content],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);
+ const a=document.createElement('a');a.href=url;a.download='resumo_observatorio_niquel_26-11-2026.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),500);
+};
+</script><script id="report-meta" type="application/json">{
+  "metal": "nickel",
+  "date": "2026-11-26",
+  "title": "Níquel: suporte começa a formar base no diário, mas mensal ainda bearish",
+  "bias": "Curto neutro / lateral a moderadamente altista; médio bearish; longo neutro (26/11); mensal bearish (25/11)",
+  "physical": "LME+SHFE 380.846 t em 26/11, +26,1% vs início de 2026; Classe 1 difere de Classe 2",
+  "note": "Research diário William Adams 26/11; mensal Andy Farida 25/11 preservado; preços e riscos por horizonte; sem cotação ou Cash–3M novos no PDF do dia."
+}</script></body>
+</html>
