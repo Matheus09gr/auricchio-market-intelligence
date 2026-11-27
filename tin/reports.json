@@ -1,8 +1,17 @@
 {
   "metal": "Estanho",
   "symbol": "Sn",
-  "updated_at": "2026-11-26",
+  "updated_at": "2026-11-27",
   "reports": [
+    {
+      "date": "2026-11-27",
+      "display_date": "27/11/2026",
+      "title": "Tin rebound eases downside pressure but sustained recovery remains unconfirmed",
+      "file": "./reports/2026-11-27.html",
+      "bias": "Neutro-bearish / consolidação",
+      "physical": "Apertado / volátil",
+      "note": "O estanho voltou acima de US$ 40 mil/t e reduziu a pressão imediata, mas a recuperação ainda não confirma reversão. Estoques baixos e backwardation mais firme ajudam, enquanto macro e liquidez mantêm a volatilidade elevada."
+    },
     {
       "date": "2026-11-26",
       "display_date": "26/11/2026",

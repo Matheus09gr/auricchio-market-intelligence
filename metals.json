@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26",
+  "updated_at": "2026-11-27",
   "metals": [
     {
       "id": "tin",
@@ -8,10 +8,10 @@
       "english": "Tin",
       "status": "available",
       "path": "./tin/",
-      "last_report": "26/11/2026",
-      "bias": "Bearish / extremamente sobrevendido",
-      "physical": "Apertado",
-      "note": "O estanho marcou nova mínima de 2026 em US$ 36.485/t. A tendência segue bearish, mas a queda quase vertical e o RSI em 22 aumentam a probabilidade de rebound técnico ou short covering."
+      "last_report": "27/11/2026",
+      "bias": "Neutro-bearish / consolidação",
+      "physical": "Apertado / volátil",
+      "note": "O estanho voltou acima de US$ 40 mil/t e reduziu a pressão imediata, mas a recuperação ainda não confirma reversão. Estoques baixos e backwardation mais firme ajudam, enquanto macro e liquidez mantêm a volatilidade elevada."
     },
     {
       "id": "copper",
